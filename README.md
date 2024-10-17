@@ -1,8 +1,6 @@
 # IHP-AnalogAcademy
-
-![IHPlogo](media/ihp-logo.jpg)
 <p align="center">
-  <img src="media/ihp-logo.jpg" alt="IHP Logo" />
+  <img src="media/ihp-logo.jpg"  width="600" height="400" />
 </p>
 
 
