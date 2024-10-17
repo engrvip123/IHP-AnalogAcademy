@@ -1,6 +1,9 @@
 # IHP-AnalogAcademy
 
 ![IHPlogo](media/ihp-logo.jpg)
+<p align="center">
+  <img src="media/ihp-logo.jpg" alt="IHP Logo" />
+</p>
 
 
 ## Table of Contents
