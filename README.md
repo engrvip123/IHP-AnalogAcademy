@@ -1,6 +1,6 @@
 # IHP-AnalogAcademy
 
-![IHPlogo](media/ihp_logo.png)
+![IHPlogo](media/ihp-logo.jpg)
 
 
 ## Table of Contents
