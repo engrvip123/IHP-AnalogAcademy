@@ -31,7 +31,7 @@ Following the installation procedure you should now be able to launch xschem by 
 When lauching Xschem the first window you should should look something like this:
 
 <p align="center">
-  <img src="media/Pasted image 20241017155312.png"  width="600" height="400" />
+  <img src="../../media/Pasted image 20241017155312.png"  width="600" height="400" />
 </p>
 
 
