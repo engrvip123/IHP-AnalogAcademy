@@ -30,6 +30,10 @@ Following the installation procedure you should now be able to launch xschem by 
 ```
 When lauching Xschem the first window you should should look something like this:
 
+<p align="center">
+  <img src="media/ihp-logo.jpg"  width="600" height="400" />
+</p>
+
 ![[Pasted image 20241017155312.png]]
 
 This is generated testcases included in the IHP PDK that shows examples of how to make different kinds of simulations. Below you will se an overview of each fan.
