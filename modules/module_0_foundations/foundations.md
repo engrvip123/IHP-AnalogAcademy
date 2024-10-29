@@ -19,15 +19,14 @@ For installing at setting up the tools, with the IHP open PDK, installation guid
    ```bash
    https://ihp-open-pdk-docs.readthedocs.io/en/latest/index.html 
    
-```
-Following the installation procedure you should now be able to launch xschem by typing the following in the terminal
+   ```
 
+Following the installation procedure you should now be able to launch xschem by typing the following in the terminal
 
 1. **Open Xschem**
    ```bash
    xschem & 
-   
-```
+   ```
 When lauching Xschem the first window you should should look something like this:
 
 <p align="center">
