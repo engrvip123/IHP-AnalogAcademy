@@ -113,15 +113,72 @@ Now you should conncect the bulk of the devices to the sources with a wire, by p
 - xschem_library/devices -> search: cap -> capa-2.sym
 - xschem_library/devices -> search: isource -> isource.sym
 - xschem_library/devices -> search: vsource -> vsource.sym (duplicate this item)
+- xschem_library/devices -> search: lab -> lab_pin.sym (duplicate this item 4 times)
+- xschem_library/devices -> search: code -> code_shown.sym (duplicate this item)
 
 From here you should connect the individual components so you have the same setup as seen in the following image:
 
-<p align="center"> <img src="../../media/Screenshot 2024-10-29 094337.png" width="850" height="500" /> </p>
+<p align="center"> <img src="../../media/Screenshot 2024-10-29 095117.png" width="950" height="500" /> </p>
 
-modify each instance in the same way as the transistors so you also have the same values. Now we want to attach labels which is done by pressio
+modify each instance in the same way as the transistors so you also have the same values and labels. NOTE the Vin1 source has the following settings for value "value = AC 1". Next up we want to write the code for our simulation. Chose one of the code_shown blocks and press Q. In here change the name to NGSPICE and set only_toplevel to true. In the value section, insert the following code:
+
+```
+value = "
+.control
+op 
+ac dec 20 1 1e12 
+save all
+let Av = db(v(vout))
+write output_file.raw 
+.endc
+"
+```
+- .control ... .endc: This block defines a sequence of commands to control the simulation.
+
+- op: Runs a DC operating point analysis, which calculates the steady-state (DC) node voltages and currents based on the current sources, voltage sources, and component values.
+
+- ac dec 20 1 1e12: Runs an AC analysis with the following parameters:
+
+    - dec: Specifies a logarithmic frequency sweep (in decades).
+    - 20: Defines the number of points per decade.
+    - 1 and 1e12: Sets the frequency range from 1 Hz to 1 THz. This analysis evaluates the frequency response of the circuit over this range.
+
+- save all: Instructs Ngspice to save all node voltages and branch currents during the simulation. This allows for detailed data analysis and access to all circuit variables.
+
+- let Av = db(v(vout)): Defines a new variable Av to store the voltage gain (in decibels) at the node vout. Here:
+
+    - v(vout) retrieves the voltage at the vout node.
+    - db(...) converts this voltage to decibels (dB) for gain measurement.
+
+- write output_file.raw: Saves all the collected data and defined variables (Av and phase) to a file named output_file.raw. This output file can be used for post-simulation analysis or plotting in external tools.
+
+For the second code block we want to include the model for the transistors, which is done by filling the value parameter with the following:
+
+```
+name=MODEL only_toplevel=true
+format="tcleval( @value )"
+value="
+.lib cornerMOSlv.lib mos_tt
+"
+```
+
+Here we see that the corner of the models is chosen as typical typical. More about this in the later modules....
 
 
+As the last step before we can simulate we must set the netlisting to spice netlist. For this navigate to options-> Netlist Format/Symbol mode and choose Spice netlist. Now everything is setup and you can click netlist in the top right corner and afterwards Simulate. When this is done, a window should pop up, with a message: binary raw file "output_file.raw". Now write 
+```
+show all
+```
+in the input to display the DC operating points, and here you can verify that the operating points is set as calculated in the gm/id script. If not you can tweek the current source for instance to get a more accurate ids of your output transistor. In order to see the outputs avaliable for plotting, you can write 
 
+```
+display all
+```
+For plotting you can use the following commands
 
+```
+print Av   \\ printing the freq response in decibels
+print Vout \\ printing the freq response with linear y axis
+```
 
-
+From here you can play around with the different displays avaliable or even plot the output of the raw file in python.
