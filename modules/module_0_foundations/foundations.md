@@ -111,4 +111,7 @@ python -m pygmid --mode sweep --config <config.cfg>
    
 ```
 
-Now the this will generate a pkl file that will work as you lookup table. To test this follow the example given in the jupyterlab document (gm/id verification) in the current module.
+
+Now the this will generate a pkl file that will work as you lookup table. To test this refer to scripting folder inside this module, and test the jupyter file provided as gmid_commonsource.ipynb...
+
+REMARK, it requires you to run sweep of the sg13g2_nmos_lv, and sg13g2_pmos_lv as given in the config file and instaciating in the lk function as seen in the script. Also the path should be changed to the folder containing your LUTS. 
