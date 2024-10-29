@@ -158,8 +158,7 @@ For the second code block we want to include the model for the transistors, whic
 name=MODEL only_toplevel=true
 format="tcleval( @value )"
 value="
-.lib cornerMOSlv.lib mos_tt
-"
+.lib cornerMOSlv.lib mos_tt"
 ```
 
 Here we see that the corner of the models is chosen as typical typical. More about this in the later modules....
