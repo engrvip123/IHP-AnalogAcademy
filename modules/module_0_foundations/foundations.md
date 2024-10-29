@@ -116,7 +116,9 @@ Now you should conncect the bulk of the devices to the sources with a wire, by p
 
 From here you should connect the individual components so you have the same setup as seen in the following image:
 
+<p align="center"> <img src="../../media/Screenshot 2024-10-29 094337.png" width="850" height="500" /> </p>
 
+modify each instance in the same way as the transistors so you also have the same values. Now we want to attach labels which is done by pressio
 
 
 
