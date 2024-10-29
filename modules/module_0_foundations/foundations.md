@@ -91,18 +91,30 @@ To verify the design created using the lookup tables, start by identifying key p
 
 ```
 touch gmid_test.sch
-
 ```
 
 From here you launch this schematic by typing
 
 ```
 xschem gmid_test.sch
-
 ```
 
 the first thing we want to do is the instanciate our mosfets. In this example we make a current mirror for biasing our output transistor to the right operation. Therefore we will need to instanciate two MOSFETS. This is done by navigating to the insert symbol botton, with a nandgate as its icon. Or you can press shift+i. Here you want to click the IHP open pdk path, and click on "sg13g2_pr". Here you should select the "sg13_lv_nmos.sym", and press OK. Now you will place it and duplicate it by pressing it and clicking "c". Now you can press shift+f while toggeling the instance for flipping it and place it in a gate to gate configuration as shown in the image:
 
+
+<p align="center"> <img src="../../media/Screenshot 2024-10-29 093228.png" width="550" height="350" /> </p>
+select each instance and press Q to change the widht and the length to the parameters found in the gmid script.
+
+
+Now you should conncect the bulk of the devices to the sources with a wire, by pressing "w" and dragging the wire to its location. After this navigate to the symbol library, again by pressing and instanciate the following items:
+
+- xschem_library/devices -> search: gnd -> gnd.sym
+- xschem_library/devices -> search: res -> res.sym
+- xschem_library/devices -> search: cap -> capa-2.sym
+- xschem_library/devices -> search: isource -> isource.sym
+- xschem_library/devices -> search: vsource -> vsource.sym (duplicate this item)
+
+From here you should connect the individual components so you have the same setup as seen in the following image:
 
 
 
