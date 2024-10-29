@@ -1,82 +1,59 @@
 # Module 0 - Foundations
 
+Welcome to the first module in the IHP Open PDK analog design course.
+Module Overview
 
-Welcome to the first module in the IHP open PDK analog course. 
+- Setup and Verification of Tools
+- Notes on the Design Flow
+- Setting Up gm/Id Methodology (Optional)
+- Verifying gm/Id Design in Xschem (Optional)
 
-### Module Overview
-1. Setup and verification of the tools
-2. Overview of the PDK ??
-3. Simulating in Xschem using Ngspice
-4. Notes on the design flow
-5. Setting up gm/id (Optional)
+## Setup and Verification of Tools
 
-
-## Setup and verification
-
-For installing at setting up the tools, with the IHP open PDK, installation guides can be found in the read-the-docs, given by the following link below:
-
-1. **Read The Docs link**
-   ```bash
-   https://ihp-open-pdk-docs.readthedocs.io/en/latest/index.html 
-   
+To install and set up the tools for working with the IHP Open PDK, refer to the installation guides in the ReadTheDocs link below:
    ```
-
-Following the installation procedure you should now be able to launch xschem by typing the following in the terminal
-
-1. **Open Xschem**
-   ```bash
-   xschem & 
+    https://ihp-open-pdk-docs.readthedocs.io/en/latest/index.html
    ```
-When lauching Xschem the first window you should should look something like this:
+After following the installation steps, you should be able to launch Xschem by entering the following command in your terminal:
 
-<p align="center">
-  <img src="../../media/Pasted image 20241017155312.png"  width="800" height="400" />
-</p>
+    xschem
 
+Upon launching, the initial Xschem window should appear as follows:
+<p align="center"> <img src="../../media/Pasted image 20241017155312.png" width="800" height="400" /> </p>
 
-This is generated testcases included in the IHP PDK that shows examples of how to make different kinds of simulations. Below you will se an overview of each fan.
+This view includes test cases within the IHP PDK, demonstrating different types of simulations. Below is an overview of each type:
 
+- DC Analysis: Evaluates steady-state operation of devices, such as operating points and device characterization.
+- Transient Analysis: Assesses time-domain behavior, showing device operation over time and response to input changes.
+- AC Analysis: Examines frequency response, including cutoff frequencies and phase shift.
+- Monte Carlo Analysis: Provides statistical data on device performance variability due to random influences, such as manufacturing deviations.
+- S-Parameter Analysis: Focuses on high-frequency behavior, describing network reflection and transmission, useful in RF design.
 
-1. **DC:**  used to describe steady state operation of devices (Operating point, device characterization etc...)
-2. **Transient**: used to describe the behavior of devices in the time domain  i.e. how devices operate over time and how they response to changes in the input
-3. **AC**: used to describe the frequency response of devices, i.e deciding cutoff frequencies, phase shift etc...
-4. **Monte Carlo**: used as a statistical tool to describe how devices vary in performance with relation to random influences. This could for example be how a comparator changes its offset in relation to manufacturing variations
-5. **S-Param**: used to describe high frequency behavior of devices, more specifically compared to the AC, S-parameters describe a complete network in terms of reflection and transmission. This is particularly used in radio frequency (RF) design. 
+The simulation library allows you to explore different designs and understand the simulation setups, which will be covered in detail throughout the course. To get started, try opening dc_lv_nmos by selecting the instance and pressing e. This will open the schematic view.
 
+From here, navigate to the "netlist" button in the top-right corner, then press "simulate." Your first schematic simulation in Xschem will now be complete. View the results by left-clicking the green arrow while holding down Ctrl. The output should look like this:
+<p align="center"> <img src="../../media/Pasted image 20241017162220.png" width="800" height="400" /> </p>
 
-In the overview you can navigate through the different design to see how different simulations are setup, however we will cover most of this in detail throughout the course, its still a good idea to probe the terrain. For instance try opening the **dc_lv_nmos** by clicking on the instance and pressing ''e''. Now you have descended into the schematic!
+If the dark mode theme is hard to read, you can toggle it by pressing "Shift + O."
+## Notes on the Design Flow
 
-From here you should navigate to the button that says, "netlist" in the top right corner, and the press simulate afterwards, and voila, you have simulated your first schematic in xschem. You can view the results by left clicking on the green arrow while holding down Ctrl. You should see something like this:
+Analog design requires a solid foundation in analog electronics to ensure high-performance, robust designs. In this course, we will focus on the gm/Id methodology rather than traditional small-signal calculations using square-law models. This method uses model parameters to generate lookup tables, enabling a more data-driven approach to design. If you're interested in understanding the circuit design procedures in greater detail, each module includes Jupyter Notebook scripts as references for more advanced IC design using open-source tools.
 
-<p align="center">
-  <img src="../../media/Pasted image 20241017162220.png"  width="800" height="400" />
-</p>
+For a deeper dive into the gm/Id methodology, consider watching this video by Mastering Microelectronics: https://www.youtube.com/watch?v=dzz4z3ijVts
 
-If you think that the dark mode theme is too unclear, you can toggle this by pressing "shift + o". 
+Refer to the next section for instructions on setting up the gm/Id tools using pygmid.
+## Setting Up gm/Id Methodology (Optional)
 
+To set up the gm/Id tools, access the pygmid repository:
 
-## Notes on the design flow
+Repository URL: https://github.com/dreoilin/pygmid
 
-When working with analog design, many parameters has to be taken into account, and a solid foundation in regards to analog electronics is mandatory in order to produce well performing and robust structures. In this course we wont rely on small signal calculations using square law models, (even though these calculations are important for conceptualizing and understanding) instead we will design with the aid of the gm/id methods. Basically this method utilizes the model parameters to give us look up tables from where we can design with our figure of metrices. If you are interested in the design procedures for the circuits, the individual Jupiter notebook scripts are provided in the modules, and can be used as reference on how to embark on more "advanced" IC design with the open source tools. 
+Switch to the "Ngspice" branch and clone the repository to a destination of your choice. Follow the installation instructions in the README. To generate the lookup table, create a configuration file specifying parameters. Below is a sample configuration file to sweep the low-voltage devices, sg13_lv_nmos and sg13_lv_pmos, with relevant parameters:
 
-If you are interested in learning more about the gm/id method, you can refer to the following video by **Mastering Microelectronics**: https://www.youtube.com/watch?v=dzz4z3ijVts
+```
 
-To setup the gm/id tools with pygmid refer to the next chapter.
-
-
-
-
-## Setting up gm/id (Optional)
-
-For setting up gm/id tools we refer to the pygmid repository provided by the following 
-
-URL: https://github.com/dreoilin/pygmid
-
-Switch the branch to Ngspice and clone the repository in a destination of your choice. Refer to the installation procedure in the readme. Now for generating the lookup table first create your config file with the listed parameters. For inspiration i show a config file that takes the two low voltage devices, sg13_lv_nmos and the equivalent pmos and sweeps them with the parameters shown under the sweep section. Remember to change the  file path to fit with your enviroment
-
-   ```bash
 [MODEL]
-file = /...../IHP-Open-PDK/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib mos_tt
+file = /path/to/IHP-Open-PDK/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib mos_tt
 info = 130nm CMOS, IHP Open Source PDK, SPICE
 corner = NOM
 temp = 300
@@ -87,31 +64,50 @@ savefilep = 130p1vrvt
 paramfile = params.lib
 
 [SWEEP]
-#	(start	,step,stop)
-VGS = 	(0,20e-3,1.2)
-VDS = (0,25e-3,1.2)
-VSB = (0,0.2,1)
-#LENGTH = [(0.13,0.02,0.5), (0.6, 0.1, 2), (2.5,0.5,10), (11,1,20)]
-LENGTH = [(0.13,0.987,10)]
+VGS = (0, 20e-3, 1.2)
+VDS = (0, 25e-3, 1.2)
+VSB = (0, 0.2, 1)
+LENGTH = [(0.13, 0.987, 10)]
 WIDTH = 1
 NFING = 1
 
 [SETTINGS]
 RAW_INCLUDE = ['pre_osdi ./psp103_nqs.osdi']
 SIMULATOR = ngspice
- 
-   
 ```
+To run the sweep, execute the following command:
 
-Now you can sweep the conf file by applying the following command:
-
-
-   ```bash
+```
 python -m pygmid --mode sweep --config <config.cfg>
-   
 ```
 
+This command will generate a .pkl file that serves as the lookup table. To test the table, navigate to the scripting folder in this module and open gmid_commonsource.ipynb.
 
-Now the this will generate a pkl file that will work as you lookup table. To test this refer to scripting folder inside this module, and test the jupyter file provided as gmid_commonsource.ipynb...
+Note: Ensure the paths to sg13g2_nmos_lv and sg13g2_pmos_lv are correctly referenced in your config file, and modify the LUT path in the script to point to the location of your lookup tables.
 
-REMARK, it requires you to run sweep of the sg13g2_nmos_lv, and sg13g2_pmos_lv as given in the config file and instaciating in the lk function as seen in the script. Also the path should be changed to the folder containing your LUTS. 
+## Verifying gm/Id Design in Xschem (Optional)
+
+To verify the design created using the lookup tables, start by identifying key parameters to validate, such as DC gain and the first pole. This requires creating a frequency analysis simulation to capture both characteristics. Begin by creating a new schematic in some specified folder:
+
+```
+touch gmid_test.sch
+
+```
+
+From here you launch this schematic by typing
+
+```
+xschem gmid_test.sch
+
+```
+
+the first thing we want to do is the instanciate our mosfets. In this example we make a current mirror for biasing our output transistor to the right operation. Therefore we will need to instanciate two MOSFETS. This is done by navigating to the insert symbol botton, with a nandgate as its icon. Or you can press shift+i. Here you want to click the IHP open pdk path, and click on "sg13g2_pr". Here you should select the "sg13_lv_nmos.sym", and press OK. Now you will place it and duplicate it by pressing it and clicking "c". Now you can press shift+f while toggeling the instance for flipping it and place it in a gate to gate configuration as shown in the image:
+
+
+
+
+
+
+
+
+
