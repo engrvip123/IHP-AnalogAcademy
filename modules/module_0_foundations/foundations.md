@@ -30,7 +30,7 @@ Following the installation procedure you should now be able to launch xschem by 
 When lauching Xschem the first window you should should look something like this:
 
 <p align="center">
-  <img src="../../media/Pasted image 20241017155312.png"  width="600" height="400" />
+  <img src="../../media/Pasted image 20241017155312.png"  width="800" height="400" />
 </p>
 
 
@@ -49,7 +49,7 @@ In the overview you can navigate through the different design to see how differe
 From here you should navigate to the button that says, "netlist" in the top right corner, and the press simulate afterwards, and voila, you have simulated your first schematic in xschem. You can view the results by left clicking on the green arrow while holding down Ctrl. You should see something like this:
 
 <p align="center">
-  <img src="../../media/Pasted image 20241017162220.png"  width="600" height="400" />
+  <img src="../../media/Pasted image 20241017162220.png"  width="800" height="400" />
 </p>
 
 If you think that the dark mode theme is too unclear, you can toggle this by pressing "shift + o". 
