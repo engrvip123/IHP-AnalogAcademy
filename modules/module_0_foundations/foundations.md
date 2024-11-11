@@ -35,6 +35,27 @@ From here, navigate to the "netlist" button in the top-right corner, then press 
 <p align="center"> <img src="../../media/Pasted image 20241017162220.png" width="800" height="400" /> </p>
 
 If the dark mode theme is hard to read, you can toggle it by pressing "Shift + O."
+
+### Opening K-Layout
+In order to test if K-layout is working properly, the following line can be executed anywhere
+
+   ```
+    klayout -e
+   ```
+This will launch klayout in edit mode. After this navigate to File -> New Layout. A small box will apear with the following input sections
+
+- Technology
+- Top cell
+- Database unit
+- Initial window size
+- Initial layers(s)
+
+Kepp all seetings default except for the technology box, where "sg13g2 - IHP SiGe 130nm technology" should be avaliable and chosen. After this press Ok. From here navigate to the toolmanger and select Instance. When this is done you the left pane should show the selected instance in the SG13 development Pcells library.  If the Sg13 dev library isnt avaliable, you should close the program and insure that you have included the submodules in the git pull, i.e
+
+```
+   git pull --recurse-submodules
+```
+
 ## Notes on the Design Flow
 
 Analog design requires a solid foundation in analog electronics to ensure high-performance, robust designs. In this course, we will focus on the gm/Id methodology rather than traditional small-signal calculations using square-law models. This method uses model parameters to generate lookup tables, enabling a more data-driven approach to design. If you're interested in understanding the circuit design procedures in greater detail, each module includes Jupyter Notebook scripts as references for more advanced IC design using open-source tools.
@@ -42,7 +63,7 @@ Analog design requires a solid foundation in analog electronics to ensure high-p
 For a deeper dive into the gm/Id methodology, consider watching this video by Mastering Microelectronics: https://www.youtube.com/watch?v=dzz4z3ijVts
 
 Refer to the next section for instructions on setting up the gm/Id tools using pygmid.
-## Setting Up gm/Id Methodology (Optional)
+## Setting Up gm/Id Methodology (Optional) (Currently not working)
 
 To set up the gm/Id tools, access the pygmid repository:
 
@@ -85,9 +106,19 @@ This command will generate a .pkl file that serves as the lookup table. To test 
 
 Note: Ensure the paths to sg13g2_nmos_lv and sg13g2_pmos_lv are correctly referenced in your config file, and modify the LUT path in the script to point to the location of your lookup tables.
 
+## Setting Up gm/Id Methodology (Optional)
+To set up the gm/Id tools, navigate to the following repository: [gmid](https://github.com/PhillipRambo/gmoveridpy)
+
+The repository was originally made by [medwatt](https://github.com/medwatt), but here a refactor is used adapted to the IHP PDK. To setup this repository, follow the installation procedure in the repository and finally run the 
+
+```
+   gmid_launcher.py
+```
+You will now be able to insert the values you want to use for, your costum sweeps. In the scripting folder, under this module, an example script was created as a jupyter notebook to showcase how to use gm/id interactively with these sweeps. Furthermore there will be some basic functions defined which can be used for different purposes. Among these a function is used to make a small GUI in order to select different parameters.
+
 ## Verifying gm/Id Design in Xschem (Optional)
 
-To verify the design created using the lookup tables, start by identifying key parameters to validate, such as DC gain and the first pole. This requires creating a frequency analysis simulation to capture both characteristics. Begin by creating a new schematic in some specified folder:
+To verify the design created using the lookup tables, start by identifying key parameters to validate, such as a simple DC gain and first order pole (As seen in the jupyter notebook script). This requires creating a frequency analysis simulation to capture both characteristics. Begin by creating a new schematic in some specified folder:
 
 ```
 touch gmid_test.sch
