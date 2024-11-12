@@ -129,37 +129,28 @@ From here you launch this schematic by typing
 ```
 xschem gmid_test.sch
 ```
+In the jupyter notebook script provided in the scripting folder, the design script, going through som different methods for plotting has a small design of a single transistor to verify the model in simulation. To try out the interactive design, fill in the corresponding parameters in the gui to double check, that the extracted values are correct. After this you need to instanciate a single mosfet in xschem. This is done by navigating to the insert symbol botton, with a nandgate as its icon. Or you can press shift+i. Here you want to click the IHP open pdk path, and click on "sg13g2_pr". Here you should select the "sg13_lv_nmos.sym", and press OK. Now you will place it. Select each instance and press Q to change the widht and the length to the parameters found in the gmid script. i.e 
 
-the first thing we want to do is the instanciate our mosfets. In this example we make a current mirror for biasing our output transistor to the right operation. Therefore we will need to instanciate two MOSFETS. This is done by navigating to the insert symbol botton, with a nandgate as its icon. Or you can press shift+i. Here you want to click the IHP open pdk path, and click on "sg13g2_pr". Here you should select the "sg13_lv_nmos.sym", and press OK. Now you will place it and duplicate it by pressing it and clicking "c". Now you can press shift+f while toggeling the instance for flipping it and place it in a gate to gate configuration as shown in the image:
-
-
-<p align="center"> <img src="../../media/Screenshot 2024-10-29 093228.png" width="550" height="350" /> </p>
-select each instance and press Q to change the widht and the length to the parameters found in the gmid script.
-
+- $L = 3.25 \mu m$
+- $W = 3.33 \mu m$
 
 Now you should conncect the bulk of the devices to the sources with a wire, by pressing "w" and dragging the wire to its location. After this navigate to the symbol library, again by pressing and instanciate the following items:
 
 - xschem_library/devices -> search: gnd -> gnd.sym
-- xschem_library/devices -> search: res -> res.sym
-- xschem_library/devices -> search: cap -> capa-2.sym
-- xschem_library/devices -> search: isource -> isource.sym
 - xschem_library/devices -> search: vsource -> vsource.sym (duplicate this item)
-- xschem_library/devices -> search: lab -> lab_pin.sym (duplicate this item 4 times)
 - xschem_library/devices -> search: code -> code_shown.sym (duplicate this item)
 
 From here you should connect the individual components so you have the same setup as seen in the following image:
 
-<p align="center"> <img src="../../media/Screenshot 2024-10-29 095117.png" width="950" height="500" /> </p>
+<p align="center"> <img src="../../media/setup_1.png" width="950" height="500" /> </p>
 
-modify each instance in the same way as the transistors so you also have the same values and labels. NOTE the Vin1 source has the following settings for value "value = AC 1". Next up we want to write the code for our simulation. Chose one of the code_shown blocks and press Q. In here change the name to NGSPICE and set only_toplevel to true. In the value section, insert the following code:
+Next up we want to write the code for our simulation. Chose one of the code_shown blocks and press Q. In here change the name to NGSPICE and set only_toplevel to true. In the value section, insert the following code:
 
 ```
-value = "
+name=NGSPICE only_toplevel=true 
+value="
 .control
-op 
-ac dec 20 1 1e12 
-save all
-let Av = db(v(vout))
+op
 write output_file.raw 
 .endc
 "
@@ -167,19 +158,6 @@ write output_file.raw
 - .control ... .endc: This block defines a sequence of commands to control the simulation.
 
 - op: Runs a DC operating point analysis, which calculates the steady-state (DC) node voltages and currents based on the current sources, voltage sources, and component values.
-
-- ac dec 20 1 1e12: Runs an AC analysis with the following parameters:
-
-    - dec: Specifies a logarithmic frequency sweep (in decades).
-    - 20: Defines the number of points per decade.
-    - 1 and 1e12: Sets the frequency range from 1 Hz to 1 THz. This analysis evaluates the frequency response of the circuit over this range.
-
-- save all: Instructs Ngspice to save all node voltages and branch currents during the simulation. This allows for detailed data analysis and access to all circuit variables.
-
-- let Av = db(v(vout)): Defines a new variable Av to store the voltage gain (in decibels) at the node vout. Here:
-
-    - v(vout) retrieves the voltage at the vout node.
-    - db(...) converts this voltage to decibels (dB) for gain measurement.
 
 - write output_file.raw: Saves all the collected data and defined variables (Av and phase) to a file named output_file.raw. This output file can be used for post-simulation analysis or plotting in external tools.
 
@@ -199,16 +177,4 @@ As the last step before we can simulate we must set the netlisting to spice netl
 ```
 show all
 ```
-in the input to display the DC operating points, and here you can verify that the operating points is set as calculated in the gm/id script. If not you can tweek the current source for instance to get a more accurate ids of your output transistor. In order to see the outputs avaliable for plotting, you can write 
-
-```
-display all
-```
-For plotting you can use the following commands
-
-```
-print Av   \\ printing the freq response in decibels
-print Vout \\ printing the freq response with linear y axis
-```
-
-From here you can play around with the different displays avaliable or even plot the output of the raw file in python.
+in the input to display the DC operating points, and here you can verify that the operating points is set as calculated in the gm/id script.
