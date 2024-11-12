@@ -35,14 +35,35 @@ From here, navigate to the "netlist" button in the top-right corner, then press 
 <p align="center"> <img src="../../media/Pasted image 20241017162220.png" width="800" height="400" /> </p>
 
 If the dark mode theme is hard to read, you can toggle it by pressing "Shift + O."
+
+### Opening K-Layout
+In order to test if K-layout is working properly, the following line can be executed anywhere
+
+   ```
+    klayout -e
+   ```
+This will launch klayout in edit mode. After this navigate to File -> New Layout. A small box will apear with the following input sections
+
+- Technology
+- Top cell
+- Database unit
+- Initial window size
+- Initial layers(s)
+
+Kepp all seetings default except for the technology box, where "sg13g2 - IHP SiGe 130nm technology" should be avaliable and chosen. After this press Ok. From here navigate to the toolmanger and select Instance. When this is done you the left pane should show the selected instance in the SG13 development Pcells library.  If the Sg13 dev library isnt avaliable, you should close the program and ensure that you have included the submodules in the git pull, i.e
+
+```
+   git pull --recurse-submodules
+```
+
 ## Notes on the Design Flow
 
-Analog design requires a solid foundation in analog electronics to ensure high-performance, robust designs. In this course, we will focus on the gm/Id methodology rather than traditional small-signal calculations using square-law models. This method uses model parameters to generate lookup tables, enabling a more data-driven approach to design. If you're interested in understanding the circuit design procedures in greater detail, each module includes Jupyter Notebook scripts as references for more advanced IC design using open-source tools.
+Analog design requires a solid foundation in analog electronics to ensure high-performance and robust designs. In this course, all circuits have been designed with the gm/Id methodology rather than traditional small-signal calculations using square-law models. This method uses model parameters to generate lookup tables, enabling a more data-driven approach to design. If you're interested in understanding the circuit design procedures in greater detail, each module includes Jupyter Notebook scripts as references for a more advanced IC design approach using open-source tools.
 
 For a deeper dive into the gm/Id methodology, consider watching this video by Mastering Microelectronics: https://www.youtube.com/watch?v=dzz4z3ijVts
 
-Refer to the next section for instructions on setting up the gm/Id tools using pygmid.
-## Setting Up gm/Id Methodology (Optional)
+Refer to the next section for instructions on setting up the gm/Id tools using pygmid/maddwet gmid lib.
+## Setting Up gm/Id Methodology (Optional) (Currently not working)
 
 To set up the gm/Id tools, access the pygmid repository:
 
@@ -85,9 +106,19 @@ This command will generate a .pkl file that serves as the lookup table. To test 
 
 Note: Ensure the paths to sg13g2_nmos_lv and sg13g2_pmos_lv are correctly referenced in your config file, and modify the LUT path in the script to point to the location of your lookup tables.
 
+## Setting Up gm/Id Methodology (Optional)
+To set up the gm/Id tools, navigate to the following repository: [gmid](https://github.com/PhillipRambo/gmoveridpy)
+
+The repository was originally made by [medwatt](https://github.com/medwatt), but here a refactor is used adapted to the IHP PDK. To setup this repository, follow the installation procedure in the repository and finally run the 
+
+```
+   gmid_launcher.py
+```
+You will now be able to insert the values you want to use for, your costum sweeps. In the scripting folder, under this module, an example script was created as a jupyter notebook to showcase how to use gm/id interactively with these sweeps. Furthermore there will be some basic functions defined which can be used for different purposes. Among these a function is used to make a small GUI in order to select different parameters.
+
 ## Verifying gm/Id Design in Xschem (Optional)
 
-To verify the design created using the lookup tables, start by identifying key parameters to validate, such as DC gain and the first pole. This requires creating a frequency analysis simulation to capture both characteristics. Begin by creating a new schematic in some specified folder:
+To verify the design created using the lookup tables, start by identifying key parameters to validate, such as a simple DC gain and first order pole (As seen in the jupyter notebook script). This requires creating a frequency analysis simulation to capture both characteristics. Begin by creating a new schematic in some specified folder:
 
 ```
 touch gmid_test.sch
@@ -98,37 +129,28 @@ From here you launch this schematic by typing
 ```
 xschem gmid_test.sch
 ```
+In the jupyter notebook script provided in the scripting folder, the design script, going through som different methods for plotting has a small design of a single transistor to verify the model in simulation. To try out the interactive design, fill in the corresponding parameters in the gui to double check, that the extracted values are correct. After this you need to instanciate a single mosfet in xschem. This is done by navigating to the insert symbol botton, with a nandgate as its icon. Or you can press shift+i. Here you want to click the IHP open pdk path, and click on "sg13g2_pr". Here you should select the "sg13_lv_nmos.sym", and press OK. Now you will place it. Select each instance and press Q to change the widht and the length to the parameters found in the gmid script. i.e 
 
-the first thing we want to do is the instanciate our mosfets. In this example we make a current mirror for biasing our output transistor to the right operation. Therefore we will need to instanciate two MOSFETS. This is done by navigating to the insert symbol botton, with a nandgate as its icon. Or you can press shift+i. Here you want to click the IHP open pdk path, and click on "sg13g2_pr". Here you should select the "sg13_lv_nmos.sym", and press OK. Now you will place it and duplicate it by pressing it and clicking "c". Now you can press shift+f while toggeling the instance for flipping it and place it in a gate to gate configuration as shown in the image:
-
-
-<p align="center"> <img src="../../media/Screenshot 2024-10-29 093228.png" width="550" height="350" /> </p>
-select each instance and press Q to change the widht and the length to the parameters found in the gmid script.
-
+- $L = 3.25 \mu m$
+- $W = 3.33 \mu m$
 
 Now you should conncect the bulk of the devices to the sources with a wire, by pressing "w" and dragging the wire to its location. After this navigate to the symbol library, again by pressing and instanciate the following items:
 
 - xschem_library/devices -> search: gnd -> gnd.sym
-- xschem_library/devices -> search: res -> res.sym
-- xschem_library/devices -> search: cap -> capa-2.sym
-- xschem_library/devices -> search: isource -> isource.sym
 - xschem_library/devices -> search: vsource -> vsource.sym (duplicate this item)
-- xschem_library/devices -> search: lab -> lab_pin.sym (duplicate this item 4 times)
 - xschem_library/devices -> search: code -> code_shown.sym (duplicate this item)
 
 From here you should connect the individual components so you have the same setup as seen in the following image:
 
-<p align="center"> <img src="../../media/Screenshot 2024-10-29 095117.png" width="950" height="500" /> </p>
+<p align="center"> <img src="../../media/setup_1.png" width="950" height="500" /> </p>
 
-modify each instance in the same way as the transistors so you also have the same values and labels. NOTE the Vin1 source has the following settings for value "value = AC 1". Next up we want to write the code for our simulation. Chose one of the code_shown blocks and press Q. In here change the name to NGSPICE and set only_toplevel to true. In the value section, insert the following code:
+Next up we want to write the code for our simulation. Chose one of the code_shown blocks and press Q. In here change the name to NGSPICE and set only_toplevel to true. In the value section, insert the following code:
 
 ```
-value = "
+name=NGSPICE only_toplevel=true 
+value="
 .control
-op 
-ac dec 20 1 1e12 
-save all
-let Av = db(v(vout))
+op
 write output_file.raw 
 .endc
 "
@@ -136,19 +158,6 @@ write output_file.raw
 - .control ... .endc: This block defines a sequence of commands to control the simulation.
 
 - op: Runs a DC operating point analysis, which calculates the steady-state (DC) node voltages and currents based on the current sources, voltage sources, and component values.
-
-- ac dec 20 1 1e12: Runs an AC analysis with the following parameters:
-
-    - dec: Specifies a logarithmic frequency sweep (in decades).
-    - 20: Defines the number of points per decade.
-    - 1 and 1e12: Sets the frequency range from 1 Hz to 1 THz. This analysis evaluates the frequency response of the circuit over this range.
-
-- save all: Instructs Ngspice to save all node voltages and branch currents during the simulation. This allows for detailed data analysis and access to all circuit variables.
-
-- let Av = db(v(vout)): Defines a new variable Av to store the voltage gain (in decibels) at the node vout. Here:
-
-    - v(vout) retrieves the voltage at the vout node.
-    - db(...) converts this voltage to decibels (dB) for gain measurement.
 
 - write output_file.raw: Saves all the collected data and defined variables (Av and phase) to a file named output_file.raw. This output file can be used for post-simulation analysis or plotting in external tools.
 
@@ -168,16 +177,4 @@ As the last step before we can simulate we must set the netlisting to spice netl
 ```
 show all
 ```
-in the input to display the DC operating points, and here you can verify that the operating points is set as calculated in the gm/id script. If not you can tweek the current source for instance to get a more accurate ids of your output transistor. In order to see the outputs avaliable for plotting, you can write 
-
-```
-display all
-```
-For plotting you can use the following commands
-
-```
-print Av   \\ printing the freq response in decibels
-print Vout \\ printing the freq response with linear y axis
-```
-
-From here you can play around with the different displays avaliable or even plot the output of the raw file in python.
+in the input to display the DC operating points, and here you can verify that the operating points is set as calculated in the gm/id script.

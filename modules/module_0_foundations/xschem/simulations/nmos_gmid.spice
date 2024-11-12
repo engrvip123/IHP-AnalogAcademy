@@ -1,0 +1,21 @@
+** sch_path: /home/pedersen/projects/IHP-AnalogAcademy/modules/module_0_foundations/xschem/nmos_gmid.sch
+**.subckt nmos_gmid
+XM3 net1 net2 GND GND sg13_lv_nmos w=3.33u l=3.25u ng=1 m=1
+Vdd1 net1 GND 0.6
+Vdd2 net2 GND 0.27
+**** begin user architecture code
+
+.lib cornerMOSlv.lib mos_tt
+
+
+
+.control
+op
+write output_file.raw
+.endc
+
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end
