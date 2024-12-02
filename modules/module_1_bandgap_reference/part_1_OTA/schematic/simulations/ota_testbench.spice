@@ -1,57 +1,71 @@
 ** sch_path: /home/pedersen/projects/IHP-AnalogAcademy/modules/module_1_bandgap_reference/part_1_OTA/schematic/ota_testbench.sch
-**.subckt ota_testbench vout
+**.subckt ota_testbench vout vout1 vout2
 *.iopin vout
-x1 vdd net1 net2 v+ v- vout GND two_stage_OTA
-V1 v+ GND 0.6
-V2 v- GND 0.6
-VDD vdd GND 1.2
-I0 net1 GND 2.78u
-I1 net2 GND 6.28u
-Cload vout GND 1p m=1
-L6 v- vout 100 m=1
-C1 v- GND 100 m=1
+*.iopin vout1
+*.iopin vout2
+x1 vdd net1 vp vm vout GND two_stage_OTA
+V1 vp GND DC 0.6 AC 1 0
+VDD vdd GND DC 1.2
+I0 net1 GND 80u
+Cload vout GND 500f m=1
+L6 vout vm 4G m=1
+C1 vm GND 4G m=1
+x2 vdd net2 vp vp vout1 GND two_stage_OTA
+I1 net2 GND 80u
+Cload1 vout1 GND 500f m=1
+x3 VDDac net3 net4 vm vout2 GND two_stage_OTA
+I2 net3 GND 80u
+L13 vout2 vm 4G m=1
+C2 vm GND 4G m=1
+V2 VDDac GND DC 1.2 AC 1 0
+V4 net4 GND DC 0.6
 **** begin user architecture code
 
+.lib /home/pedersen/IHP-Open-PDK/ihp-sg13g2/libs.tech/ngspice/models/cornerCAP.lib cap_typ
 .lib cornerMOSlv.lib mos_tt
 
 
 
 .control
 op
-ac dec 20 1 1e9
+save all
+write tb_OTA_op.raw
+.endc
+
+.control
+op
+ac dec 100 1 10e6
 save all
 let Av = db(v(vout))
+let PSRR = db(v(vout2)/v(VDDac))
+let CMRR = db((v(vout)/v(vp))/(v(vout1)/v(vp)))
+let phase = 180*cph(vout)/pi
 write output_file.raw
 .endc
 
 
-
-.lib /home/pedersen/IHP-Open-PDK/ihp-sg13g2/libs.tech/ngspice/models/cornerCAP.lib cap_typ
-
 **** end user architecture code
 **.ends
 
-* expanding   symbol:  two_stage_OTA.sym # of pins=7
+* expanding   symbol:  two_stage_OTA.sym # of pins=6
 ** sym_path: /home/pedersen/projects/IHP-AnalogAcademy/modules/module_1_bandgap_reference/part_1_OTA/schematic/two_stage_OTA.sym
 ** sch_path: /home/pedersen/projects/IHP-AnalogAcademy/modules/module_1_bandgap_reference/part_1_OTA/schematic/two_stage_OTA.sch
-.subckt two_stage_OTA vdd itail iout v+ v- vout vss
+.subckt two_stage_OTA vdd iout v+ v- vout vss
 *.iopin v-
 *.iopin v+
-*.iopin itail
 *.iopin vss
 *.iopin vdd
 *.iopin iout
 *.iopin vout
-XM4 net3 net1 vss vss sg13_lv_nmos w=0.50u l=9.75u ng=1 m=1
-XM3 net1 net1 vss vss sg13_lv_nmos w=0.50u l=9.75u ng=1 m=1
-XM1 net1 v- net2 vdd sg13_lv_pmos w=6.96u l=3.25u ng=4 m=1
-XM2 net3 v+ net2 vdd sg13_lv_pmos w=6.96u l=3.25u ng=4 m=1
-XM5 net2 itail vdd vdd sg13_lv_pmos w=3u l=130n ng=1 m=1
-XM8 itail itail vdd vdd sg13_lv_pmos w=3u l=130n ng=1 m=1
-XM7 vout iout vdd vdd sg13_lv_pmos w=3.6525u l=3.38u ng=4 m=1
-XM9 iout iout vdd vdd sg13_lv_pmos w=3.6525u l=3.38u ng=4 m=1
-XC1 net3 vout cap_cmim w=9.98e-6 l=7.7e-6 m=4
-XM6 vout net3 vss vss sg13_lv_nmos w=2.28u l=9.75u ng=1 m=1
+XM4 net3 net1 vss vss sg13_lv_nmos w=720n l=9.75u ng=1 m=1
+XM3 net1 net1 vss vss sg13_lv_nmos w=720n l=9.75u ng=1 m=1
+XM1 net1 v- net2 vdd sg13_lv_pmos w=7.41u l=3.64u ng=1 m=1
+XM2 net3 v+ net2 vdd sg13_lv_pmos w=7.41u l=3.64u ng=1 m=1
+XM5 net2 iout vdd vdd sg13_lv_pmos w=5.3u l=1.95u ng=1 m=1
+XM7 vout iout vdd vdd sg13_lv_pmos w=75u l=2.08u ng=8 m=1
+XM6 vout net3 vss vss sg13_lv_nmos w=28.8u l=9.75u ng=4 m=1
+XM9 iout iout vdd vdd sg13_lv_pmos w=75u l=2.08u ng=8 m=1
+XC2 net3 vout cap_cmim w=22.295e-6 l=22.295e-6 m=1
 .ends
 
 .GLOBAL GND
