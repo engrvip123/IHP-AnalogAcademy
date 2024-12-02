@@ -1,4 +1,4 @@
 /misc/
 **/.vscode/
 **/.ipynb_checkpoints/
-**/.raw/
+*.raw
