@@ -1,4 +1,4 @@
-Two-Stage OTA Implementation in Xschem
+# Two-Stage OTA Implementation in Xschem
 
 The first step in the procedure is to create the schematic for the two-stage OTA used in the design. Begin by creating an Xschem file with the following command:
 
