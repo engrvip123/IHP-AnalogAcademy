@@ -1,3 +1,22 @@
+Two-Stage OTA Implementation in Xschem
+
+The first step in the procedure is to create the schematic for the two-stage OTA used in the design. Begin by creating an Xschem file with the following command:
+
+```
+	touch two_stage_OTA.sch
+```
+
+Step 2: Instantiating Transistors
+
+Next, instantiate six MOSFETs (three PMOS and two NMOS) using the IHP Open PDK. Refer to the foundation markdown file from Module 0 for guidance on adding these components. Arrange the transistors as illustrated below, configuring their parameters accordingly:
+<p align="center"> <img src="../../../media/module_1/OTA_images/first_stage_img.png" width="1000" height="900" /> </p>
+
+To locate the required labels, open the Components Manager and search for iopin.sym under xschem_library/devices.
+
+
+
+# Two Stage OTA implimentation in Xschem
+
 First step in our procedure is to create the schematic for the OTA we will use in our design. To do this create a xschem file by typing
 
 ```
@@ -28,7 +47,7 @@ For clarity, here are the transistor dimensions for the initial stage:
 
 Proceed to draw the output stage, which includes a Miller compensation capacitor. Follow the configuration shown below:
 
-<p align="center"> <img src="../../../media/module_1/OTA_images/full_system_img.png" width="1000" height="900" /> </p>
+<p align="center"> <img src="../../../media/module_1/OTA_images/full_system_img.png" width="1000" height="600" /> </p>
 
 
 Dimensions for the output stage components are as follows:
