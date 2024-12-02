@@ -9,7 +9,7 @@ First step in our procedure is to create the schematic for the OTA we will use i
 Next, instantiate six MOSFETs (three PMOS and two NMOS) from the IHP Open PDK. Refer to the foundations markdown file from Module 0 for guidance on adding these components. Arrange the transistors as shown in the image below and configure their parameters accordingly.
 
 <p align="center">
-  <img src="../../media/module_1/bandgap_circuit.png" width="800" height="900" />
+  <img src="../../../media/module_1/OTA_images/first_stage_img.png" width="1000" height="900" />
 </p>
 
 To locate the necessary labels, open the Components Manager and search for `iopin.sym` under `xschem_library/devices`.
@@ -28,7 +28,7 @@ For clarity, here are the transistor dimensions for the initial stage:
 
 Proceed to draw the output stage, which includes a Miller compensation capacitor. Follow the configuration shown below:
 
-<p align="center"> <img src="media/module_1/OTA_images/first_stage_img.png/full_system_img.png" width="800" height="700" /> </p>
+<p align="center"> <img src="../../../media/module_1/OTA_images/full_system_img.png" width="1000" height="900" /> </p>
 
 
 Dimensions for the output stage components are as follows:
@@ -60,7 +60,7 @@ Its also possible to remove the bias current pin and replace with an actual on c
 
 In symbol mode, Xschem automatically creates a small rectangle that includes pins with default names based on your schematic. Give the symbol an appropriate name and you should see the following
 
-<p align="center"> <img src="../../media/ota/symbol_1.png" width="800" height="700" /> </p>
+<p align="center"> <img src="../../../media/module_1/OTA_images/symbol_1.png" width="500" height="400" /> </p>
 
 
 ### Step 4: Designing the Symbol Shape
@@ -70,7 +70,7 @@ Now, using the **Draw** tools in Xschem, modify the default rectangle to create 
 If you’re interested in learning to create more complex shapes, there are resources on YouTube and other platforms. However, if you already have experience drawing schematic symbols, this step should feel straightforward. Refer to the provided images as a guide for arranging the shape and positioning the pins for a clean, organized symbol.
 
 
-<p align="center"> <img src="../../media/ota/ota_sym.png" width="800" height="700" /> </p>
+<p align="center"> <img src="../../../media/module_1/OTA_images/ota_sym.png" width="500" height="400" /> </p>
 
 
 (Note: If the grid size and snapping values are too big, you can adjust at view - -> Set snap value/set grid spacing )
@@ -126,7 +126,7 @@ To set up the first testbench for simulating the open-loop frequency response of
 5. **Verify the Setup**:
     
     - At this point, your schematic should resemble the provided image, ensuring all components are placed and connected correctly.
-    <p align="center"> <img src="../../media/ota/tb_img_1.png" width="800" height="700" /> </p>
+    <p align="center"> <img src="../../../media/module_1/OTA_images/tb_img_1.png" width="1000" height="700" /> </p>
 As you may see there is additional components in the picture. The reasoning behind this can be seen in the following sections
 #### **Series Feedback with Infinite Inductor**
 
@@ -186,7 +186,7 @@ In the **Value** field, insert the following code:
     - **`mos_tt`**: Specifies the **Typical-Typical (TT)** process corner for the MOSFETs
 
 By including this code block, you ensure the simulation has access to the correct models and process corners. At this point, your code block should resemble the provided image.
-<p align="center"> <img src="../../media/ota/tb_img_3.png" width="800" height="700" /> </p>
+<p align="center"> <img src="../../../media/module_1/OTA_images/tb_img_3.png" width="450" height="300" /> </p>
 
 ### Extra Information About process corners: Understanding Variations in Semiconductor Fabrication
 Process corners are sets of predefined conditions that account for variations in semiconductor manufacturing processes. These variations affect the electrical characteristics of devices (like MOSFETs and capacitors) and can impact circuit performance. Simulating across process corners ensures your design works reliably under real-world manufacturing tolerances.
@@ -281,7 +281,7 @@ write output_file.raw
 - **`write output_file.raw`**: Saves the AC analysis results to a raw file for further processing.
 #### **Verifying the Code Block**
 The complete code block should look as shown in the image below:
-<p align="center"> <img src="../../media/ota/tb_img_4.png" width="800" height="700" /> </p>
+<p align="center"> <img src="../../../media/module_1/OTA_images/tb_img_4.png" width="250" height="250" /> </p>
 
 
 ### Step 6: Running simulation and confirming operation
@@ -322,7 +322,7 @@ tclcommand="xschem raw_read $netlist_dir/output_file.raw ac"
 ```
 After this press ctrl and left click the arrow, and after this double click the bottom plot. From here you should see all the avaliable signals for plotting and select the ph(vout). This gives the phase response. This is used instead of the statement we defined since xschem automatically saves the data in the raw format as a complex number with a real and imaginary number. From check the Log X box and set the x max to 6.65 and the y min to -200 and Y max to 0. For the second plot double press this and now select the Av to be plotted. From here also check the log x box, set the x axis to the same as for the phase plot and the Y max to 77. From here you should see the same as in the following picture
 
-<p align="center"> <img src="../../media/ota/ac_resp.png" width="800" height="700" /> </p>
+<p align="center"> <img src="../../../media/module_1/OTA_images/ac_resp.png" width="800" height="700" /> </p>
 
 Refer to the provided images and simulations to confirm the setup and ensure everything is correctly configured for the analysis.
 
@@ -334,7 +334,7 @@ After confirming the open-loop, you will introduce a second **OTA symbol** to te
 2. Connect the two inputs together
 
 By now you should have the following setup
-<p align="center"> <img src="../../media/ota/tb_img_5.png" width="800" height="700" /> </p>
+<p align="center"> <img src="../../../media/module_1/OTA_images/tb_img_5.png" width="1000" height="500" /> </p>
 
 Now the code block should also have an extended definition where we will define our CMRR calculation as 
 
@@ -343,7 +343,7 @@ Now the code block should also have an extended definition where we will define 
 
 ```
 Now you can add another graph window, or just use the XTerm terminal. You should now see a CMRR in the same region as the following image
-<p align="center"> <img src="../../media/ota/CMRR.png" width="800" height="700" /> </p>
+<p align="center"> <img src="../../../media/module_1/OTA_images/CMRR.png" width="500" height="500" /> </p>
 
 
 ### Step 9: Insert a Third OTA Symbol for PSRR Analysis
@@ -360,7 +360,7 @@ For the simulation setup, we refer to the description below
 3. For the supply now add a AC signal of 1 and a phase of 0
 
 For the setup it should something like this
-<p align="center"> <img src="../../media/ota/tb_img_6.png" width="800" height="700" /> </p>
+<p align="center"> <img src="../../../media/module_1/OTA_images/tb_img_6.png" width="700" height="600" /> </p>
 
 
 For the code block you can define the PSRR as given 
@@ -370,7 +370,7 @@ let PSRR = db(v(vout2)/v(VDDac))
 
 ```
 For the power supply rejection ratio you should see something like this:
-<p align="center"> <img src="../../media/ota/PSRR.png" width="800" height="700" /> </p>
+<p align="center"> <img src="../../../media/module_1/OTA_images/PSRR.png" width="500" height="500" /> </p>
 
 
 
