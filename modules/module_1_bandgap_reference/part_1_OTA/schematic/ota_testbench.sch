@@ -201,6 +201,22 @@ N 95 200 200 200 {
 lab=#net4}
 N 95 260 95 280 {
 lab=GND}
+N 1300 330 1570 330 {
+lab=vout3}
+N 1180 330 1245 330 {
+lab=#net5}
+N 1180 390 1180 400 {
+lab=GND}
+N 1410 120 1570 120 {
+lab=vout3}
+N 1570 120 1570 330 {
+lab=vout3}
+N 1180 160 1210 160 {
+lab=#net5}
+N 1180 160 1180 330 {
+lab=#net5}
+N 1110 80 1210 80 {
+lab=vp}
 C {two_stage_OTA.sym} 360 -410 0 0 {name=x1}
 C {vsource.sym} 775 -205 0 0 {name=V1 value="DC 0.6 AC 1 0"
 }
@@ -298,3 +314,17 @@ C {lab_pin.sym} 335 65 0 0 {name=p8 sig_type=std_logic lab=VDDac}
 C {vsource.sym} 95 230 0 0 {name=V4 value="DC 0.6"
 }
 C {gnd.sym} 95 280 0 0 {name=l12 lab=GND}
+C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_1_bandgap_reference/part_2_full_bgr/schematic/verilog/veriloga_tbs/diff_amp.sym} 1310 120 0 0 {name=U1 model=diff_amp_cell spiceprefix=X}
+C {ind.sym} 1275 330 1 0 {name=L16
+m=1
+value=4G
+footprint=1206
+device=inductor}
+C {capa.sym} 1180 360 0 0 {name=C3
+m=1
+value=4G
+footprint=1206
+device="ceramic capacitor"}
+C {gnd.sym} 1180 400 0 0 {name=l17 lab=GND}
+C {iopin.sym} 1570 120 0 0 {name=p9 lab=vout3}
+C {lab_pin.sym} 1110 80 0 0 {name=p14 sig_type=std_logic lab=vp}

@@ -178,7 +178,7 @@ value="
 .lib $::SG13G2_MODELS/cornerRES.lib res_typ
 .lib cornerMOSlv.lib mos_tt
 "}
-C {sg13g2_pr/sg13_lv_nmos.sym} -700 -765 2 0 {name=M6
+C {sg13g2_pr/sg13_lv_nmos.sym} -700 -765 2 0 {name=M8
 l=10u
 w=150n
 ng=1
@@ -186,7 +186,7 @@ m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_pmos.sym} -700 -930 0 1 {name=M7
+C {sg13g2_pr/sg13_lv_pmos.sym} -700 -930 0 1 {name=M6
 l=1u
 w=1u
 ng=1
@@ -194,7 +194,7 @@ m=1
 model=sg13_lv_pmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_pmos.sym} -595 -930 0 0 {name=M8
+C {sg13g2_pr/sg13_lv_pmos.sym} -595 -930 0 0 {name=M7
 l=1u
 w=1u
 ng=1
@@ -229,7 +229,7 @@ C {lab_pin.sym} -780 -930 0 0 {name=p17 sig_type=std_logic lab=vdd}
 C {vsource.sym} 1085 -590 0 0 {name=V1 value=1.2 savecurrent=false}
 C {lab_pin.sym} 1085 -665 0 1 {name=p6 sig_type=std_logic lab=vdd}
 C {gnd.sym} 1085 -530 0 0 {name=l18 lab=GND}
-C {sg13g2_pr/sg13_lv_nmos.sym} 150 -560 2 0 {name=M2
+C {sg13g2_pr/sg13_lv_nmos.sym} 150 -560 2 0 {name=M1
 l=5u
 w=7.14u
 ng=4
@@ -237,7 +237,7 @@ m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_nmos.sym} 410 -560 2 1 {name=M3
+C {sg13g2_pr/sg13_lv_nmos.sym} 410 -560 2 1 {name=M2
 l=5u
 w=21u
 ng=8
@@ -246,7 +246,7 @@ model=sg13_lv_nmos
 spiceprefix=X
 }
 C {gnd.sym} 280 -430 0 0 {name=l3 lab=GND}
-C {sg13g2_pr/sg13_lv_pmos.sym} 150 -870 0 1 {name=M5
+C {sg13g2_pr/sg13_lv_pmos.sym} 150 -870 0 1 {name=M3
 l=5u
 w=15u
 ng=8
@@ -254,7 +254,7 @@ m=1
 model=sg13_lv_pmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_pmos.sym} 410 -870 0 0 {name=M1
+C {sg13g2_pr/sg13_lv_pmos.sym} 410 -870 0 0 {name=M4
 l=5u
 w=15u
 ng=8
@@ -266,7 +266,7 @@ C {lab_pin.sym} 280 -965 0 1 {name=p2 sig_type=std_logic lab=vdd}
 C {lab_pin.sym} 230 -740 3 0 {name=p3 sig_type=std_logic lab=v-}
 C {lab_pin.sym} 315 -740 0 0 {name=p8 sig_type=std_logic lab=v+}
 C {lab_pin.sym} 285 -870 1 1 {name=p9 sig_type=std_logic lab=Vo1}
-C {sg13g2_pr/sg13_lv_pmos.sym} 615 -870 0 0 {name=M4
+C {sg13g2_pr/sg13_lv_pmos.sym} 615 -870 0 0 {name=M5
 l=5u
 w=16u
 ng=8
