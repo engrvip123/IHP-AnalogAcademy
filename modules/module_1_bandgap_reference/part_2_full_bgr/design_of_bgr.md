@@ -237,7 +237,7 @@ write bgr_transient.raw
 ### Final Schematic
 
 Ensure the schematic matches the design below:
-<p align="center"> <img src="../../../media/module_1/BGR_images/final_bandgap_core.png" width="1000" height="900" /> </p>
+<p align="center"> <img src="../../../media/module_1/BGR_images/final_bandgap_core.png" width="1500" height="900" /> </p>
 
 
 ### Visualizing Results
