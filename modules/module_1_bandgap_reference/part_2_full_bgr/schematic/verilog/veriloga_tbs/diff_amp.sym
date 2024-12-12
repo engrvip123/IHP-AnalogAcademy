@@ -30,7 +30,7 @@ N1 out in1 in2 diff_amp_model
 
 * following line specifies the location for the .osdi file so ngspice can use it.
 
-pre_osdi /home/pedersen/projects/IHP-AnalogAcademy/modules/module_1_bandgap_reference/part_2_full_bgr/schematic/verilog/diff_amp2.osdi
+pre_osdi /home/pedersen/projects/IHP-AnalogAcademy/modules/module_1_bandgap_reference/part_2_full_bgr/schematic/verilog/diff_amp.osdi
 
 .endc
 

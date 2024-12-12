@@ -5,50 +5,6 @@ K {}
 V {}
 S {}
 E {}
-B 2 1345.3515625 -1214.21875 2145.3515625 -814.21875 {flags=graph
-y1=0
-y2=1.3
-ypos1=0
-ypos2=2
-divy=5
-subdivy=1
-unity=1
-
-x2=2
-divx=5
-subdivx=1
-xlabmag=1.0
-ylabmag=1.0
-
-
-dataset=-1
-unitx=1
-logx=0
-logy=0
-x1=0
-color=7
-node=vdd}
-B 2 1345.3515625 -804.21875 2145.3515625 -404.21875 {flags=graph
-y1=-2.4e-13
-y2=0.61
-ypos1=0
-ypos2=2
-divy=5
-subdivy=1
-unity=1
-
-x2=2
-divx=5
-subdivx=1
-xlabmag=1.0
-ylabmag=1.0
-node=vbg
-color=4
-dataset=-1
-unitx=1
-logx=0
-logy=0
-x1=0}
 N -720 -850 -720 -795 {
 lab=#net1}
 N -575 -980 -485 -980 {
@@ -207,28 +163,36 @@ N -630 -795 -575 -795 {
 lab=#net2}
 N -630 -735 -575 -735 {
 lab=GND}
-C {devices/code_shown.sym} -440 -333.828125 0 0 {name=bandgap only_toplevel=true value="
+C {devices/code_shown.sym} 20 -403.828125 0 0 {name=NGSPICE only_toplevel=false 
+value="
 .control
-.save all
-alter V1 dc 1.2            
-op
-dc TEMP -50 100 5
-write bgr_temp.raw
+  let run = 1
+  let mc_runs = 100
+  set curplot = new
+  set scratch = $curplot
+  dowhile run <= mc_runs
+    reset
+    dc temp -50 100 5
+    set run = $&run
+    set dc = $curplot
+    setplot $scratch
+    let off\{$run\} = \{$dc\}.v(VBG)
+    let mytemp\{$run\} = \\"\{$dc\}.temp-sweep\\"
+    setplot $dc
+    let run = run + 1
+  end
+  set nolegend
+  plot \{$scratch\}.allv vs \{$scratch\}.mytemp1
+  write bandgap_testbench_mc_mis.raw \{$scratch\}.allv \{$scratch\}.mytemp1
 .endc
 
-.control
-.save all     
-tran 1m 2 
-write bandgap_transient.raw
-.endc
-"
-}
+"}
 C {devices/code_shown.sym} -450 -445 0 0 {name=MODEL only_toplevel=true
 format="tcleval( @value )"
 value="
 .lib $::SG13G2_MODELS/cornerCAP.lib cap_typ
 .lib $::SG13G2_MODELS/cornerRES.lib res_typ
-.lib cornerMOSlv.lib mos_tt
+.lib cornerMOSlv.lib mos_tt_mismatch
 "}
 C {sg13g2_pr/sg13_lv_nmos.sym} -700 -765 2 0 {name=M8
 l=10u
@@ -273,7 +237,7 @@ C {iopin.sym} -435 -650 3 1 {name=p7 lab=v-}
 C {iopin.sym} -80 -695 0 0 {name=p10 lab=Vo1}
 C {lab_pin.sym} -530 -930 0 1 {name=p4 sig_type=std_logic lab=vdd}
 C {lab_pin.sym} -780 -930 0 0 {name=p17 sig_type=std_logic lab=vdd}
-C {vsource.sym} 890 -330 0 0 {name=V1 value="PULSE(0 1.2 0 1 0 1 2)" savecurrent=false}
+C {vsource.sym} 890 -330 0 0 {name=V1 value="DC 1.2" savecurrent=false}
 C {lab_pin.sym} 890 -405 0 1 {name=p6 sig_type=std_logic lab=vdd}
 C {gnd.sym} 890 -270 0 0 {name=l18 lab=GND}
 C {sg13g2_pr/sg13_lv_nmos.sym} 150 -560 2 0 {name=M1
@@ -355,14 +319,6 @@ model=rppd
 spiceprefix=X
 b=0
 m=1
-}
-C {launcher.sym} 1171.40625 -793.28125 0 0 {name=h5
-descr="load DC" 
-tclcommand="xschem raw_read $netlist_dir/bgr_temp.raw dc"
-}
-C {launcher.sym} 1171.40625 -768.28125 0 0 {name=h1
-descr="load Transient" 
-tclcommand="xschem raw_read $netlist_dir/bandgap_transient.raw tran"
 }
 C {sg13g2_pr/cap_cmim.sym} -630 -765 0 0 {name=C1
 model=cap_cmim

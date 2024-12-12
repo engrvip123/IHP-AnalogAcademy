@@ -8,7 +8,7 @@ output electrical out;
 
 input electrical IN1, IN2;
 
-parameter real gain = 10000; // setting gain to 10 of the differential amplifier
+parameter real gain = 3500; // setting gain to 10 of the differential amplifier
 
 analog begin
 
