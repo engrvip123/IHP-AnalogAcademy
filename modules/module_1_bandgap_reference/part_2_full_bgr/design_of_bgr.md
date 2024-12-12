@@ -258,7 +258,7 @@ Expected results should resemble the following plots:
 **Temperature Sweep (DC Simulation)**:
 <p align="center"> <img src="../../../media/module_1/BGR_images/dc_temp_plot.png" width="1000" height="900" /> </p>
 **Transient Analysis**:
-<p align="center"> <img src="../../../media/module_1/BGR_images/Pasted image 20241211093714.png" width="1000" height="900" /> </p>
+<p align="center"> <img src="../../../media/module_1/BGR_images/tran_temp_plot.png" width="1000" height="900" /> </p>
 
 
 ### Mismatch and Monte Carlo Simulations
