@@ -212,7 +212,7 @@ C {devices/code_shown.sym} -440 -333.828125 0 0 {name=bandgap only_toplevel=true
 .save all
 alter V1 dc 1.2            
 op
-dc TEMP -50 100 5
+dc TEMP 100 -50 -5
 write bgr_temp.raw
 .endc
 
@@ -356,7 +356,7 @@ spiceprefix=X
 b=0
 m=1
 }
-C {launcher.sym} 1171.40625 -793.28125 0 0 {name=h5
+C {launcher.sym} 1171.40625 -813.28125 0 0 {name=h5
 descr="load DC" 
 tclcommand="xschem raw_read $netlist_dir/bgr_temp.raw dc"
 }

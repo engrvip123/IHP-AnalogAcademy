@@ -5,91 +5,91 @@ K {}
 V {}
 S {}
 E {}
-N 440 -280 440 -240 {
+N 450 -435 450 -395 {
 lab=#net1}
-N 440 -280 550 -280 {
+N 450 -435 560 -435 {
 lab=#net1}
-N 440 -150 650 -150 {
+N 660 -305 860 -305 {
 lab=vss}
-N 440 -210 440 -150 {
-lab=vss}
-N 550 -210 610 -210 {
+N 560 -365 620 -365 {
 lab=#net1}
-N 550 -280 550 -210 {
+N 560 -435 560 -365 {
 lab=#net1}
-N 480 -210 550 -210 {
+N 490 -365 560 -365 {
 lab=#net1}
-N 650 -210 650 -150 {
-lab=vss}
-N 440 -340 440 -280 {
+N 450 -495 450 -435 {
 lab=#net1}
-N 440 -370 650 -370 {
+N 450 -525 660 -525 {
 lab=vdd}
-N 440 -420 440 -400 {
+N 450 -575 450 -555 {
 lab=#net2}
-N 650 -420 650 -400 {
+N 660 -575 660 -555 {
 lab=#net2}
-N 550 -420 650 -420 {
+N 560 -575 660 -575 {
 lab=#net2}
-N 370 -370 400 -370 {
+N 380 -525 410 -525 {
 lab=v-}
-N 690 -370 720 -370 {
+N 700 -525 730 -525 {
 lab=v+}
-N 380 -470 510 -470 {
+N 390 -625 520 -625 {
 lab=iout}
-N 160 -420 160 -400 {
+N 170 -575 170 -555 {
 lab=iout}
-N 160 -420 210 -420 {
+N 170 -575 220 -575 {
 lab=iout}
-N 210 -470 230 -470 {
+N 220 -625 240 -625 {
 lab=iout}
-N 160 -520 160 -470 {
-lab=vdd}
-N 160 -440 160 -420 {
+N 170 -595 170 -575 {
 lab=iout}
-N 210 -470 210 -420 {
+N 220 -625 220 -575 {
 lab=iout}
-N 200 -470 210 -470 {
+N 210 -625 220 -625 {
 lab=iout}
-N 790 -470 810 -470 {
+N 800 -625 820 -625 {
 lab=iout}
-N 850 -520 850 -470 {
-lab=vdd}
-N 850 -370 890 -370 {
+N 860 -525 900 -525 {
 lab=vout}
-N 850 -440 850 -370 {
+N 860 -595 860 -525 {
 lab=vout}
-N 650 -245 650 -240 {
+N 660 -400 660 -395 {
 lab=#net3}
-N 650 -150 850 -150 {
-lab=vss}
-N 550 -520 850 -520 {
+N 560 -675 860 -675 {
 lab=vdd}
-N 160 -520 550 -520 {
-lab=vdd}
-N 550 -520 550 -470 {
-lab=vdd}
-N 550 -440 550 -420 {
+N 560 -595 560 -575 {
 lab=#net2}
-N 440 -420 550 -420 {
+N 450 -575 560 -575 {
 lab=#net2}
-N 850 -245 850 -150 {
+N 760 -400 820 -400 {
+lab=#net3}
+N 660 -495 660 -400 {
+lab=#net3}
+N 760 -460 760 -400 {
+lab=#net3}
+N 660 -400 760 -400 {
+lab=#net3}
+N 860 -460 860 -430 {
+lab=vout}
+N 820 -460 860 -460 {
+lab=vout}
+N 860 -525 860 -460 {
+lab=vout}
+N 450 -305 660 -305 {
 lab=vss}
-N 750 -245 810 -245 {
-lab=#net3}
-N 650 -340 650 -245 {
-lab=#net3}
-N 750 -305 750 -245 {
-lab=#net3}
-N 650 -245 750 -245 {
-lab=#net3}
-N 850 -305 850 -275 {
-lab=vout}
-N 810 -305 850 -305 {
-lab=vout}
-N 850 -370 850 -305 {
-lab=vout}
-C {sg13g2_pr/sg13_lv_nmos.sym} 630 -210 2 1 {name=M4
+N 860 -675 860 -625 {
+lab=vdd}
+N 170 -675 170 -625 {
+lab=vdd}
+N 560 -675 560 -625 {
+lab=vdd}
+N 170 -675 560 -675 {
+lab=vdd}
+N 450 -365 450 -305 {
+lab=vss}
+N 860 -400 860 -305 {
+lab=vss}
+N 660 -365 660 -305 {
+lab=vss}
+C {sg13g2_pr/sg13_lv_nmos.sym} 640 -365 2 1 {name=M4
 l=9.75u
 w=720n
 ng=1
@@ -97,7 +97,7 @@ m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_nmos.sym} 460 -210 2 0 {name=M3
+C {sg13g2_pr/sg13_lv_nmos.sym} 470 -365 2 0 {name=M3
 l=9.75u
 w=720n
 ng=1
@@ -105,23 +105,23 @@ m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_pmos.sym} 420 -370 0 0 {name=M1
-l=3.64u
-w=3.705u
+C {sg13g2_pr/sg13_lv_pmos.sym} 430 -525 0 0 {name=M1
+l=3.7u
+w=3.64u
 ng=1
-m=1
+m=2
 model=sg13_lv_pmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_pmos.sym} 670 -370 0 1 {name=M2
-l=3.64u
-w=3.705u
+C {sg13g2_pr/sg13_lv_pmos.sym} 680 -525 0 1 {name=M2
+l=3.7u
+w=3.64u
 ng=1
-m=1
+m=2
 model=sg13_lv_pmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_pmos.sym} 530 -470 0 0 {name=M5
+C {sg13g2_pr/sg13_lv_pmos.sym} 540 -625 0 0 {name=M5
 l=1.95u
 w=5.3u
 ng=1
@@ -129,7 +129,7 @@ m=1
 model=sg13_lv_pmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_pmos.sym} 830 -470 0 0 {name=M7
+C {sg13g2_pr/sg13_lv_pmos.sym} 840 -625 0 0 {name=M7
 l=2.08u
 w=75u
 ng=8
@@ -137,7 +137,7 @@ m=1
 model=sg13_lv_pmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_nmos.sym} 830 -245 2 1 {name=M6
+C {sg13g2_pr/sg13_lv_nmos.sym} 840 -400 2 1 {name=M6
 l=9.75u
 w=28.8u
 ng=4
@@ -145,16 +145,15 @@ m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {iopin.sym} 370 -370 0 1 {name=p10 lab=v-}
-C {iopin.sym} 720 -370 0 0 {name=p11 lab=v+}
-C {iopin.sym} 550 -150 1 1 {name=p5 lab=vss}
-C {iopin.sym} 550 -520 1 1 {name=p1 lab=vdd}
-C {iopin.sym} 160 -400 0 1 {name=p3 lab=iout}
-C {iopin.sym} 890 -370 0 0 {name=p8 lab=vout}
-C {lab_pin.sym} 230 -470 0 1 {name=p7 sig_type=std_logic lab=iout}
-C {lab_pin.sym} 790 -470 0 0 {name=p6 sig_type=std_logic lab=iout}
-C {lab_pin.sym} 550 -370 3 0 {name=p2 sig_type=std_logic lab=vdd}
-C {sg13g2_pr/sg13_lv_pmos.sym} 180 -470 0 1 {name=M9
+C {iopin.sym} 380 -525 0 1 {name=p10 lab=v-}
+C {iopin.sym} 730 -525 0 0 {name=p11 lab=v+}
+C {iopin.sym} 560 -305 1 1 {name=p5 lab=vss}
+C {iopin.sym} 560 -675 1 1 {name=p1 lab=vdd}
+C {iopin.sym} 170 -555 0 1 {name=p3 lab=iout}
+C {iopin.sym} 900 -525 0 0 {name=p8 lab=vout}
+C {lab_pin.sym} 240 -625 0 1 {name=p7 sig_type=std_logic lab=iout}
+C {lab_pin.sym} 800 -625 0 0 {name=p6 sig_type=std_logic lab=iout}
+C {sg13g2_pr/sg13_lv_pmos.sym} 190 -625 0 1 {name=M9
 l=2.08u
 w=75u
 ng=8
@@ -162,10 +161,11 @@ m=1
 model=sg13_lv_pmos
 spiceprefix=X
 }
-C {sg13g2_pr/cap_cmim.sym} 780 -305 3 0 {name=C2
+C {sg13g2_pr/cap_cmim.sym} 790 -460 3 0 {name=C2
 model=cap_cmim
 w=22.295e-6
 l=22.295e-6
 m=1
 spiceprefix=X}
-C {lab_pin.sym} 380 -470 0 0 {name=p4 sig_type=std_logic lab=iout}
+C {lab_pin.sym} 390 -625 0 0 {name=p4 sig_type=std_logic lab=iout}
+C {lab_pin.sym} 555 -525 3 0 {name=p2 sig_type=std_logic lab=vdd}

@@ -13,7 +13,7 @@ ypos2=2
 divy=5
 subdivy=4
 unity=1
-x1=0
+x1=-1.75
 
 divx=5
 subdivx=8
@@ -35,20 +35,20 @@ autoload=0
 
 sim_type=ac
 
-y2=180
-y1=-180
+y2=33.964
+y1=-136.006
 color=4
 node=ph(vout)
-x2=7}
+x2=5.25}
 B 2 680 -1295 1480 -895 {flags=graph
-y1=0.063
-y2=77
+y1=33
+y2=74
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0
+x1=-1.75
 
 divx=5
 subdivx=8
@@ -60,16 +60,16 @@ dataset=-1
 unitx=1
 logx=1
 logy=0
-x2=7}
+x2=5.25}
 B 2 1535 -1295 2335 -895 {flags=graph
-y1=52
-y2=67
+y1=37
+y2=86
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0
+x1=-1.75
 
 divx=5
 subdivx=8
@@ -81,18 +81,18 @@ dataset=-1
 unitx=1
 logx=1
 logy=0
-x2=7
+x2=5.25
 color=4
 node=cmrr}
 B 2 1525 -875 2325 -475 {flags=graph
-y1=0.08
-y2=30
+y1=0.05
+y2=28
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0
+x1=-1.75
 
 divx=5
 subdivx=8
@@ -104,7 +104,7 @@ dataset=-1
 unitx=1
 logx=1
 logy=0
-x2=7
+x2=5.25
 color=4
 node=psrr}
 N 775 -265 775 -235 {
@@ -273,7 +273,7 @@ value=4G
 footprint=1206
 device="ceramic capacitor"}
 C {gnd.sym} 210 -40 0 0 {name=l7 lab=GND}
-C {launcher.sym} 430 -635 0 0 {name=h5
+C {launcher.sym} 420 -635 0 0 {name=h5
 descr="load waves" 
 tclcommand="xschem raw_read $netlist_dir/output_file.raw ac"
 }

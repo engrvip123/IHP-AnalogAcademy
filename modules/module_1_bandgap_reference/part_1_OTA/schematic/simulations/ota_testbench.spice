@@ -63,8 +63,8 @@ write output_file.raw
 *.iopin vout
 XM4 net3 net1 vss vss sg13_lv_nmos w=720n l=9.75u ng=1 m=1
 XM3 net1 net1 vss vss sg13_lv_nmos w=720n l=9.75u ng=1 m=1
-XM1 net1 v- net2 vdd sg13_lv_pmos w=3.705u l=3.64u ng=1 m=1
-XM2 net3 v+ net2 vdd sg13_lv_pmos w=3.705u l=3.64u ng=1 m=1
+XM1 net1 v- net2 vdd sg13_lv_pmos w=27.84u l=3.25u ng=4 m=1
+XM2 net3 v+ net2 vdd sg13_lv_pmos w=27.84u l=3.25u ng=4 m=1
 XM5 net2 iout vdd vdd sg13_lv_pmos w=5.3u l=1.95u ng=1 m=1
 XM7 vout iout vdd vdd sg13_lv_pmos w=75u l=2.08u ng=8 m=1
 XM6 vout net3 vss vss sg13_lv_nmos w=28.8u l=9.75u ng=4 m=1
@@ -92,7 +92,7 @@ N1 out in1 in2 diff_amp_model
 
 * following line specifies the location for the .osdi file so ngspice can use it.
 
-pre_osdi /home/pedersen/projects/IHP-AnalogAcademy/modules/module_1_bandgap_reference/part_2_full_bgr/schematic/verilog/diff_amp2.osdi
+pre_osdi /home/pedersen/projects/IHP-AnalogAcademy/modules/module_1_bandgap_reference/part_2_full_bgr/schematic/verilog/diff_amp.osdi
 
 .endc
 

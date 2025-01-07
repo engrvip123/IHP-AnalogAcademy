@@ -167,12 +167,12 @@ C {devices/code_shown.sym} 20 -403.828125 0 0 {name=NGSPICE only_toplevel=false
 value="
 .control
   let run = 1
-  let mc_runs = 100
+  let mc_runs = 200
   set curplot = new
   set scratch = $curplot
   dowhile run <= mc_runs
     reset
-    dc temp -50 100 5
+    dc temp 100 -50 -5
     set run = $&run
     set dc = $curplot
     setplot $scratch
