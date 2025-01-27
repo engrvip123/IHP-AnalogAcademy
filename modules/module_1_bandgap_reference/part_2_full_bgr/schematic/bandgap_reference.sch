@@ -341,12 +341,12 @@ b=0
 m=1
 }
 C {sg13g2_pr/rppd.sym} 595 -680 0 0 {name=R1
-w=0.5e-6
+w=0.6e-6
 l=194.345e-6
 model=rppd
 spiceprefix=X
 b=0
-m=1.2
+m=1
 }
 C {sg13g2_pr/rppd.sym} 800 -685 0 0 {name=R2
 w=0.5e-6
