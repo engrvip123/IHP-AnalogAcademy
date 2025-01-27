@@ -137,3 +137,6 @@ At this point you should see a lot of uncorrected LVS issues.
 The linked video provides a walkthrough on designing the input pair of an OTA for a bandgap reference and demonstrates how to complete a layout using open-source tools. While this is not a comprehensive, 
 end-to-end tutorial—such a deep dive would require far more time than is practical for a single video—it covers the essentials.
 You’ll learn how to navigate KLayout effectively and establish a solid layout workflow, laying the foundation for more advanced design tasks.
+
+Link to layout tutorial:
+https://youtu.be/tOYrJKtNuaw
