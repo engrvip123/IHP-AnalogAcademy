@@ -62,7 +62,7 @@ Rppd’s low temperature coefficient, good precision, and moderate resistance ma
 
 First, we will build the core of the bandgap reference.
 
-<p align="center"> <img src="../../../media/module_1/BGR_images/bandgap_core.png" width="1000" height="900" /> </p>
+<p align="center"> <img src="../../../media/module_1/BGR_images/bandgap_core.png" width="1000" height="700" /> </p>
 
 As shown here, the setup is quite basic. You can adjust it to your needs, as long as the proper connections are maintained. The new component introduced is the RPPD resistors, which can be found in the components library under the PDK directory. Ensure the device sizes match those shown in the image, and don't forget to add a voltage source to supply VDD.
 
@@ -435,6 +435,8 @@ value="
 
 
 From the written raw file the output is then plotted in python to extract the following result
+
+<p align="center"> <img src="../../../media/module_1/BGR_images/monte_carlo.png" width="700" height="500" /> </p>
 
 
 
