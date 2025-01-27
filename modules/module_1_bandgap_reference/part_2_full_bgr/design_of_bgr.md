@@ -365,6 +365,76 @@ When considering the **3-sigma interval**, the focus shifts to evaluating the ov
 
 The next section will demonstrate how to set up and perform a Monte Carlo simulation for the bandgap reference. This includes defining mismatch parameters, specifying the number of runs, and analyzing the results to assess robustness.
 
+### ### Monte Carlo Mismatch Simulation in Xschem: A Step-by-Step Tutorial (ongoing)
+
+In this tutorial, we’ll demonstrate how to perform a Monte Carlo mismatch simulation in Xschem using a bandgap circuit as an example. This process involves introducing random variations in device parameters to analyze how mismatch affects the circuit's performance.
+
+---
+#### **Step 1: Importing Models**
+
+To begin, include the appropriate model files in your simulation. For mismatch simulations, the models should include mismatch parameters. Use the following imports:
+
+```
+.lib $::SG13G2_MODELS/cornerCAP.lib cap_typ .lib $::SG13G2_MODELS/cornerRES.lib res_typ .lib cornerMOSlv.lib mos_tt_mismatch
+```
+
+- **`cornerCAP.lib`**: Includes typical capacitor models.
+- **`cornerRES.lib`**: Includes typical resistor models.
+- **`cornerMOSlv.lib`**: Includes MOSFET models with mismatch parameters (`mos_tt_mismatch`).
+
+#### **Step 2: Setting Up the Simulation**
+
+The following code sets up the Monte Carlo mismatch simulation. This script performs multiple simulation runs, introduces variations, and records the results.
+
+```
+name=NGSPICE only_toplevel=false 
+value="
+.control
+  let run = 1
+  let mc_runs = 200
+  set curplot = new
+  set scratch = $curplot
+  dowhile run <= mc_runs
+    reset
+    dc temp 100 -50 -5
+    set run = $&run
+    set dc = $curplot
+    setplot $scratch
+    let off{$run} = {$dc}.v(VBG)
+    let mytemp{$run} = \"{$dc}.temp-sweep\"
+    setplot $dc
+    let run = run + 1
+  end
+  set nolegend
+  plot {$scratch}.allv vs {$scratch}.mytemp1
+  write bandgap_testbench_mc_mis.raw {$scratch}.allv {$scratch}.mytemp1
+.endc
+"
+```
+---
+#### **Script Breakdown**
+
+1. **Initialization**:
+    
+    - `let run = 1`: Initializes the run counter.
+    - `let mc_runs = 200`: Sets the number of Monte Carlo runs to 200.
+2. **Simulation Loop**:
+    
+    - **Reset for Each Run**: The `reset` command clears the simulation state.
+    - **Temperature Sweep**: The `dc temp 100 -50 -5` command sweeps temperatures from 100°C to -50°C in 5°C steps.
+    - **Result Collection**:
+        - `off{$run}`: Stores the bandgap output voltage (`VBG`) for each run.
+        - `mytemp{$run}`: Stores the temperature sweep for each run.
+3. **Plotting**:
+    
+    - Results from all runs are saved into `$scratch`.
+    - `plot {$scratch}.allv vs {$scratch}.mytemp1`: Plots the output voltage against the temperature.
+4. **Output**:
+    
+    - Results are written to a `.raw` file for further analysis: `bandgap_testbench_mc_mis.raw`.
+
+
+From the written raw file the output is then plotted in python to extract the following result
 
 
 
