@@ -149,7 +149,7 @@ At this stage, you have two options for proceeding with the bandgap reference de
 
 The circuit, including the amplifier and startup circuitry, is shown in the image below. Ensure proper connections as depicted. Refer to the next section for details on setting up the testbench.
 
-<p align="center"> <img src="../../../media/module_1/BGR_images/OTA_amp.png" width="1000" height="900" /> </p>
+<p align="center"> <img src="../../../media/module_1/BGR_images/OTA_amp.png" width="1000" height="600" /> </p>
 
 
 ## Bandgap Reference Testbench
