@@ -48,7 +48,7 @@ Next, search for **DC Voltage Source** and place **two power sources** in the op
 
 Finally, label the appropriate nodes as **VCC** and **Vb**, ensuring that the corresponding voltage sources are correctly placed, as shown in the image below:
 
-<p align="center"> <img src="../../media/module_2/schematic_bias_1.png" width="800" height="700" /> </p>
+<p align="center"> <img src="../../../media/module_2/schematic_bias_1.png" width="800" height="500" /> </p>
 
 
 Now, we need to set up our **analysis mode** and configure the necessary parameters to capture the circuit's behavior in the first step. This includes:
@@ -82,12 +82,6 @@ and for the DC simulation just leave it as it is. For the include script the tex
 .LIB cornerHBT.lib hbt_typ
 ```
 
-
-At this point your schematic should look like the one in the following image
-![[Pasted image 20250210085958.png]]
-
-(IMPORTANT: For the in and output port the num should be 1 and 2)
-
 ## Initial Simulation
 
 Now that we have set up the testbench, we need to define our first simulation objective. As mentioned earlier, we will not go into deep theoretical explanations of the amplifier topology, but instead, we will conduct well-structured simulations that align with the key analysis steps needed in the design process of this amplifier.
@@ -109,7 +103,7 @@ In the **SG13G2** technology, the **npn13G2** transistor has a maximum **current
     - To keep the testbench clean, open a new **.dpl** window to analyze results.
     - This format is used to display simulation data visually.
     - Click the **button with the following icon** (insert icon) to create it.
-      <p align="center"> <img src="../../media/module_2/dpl_window.png" width="800" height="700" /> </p>
+      <img src="../../../media/module_2/dpl_window.png" width="30" height="30" /> </p>
 3. **Add Visualization Elements**:
     - Navigate to the **Diagram** tab under **Components** and insert:
         - **Smith Chart** → Used to analyze **reflection coefficients** (**S11** and **S22**), which provide insight into the necessary impedance matching (ac.v(s_1_1),  ac.v(s_2_2)).
@@ -123,9 +117,9 @@ K = (1 - abs(s_1_1)^2 - abs(s_2_2)^2 + abs(s_1_1 * s_2_2 - s_1_2 * s_2_1)^2) / (
 ```
 
 When these steps are done, your schematic should look like the following:
-<p align="center"> <img src="../../media/module_2/schematic_bias_2.png" width="800" height="700" /> </p>
+<p align="center"> <img src="../../../media/module_2/schematic_bias_2.png" width="800" height="500" /> </p>
 And you results/.dpl file should look like the following:
-<p align="center"> <img src="../../media/module_2/results_bias_1.png" width="800" height="700" /> </p>
+<p align="center"> <img src="../../../media/module_2/results_bias_1.png" width="800" height="400" /> </p>
 At this point we can add markers to the lines in order to analyze the results more precisely. 
 
 ## Finding the Optimal Number of Fingers
@@ -154,7 +148,7 @@ To make tuning easier, we will define the **inductor value as a parameter**. Thi
     - This will act as our first guess before fine-tuning through simulation.
 
 Once these steps are completed, your schematic should look like the following:
-<p align="center"> <img src="../../media/module_2/schematic_bias_3.png" width="800" height="700" /> </p>
+<p align="center"> <img src="../../../media/module_2/schematic_bias_3.png" width="800" height="500" /> </p>
 ## Simulating and Fine-Tuning the Inductor
 
 Now that the circuit is set up, we can proceed with the **simulation** and visualization of key parameters. Instead of using a **.dpl file**, we will directly add a **Smith chart** and a **Cartesian plot** to the testbench. These will allow us to observe:
@@ -179,7 +173,7 @@ Now that the circuit is set up, we can proceed with the **simulation** and visua
 ### Example Inductor Value
 
 For this example, an inductor value of **300 pH** was used. The corresponding results are shown below:
-<p align="center"> <img src="../../media/module_2/results_bias_2.png" width="800" height="700" /> </p>
+<p align="center"> <img src="../../../media/module_2/results_bias_2.png" width="800" height="400" /> </p>
 
 As seen in the results, the circuit is **conditionally stable** in the frequency range of **0 to 12 GHz**. However, this is acceptable for now, as the circuit is composed of **ideal components**, and **parasitic effects** have not been accounted for.
 
