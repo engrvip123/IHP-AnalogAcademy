@@ -1,0 +1,12 @@
+** sch_path: /home/pedersen/projects/IHP-AnalogAcademy/modules/module_1_bandgap_reference/part_3_layout/OTA_layout/input_stage/schematic_mod/input_stage.sch
+.subckt input_stage vss vdd dn4 dn3 dn2 iout
+*.PININFO vss:B vdd:B dn4:B dn3:B dn2:B iout:B
+M7 dn2 iout vdd bulk1 sg13_lv_pmos l=1.95u w=5.3u ng=1 m=1
+R2 vss bulk2 ptap1 A = 7.0975e-12 P=56.78e-6
+R3 vdd bulk1 ntap1 A = 7.5826e-12 P = 48.92e-6
+M1 dn3 dn3 vss bulk2 sg13_lv_nmos l=9.75u w=720n ng=1 m=1
+M2 dn4 dn3 vss bulk2 sg13_lv_nmos l=9.75u w=720n ng=1 m=1
+.ends
+.end
+
+

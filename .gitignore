@@ -4,4 +4,6 @@
 *.raw
 *.spice
 *.osdi
-*.cdl
+*.dat.ngspice
+*.dat
+
