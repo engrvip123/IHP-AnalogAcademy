@@ -1,75 +1,31 @@
-* Extracted by KLayout with SG13G2 LVS runset on : 13/12/2024 15:39
+* Extracted by KLayout with SG13G2 LVS runset on : 13/02/2025 13:18
 
-.SUBCKT two_stage_OTA_layout
-M$1 \$2 \$70 \$3 \$1 sg13_lv_nmos L=9.75u W=7.2u AS=2.448p AD=1.368p PS=15.08u
-+ PD=7.58u
-M$2 \$3 \$73 \$4 \$1 sg13_lv_nmos L=9.75u W=7.2u AS=1.368p AD=1.368p PS=7.58u
-+ PD=7.58u
-M$3 \$4 \$8 \$5 \$1 sg13_lv_nmos L=9.75u W=7.2u AS=1.368p AD=1.368p PS=7.58u
-+ PD=7.58u
-M$4 \$5 \$8 \$6 \$1 sg13_lv_nmos L=9.75u W=7.2u AS=1.368p AD=2.448p PS=7.58u
-+ PD=15.08u
-M$5 \$9 \$70 \$10 \$69 sg13_lv_pmos L=3.7u W=3.64u AS=1.2376p AD=1.2376p
-+ PS=7.96u PD=7.96u
-M$6 \$11 \$70 \$12 \$71 sg13_lv_pmos L=3.7u W=3.64u AS=1.2376p AD=1.2376p
-+ PS=7.96u PD=7.96u
-M$7 \$13 \$73 \$14 \$72 sg13_lv_pmos L=3.7u W=3.64u AS=1.2376p AD=1.2376p
-+ PS=7.96u PD=7.96u
-M$8 \$15 \$73 \$16 \$74 sg13_lv_pmos L=3.7u W=3.64u AS=1.2376p AD=1.2376p
-+ PS=7.96u PD=7.96u
-M$9 \$37 \$86 \$38 \$85 sg13_lv_pmos L=3.7u W=3.64u AS=1.2376p AD=1.2376p
-+ PS=7.96u PD=7.96u
-M$10 \$39 \$88 \$40 \$87 sg13_lv_pmos L=3.7u W=3.64u AS=1.2376p AD=1.2376p
-+ PS=7.96u PD=7.96u
-M$11 \$41 \$91 \$42 \$90 sg13_lv_pmos L=3.7u W=3.64u AS=1.2376p AD=1.2376p
-+ PS=7.96u PD=7.96u
-M$12 \$43 \$93 \$44 \$92 sg13_lv_pmos L=3.7u W=3.64u AS=1.2376p AD=1.2376p
-+ PS=7.96u PD=7.96u
-M$13 \$49 \$83 \$50 \$82 sg13_lv_pmos L=3.7u W=3.64u AS=1.2376p AD=1.2376p
-+ PS=7.96u PD=7.96u
-M$14 \$51 \$81 \$52 \$80 sg13_lv_pmos L=3.7u W=3.64u AS=1.2376p AD=1.2376p
-+ PS=7.96u PD=7.96u
-M$15 \$53 \$79 \$54 \$78 sg13_lv_pmos L=3.7u W=3.64u AS=1.2376p AD=1.2376p
-+ PS=7.96u PD=7.96u
-M$16 \$55 \$76 \$56 \$77 sg13_lv_pmos L=3.7u W=3.64u AS=1.2376p AD=1.2376p
-+ PS=7.96u PD=7.96u
-M$17 \$17 \$8 \$18 \$94 sg13_lv_pmos L=1.95u W=5.3u AS=1.802p AD=1.802p
+.SUBCKT two_stage_OTA_layout vss vdd dn3 iout vout dn2 v+ v\x2d vss$1 dn4
+M$1 vss dn3 dn3 vss sg13_lv_nmos L=9.75u W=0.72u AS=0.2448p AD=0.2448p PS=2.12u
++ PD=2.12u
+M$2 vss dn3 dn4 vss sg13_lv_nmos L=9.75u W=0.72u AS=0.2448p AD=0.2448p PS=2.12u
++ PD=2.12u
+M$3 vss$1 dn4 vout vss sg13_lv_nmos L=9.75u W=28.8u AS=6.552p AD=6.552p
++ PS=37.82u PD=37.82u
+M$7 vdd iout iout \$3 sg13_lv_pmos L=2.08u W=75u AS=15.65625p AD=15.65625p
++ PS=87.715u PD=87.715u
+M$15 vdd iout vout \$3 sg13_lv_pmos L=2.08u W=75u AS=15.65625p AD=15.65625p
++ PS=87.715u PD=87.715u
+M$23 vdd vdd dn2 \$2 sg13_lv_pmos L=3.7u W=14.56u AS=4.9504p AD=4.9504p
++ PS=31.84u PD=31.84u
+M$25 dn2 v+ dn4 \$2 sg13_lv_pmos L=3.7u W=7.28u AS=2.4752p AD=2.4752p PS=15.92u
++ PD=15.92u
+M$26 dn2 v\x2d dn3 \$2 sg13_lv_pmos L=3.7u W=7.28u AS=2.4752p AD=2.4752p
++ PS=15.92u PD=15.92u
+M$27 dn4 vdd vdd \$2 sg13_lv_pmos L=3.7u W=7.28u AS=2.4752p AD=2.4752p
++ PS=15.92u PD=15.92u
+M$28 dn3 vdd vdd \$2 sg13_lv_pmos L=3.7u W=7.28u AS=2.4752p AD=2.4752p
++ PS=15.92u PD=15.92u
+M$35 dn2 iout vdd \$38 sg13_lv_pmos L=1.95u W=5.3u AS=1.802p AD=1.802p
 + PS=11.28u PD=11.28u
-M$18 \$45 \$98 \$46 \$99 sg13_lv_pmos L=1.95u W=5.3u AS=1.802p AD=1.802p
-+ PS=11.28u PD=11.28u
-M$19 \$47 \$95 \$48 \$97 sg13_lv_pmos L=1.95u W=5.3u AS=1.802p AD=1.802p
-+ PS=11.28u PD=11.28u
-M$20 \$19 \$8 \$20 \$108 sg13_lv_pmos L=2.08u W=9.375u AS=3.1875p AD=1.78125p
-+ PS=19.43u PD=9.755u
-M$21 \$20 \$8 \$21 \$108 sg13_lv_pmos L=2.08u W=9.375u AS=1.78125p AD=1.78125p
-+ PS=9.755u PD=9.755u
-M$22 \$21 \$8 \$22 \$108 sg13_lv_pmos L=2.08u W=9.375u AS=1.78125p AD=1.78125p
-+ PS=9.755u PD=9.755u
-M$23 \$22 \$8 \$23 \$108 sg13_lv_pmos L=2.08u W=9.375u AS=1.78125p AD=1.78125p
-+ PS=9.755u PD=9.755u
-M$24 \$23 \$8 \$24 \$108 sg13_lv_pmos L=2.08u W=9.375u AS=1.78125p AD=1.78125p
-+ PS=9.755u PD=9.755u
-M$25 \$24 \$8 \$25 \$108 sg13_lv_pmos L=2.08u W=9.375u AS=1.78125p AD=1.78125p
-+ PS=9.755u PD=9.755u
-M$26 \$25 \$8 \$26 \$108 sg13_lv_pmos L=2.08u W=9.375u AS=1.78125p AD=1.78125p
-+ PS=9.755u PD=9.755u
-M$27 \$26 \$106 \$27 \$108 sg13_lv_pmos L=2.08u W=9.375u AS=1.78125p AD=3.1875p
-+ PS=9.755u PD=19.43u
-M$28 \$28 \$107 \$29 \$104 sg13_lv_pmos L=2.08u W=9.375u AS=3.1875p AD=1.78125p
-+ PS=19.43u PD=9.755u
-M$29 \$29 \$110 \$30 \$104 sg13_lv_pmos L=2.08u W=9.375u AS=1.78125p
-+ AD=1.78125p PS=9.755u PD=9.755u
-M$30 \$30 \$109 \$31 \$104 sg13_lv_pmos L=2.08u W=9.375u AS=1.78125p
-+ AD=1.78125p PS=9.755u PD=9.755u
-M$31 \$31 \$111 \$32 \$104 sg13_lv_pmos L=2.08u W=9.375u AS=1.78125p
-+ AD=1.78125p PS=9.755u PD=9.755u
-M$32 \$32 \$112 \$33 \$104 sg13_lv_pmos L=2.08u W=9.375u AS=1.78125p
-+ AD=1.78125p PS=9.755u PD=9.755u
-M$33 \$33 \$113 \$34 \$104 sg13_lv_pmos L=2.08u W=9.375u AS=1.78125p
-+ AD=1.78125p PS=9.755u PD=9.755u
-M$34 \$34 \$105 \$35 \$104 sg13_lv_pmos L=2.08u W=9.375u AS=1.78125p
-+ AD=1.78125p PS=9.755u PD=9.755u
-M$35 \$35 \$103 \$36 \$104 sg13_lv_pmos L=2.08u W=9.375u AS=1.78125p AD=3.1875p
-+ PS=9.755u PD=19.43u
-C$36 \$102 \$101 cap_cmim w=22.295u l=22.295u A=497.067025p P=89.18u m=1
+C$36 \$7 vout cap_cmim w=22.295u l=22.295u A=497.067025p P=89.18u m=1
+R$37 \$3 vdd ntap1 A=27.435p P=177u
+R$38 \$2 vdd ntap1 A=28.7556p P=185.52u
+R$39 \$38 vdd ntap1 A=7.5826p P=48.92u
+R$40 vss vss$1 ptap1 A=25.19p P=201.52u
 .ENDS two_stage_OTA_layout

@@ -1,6 +1,6 @@
 <Qucs Schematic 24.3.1>
 <Properties>
-  <View=-662,-134,850,683,0.994048,0,0>
+  <View=-717,-198,985,870,0.883,0,0>
   <Grid=10,10,1>
   <DataSet=output_matching.dat>
   <DataDisplay=output_matching.dpl>
@@ -34,7 +34,6 @@
   <L L22 1 300 400 -26 10 0 0 "Lstab" 1 "" 0>
   <L L24 1 -70 410 -96 -26 0 3 "Lin" 1 "" 0>
   <L L25 1 -70 320 -96 -26 0 3 "Lin" 1 "" 0>
-  <.SP SP1 1 -260 -80 0 61 0 0 "lin" 1 "1 GHz" 1 "300 GHz" 1 "1197" 1 "no" 0 "1" 0 "2" 0 "no" 0 "no" 0>
   <.DC DC1 1 -100 -80 0 36 0 0 "26.85" 0 "0.001" 0 "1 pA" 0 "1 uV" 0 "no" 0 "150" 0 "no" 0 "none" 0 "CroutLU" 0>
   <INCLSCR INCLSCR1 1 -200 90 -60 16 0 0 ".LIB cornerHBT.lib hbt_typ\n" 1 "" 0 "" 0>
   <NutmegEq NutmegEq1 1 -290 570 -28 16 0 0 "SP1" 1 "k=(1 - abs(s_1_1)^2 - abs(s_2_2)^2 + abs(s_1_1 * s_2_2 - s_1_2 * s_2_1)^2) / (2 * abs(s_1_2 * s_2_1))\n" 1>
@@ -42,7 +41,7 @@
   <C C26 1 -150 480 -20 -49 0 2 "Cin" 1 "" 0 "neutral" 0>
   <SpicePar SpicePar1 1 -370 10 -28 16 0 0 "Lstab=300pH" 1>
   <SpicePar SpicePar3 1 -370 90 -28 16 0 0 "Lin=254.5pH" 1>
-  <SpicePar SpicePar2 1 -480 90 -28 16 0 0 "Cin=36.974fF" 1>
+  <SpicePar SpicePar2 1 -480 90 -28 16 0 0 "Cin=45fF" 1>
   <SpicePar SpicePar4 1 -480 10 -28 16 0 0 "Cout=88fF" 1>
   <SpicePar SpicePar5 1 -590 10 -28 16 0 0 "Lout=273pH" 1>
   <L L28 1 360 50 -96 -26 0 3 "Lout" 1 "" 0>
@@ -51,6 +50,7 @@
   <C C30 1 570 100 -20 -49 0 2 "Cout" 1 "" 0 "neutral" 0>
   <GND * 1 690 180 0 0 0 0>
   <L L30 1 170 400 -26 10 0 0 "Lstab" 1 "" 0>
+  <.SP SP1 1 -260 -80 0 61 0 0 "lin" 1 "45 GHz" 1 "55 GHz" 1 "41" 1 "no" 0 "1" 0 "2" 0 "no" 0 "no" 0>
 </Components>
 <Wires>
   <110 320 110 400 "VE" 50 300 27 "">
