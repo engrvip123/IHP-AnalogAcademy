@@ -104,24 +104,24 @@ footprint=1206
 device="ceramic capacitor"}
 C {gnd.sym} 460 -140 0 0 {name=l6 lab=GND}
 C {gnd.sym} 460 -300 2 0 {name=l7 lab=GND}
-C {devices/code_shown.sym} -395 -440 0 0 {name=MODEL1 only_toplevel=false
+C {devices/code_shown.sym} 15 -480 0 0 {name=MODEL1 only_toplevel=false
 format="tcleval( @value )"
 value="
 .lib cornerMOSlv.lib mos_tt_mismatch
 "}
-C {devices/code_shown.sym} 85 -930 0 0 {name=NGSPICE1 only_toplevel=false 
+C {devices/code_shown.sym} -675 -780 0 0 {name=NGSPICE1 only_toplevel=false 
 value="
 .control
   let run = 1
-  let mc_runs = 400
+  let mc_runs = 100
   let results = unitvec(mc_runs)
   dowhile run <= mc_runs
     reset
     .param clock = 100e6    ; 100 MHz clock
     .param period = 1 / clock
-    .param num_cycles = 100  ; number of evaluation cycles
+    .param num_cycles = 200  ; number of evaluation cycles
     .param tr = num_cycles * period
-    tran 300p 1u
+    tran 300p 2u
     set run = $&run
     let vdiff = v(outp) - v(outm)
     

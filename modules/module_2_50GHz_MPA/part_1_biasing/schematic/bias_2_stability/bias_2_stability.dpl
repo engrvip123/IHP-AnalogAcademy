@@ -1,6 +1,6 @@
 <Qucs Schematic 24.3.1>
 <Properties>
-  <View=-85,20,1543,969,1,125,0>
+  <View=43,110,1118,655,1.48959,98,0>
   <Grid=10,10,0>
   <DataSet=bias_2_stability.dat>
   <DataDisplay=bias_2_stability.sch>
@@ -20,23 +20,13 @@
 <Wires>
 </Wires>
 <Diagrams>
-  <Rect 194 504 476 414 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 1 0 0 "" "" "">
-	<"ngspice/ac.k" #0000ff 0 3 0 0 0>
-	  <Mkr 1e+09 205 -424 3 0 0>
-  </Rect>
-  <Smith 790 525 445 445 3 #c0c0c0 1 00 1 0 1 1 1 0 4 1 1 0 1 1 315 0 225 1 0 0 "" "" "">
+  <Smith 738 522 332 332 3 #c0c0c0 1 00 1 0 1 1 1 0 4 1 1 0 1 1 315 0 225 1 0 0 "" "" "">
 	<"ngspice/ac.v(s_1_1)" #0000ff 0 3 0 0 0>
-	  <Mkr 5e+10 380 -342 3 0 0>
 	<"ngspice/ac.v(s_2_2)" #ff0000 0 3 0 0 0>
-	  <Mkr 5e+10 341 -116 3 0 0>
   </Smith>
-  <Tab 200 823 459 83 3 #c0c0c0 1 00 1 0 1 1 1 0 1 1 1 0 1 1 315 0 225 1 0 0 "" "" "">
-	<"ngspice/v(vcc)" #0000ff 0 3 1 0 0>
-	<"ngspice/v(vbase)" #0000ff 0 3 1 0 0>
-	<"ngspice/v(vb)" #0000ff 0 3 1 0 0>
-	<"ngspice/v(collector_voltage)" #0000ff 0 3 1 0 0>
-	<"ngspice/i(pr1)" #0000ff 0 3 1 0 0>
-  </Tab>
+  <Rect 150 530 511 334 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 1 0 0 "" "" "">
+	<"ngspice/ac.k" #0000ff 0 3 0 0 0>
+  </Rect>
 </Diagrams>
 <Paintings>
 </Paintings>

@@ -52,7 +52,7 @@ x2=1e-06
 
 
 color=4
-node=v+}
+node=vinp}
 B 2 850 -1225 1650 -825 {flags=graph
 y1=-1.3
 y2=1.3
