@@ -116,10 +116,10 @@ K = (1 - abs(s_1_1)^2 - abs(s_2_2)^2 + abs(s_1_1 * s_2_2 - s_1_2 * s_2_1)^2) / (
 When these steps are done, your schematic should look like the following:
 (remember to set the frequency in the elements that need it as we go !)
 And you results/.dpl file should look like the following:
-<p align="center"> <img src="../../../media/module_2/schematic_bias_2.png" width="800" height="500" /> </p>
+<p align="center"> <img src="../../../media/module_2/schematic_bias_2.png" width="800" height="600" /> </p>
 (remember to set the frequency in the elements that need it as we go !)
 And you results/.dpl file should look like the following:
-<p align="center"> <img src="../../../media/module_2/results_bias_1.png" width="800" height="400" /> </p>
+<p align="center"> <img src="../../../media/module_2/results_bias_1.png" width="800" height="500" /> </p>
 At this point we can add markers to the lines in order to analyze the results more precisely. 
 
 ## Finding the Optimal Number of Fingers
