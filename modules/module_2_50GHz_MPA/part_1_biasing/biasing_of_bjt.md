@@ -38,15 +38,13 @@ We’ll start by instantiating the **npn13G2** BJT, which is a commonly used tra
 `libraries/User libraries/IHP_PDK_nonlinear_components/npn13G2`
 ```
 
-Once the transistor is instantiated, duplicate it and place the copies in a mirrored or differential arrangement (as shown in the schematic image below).
-
 Next, navigate to the **Components** pane in the vertical column on the left side of the window. Search for **DC Block** and **DC Feed** components, then add them to the schematic.
 
 Now, add **two ideal resistors** from the **Lumped Components** category (**Resistors US**) and set their values to **50 ohms** to ensure proper impedance matching.
 
-Next, search for **DC Voltage Source** and place **two power sources** in the open positions. Set their impedance to **50 ohms** to match the circuit requirements.
+Next, search for **DC Voltage Source** and **two power sources**  and create a two port system with the power sources. For the placement of the DC voltage source look at the image below. For labeling press 'Ctrl+L'.
 
-Finally, label the appropriate nodes as **VCC** and **Vb**, ensuring that the corresponding voltage sources are correctly placed, as shown in the image below:
+
 
 <p align="center"> <img src="../../../media/module_2/schematic_bias_1.png" width="800" height="500" /> </p>
 
@@ -81,7 +79,6 @@ and for the DC simulation just leave it as it is. For the include script the tex
 ```
 .LIB cornerHBT.lib hbt_typ
 ```
-
 ## Initial Simulation
 
 Now that we have set up the testbench, we need to define our first simulation objective. As mentioned earlier, we will not go into deep theoretical explanations of the amplifier topology, but instead, we will conduct well-structured simulations that align with the key analysis steps needed in the design process of this amplifier.
@@ -90,7 +87,7 @@ Now that we have set up the testbench, we need to define our first simulation ob
 
 The first design decision is selecting the number of fingers for our **npn13G2** BJT. This determines the **current-handling capability** of the transistor, which directly affects its **linearity**. However, increasing the number of fingers introduces trade-offs, such as **higher parasitics**, which can impact **matching constraints** and **gain performance**.
 
-To begin, we set an initial bias voltage **Vb**, such as **1V**, and run the simulation by pressing the **simulate** button next to the simulator selector pane. Once the simulation is complete, we need to analyze key parameters to determine the optimal bias point **Vb** and transistor sizing.
+To begin, we set an initial bias voltage, such as **1V**, and run the simulation by pressing the **simulate** button next to the simulator selector pane (make sure you are using **ngspice**). Once the simulation is complete, we need to analyze key parameters to determine the optimal bias point and transistor size.
 
 ### Setting Constraints
 
@@ -98,7 +95,7 @@ In the **SG13G2** technology, the **npn13G2** transistor has a maximum **current
 
 1. **Insert a Current Probe**:
     - Search for **Current Probe** under **Components**.
-    - Place it in **series** with the collector branch of one of the transistors.
+    - Place it in **series** with the collector branch of the transistor.
 2. **Create a New Analysis Window (.dpl Format)**:
     - To keep the testbench clean, open a new **.dpl** window to analyze results.
     - This format is used to display simulation data visually.
@@ -117,7 +114,10 @@ K = (1 - abs(s_1_1)^2 - abs(s_2_2)^2 + abs(s_1_1 * s_2_2 - s_1_2 * s_2_1)^2) / (
 ```
 
 When these steps are done, your schematic should look like the following:
+(remember to set the frequency in the elements that need it as we go !)
+And you results/.dpl file should look like the following:
 <p align="center"> <img src="../../../media/module_2/schematic_bias_2.png" width="800" height="500" /> </p>
+(remember to set the frequency in the elements that need it as we go !)
 And you results/.dpl file should look like the following:
 <p align="center"> <img src="../../../media/module_2/results_bias_1.png" width="800" height="400" /> </p>
 At this point we can add markers to the lines in order to analyze the results more precisely. 
@@ -126,30 +126,30 @@ At this point we can add markers to the lines in order to analyze the results mo
 
 As previously mentioned, increasing the **current handling** of the BJTs improves **linearity**, but it also affects the **stability** of the circuit. To ensure the amplifier remains **unconditionally stable**, we must satisfy the **stability condition** where the **K factor** is greater than **1**.
 
-When adjusting the **number of fingers**, we also have the flexibility to **fine-tune the base bias voltage (Vb)** to find an optimal operating point. A good starting point is setting the **number of fingers to 10** and adjusting **Vb to approximately 0.97V**, which results in a **total current of around 30mA per branch** in the differential pair. This ensures a reasonable trade-off between **linearity, power consumption, and stability**.
+When adjusting the **number of fingers**, we also have the flexibility to **fine-tune the base bias voltage** to find an optimal operating point. A good starting point is setting the **number of fingers to 10** and adjusting **bias to approximately 0.97V**, which results in a **total current of around 26mA** . This ensures a reasonable trade-off between **linearity, power consumption, and stability**.
 
+
+## Playing around
+
+At this stage we can try to play around with the stability of the amplifier. For this the schematic can be seen below. NOTE the tuning of the degenerative resistor and capacitor on the base is a loop, since it depends on many parameters. Below the initial approach can be seen
 ## Stabilizing the Amplifier
 
-To improve **stability**, we introduce **emitter degeneration** using an **inductor** instead of a resistor. **Inductive degeneration** is preferred because, unlike resistive degeneration, it provides **negative feedback** without significantly **dissipating power** or **attenuating signal amplitude**. This allows us to enhance **stability** while maintaining **gain efficiency**.
+To improve **stability**, we introduce a base resistance in parallel with a capacitor. This provides a low frequency attenuation while allowing our frequency of interest. This helps introduce more stability to our circuit by degeneration. 
 
-### Selecting and Instantiating the Inductor Model
+### Setting Up parameter for the inductor
 
-For now, we will use the **inductor with Q** model, which can be found under **Lumped Components**. This model includes **parasitic losses** through a **quality factor (Q)**, making it more realistic than an ideal inductor.
-
-### Setting Up the Inductor Parameter
-
-To make tuning easier, we will define the **inductor value as a parameter**. This allows us to **easily adjust its value** during simulations. Follow these steps:
+To make tuning easier, we will define the **resistor value as a parameter**. This allows us to **easily adjust its value** during simulations. Follow these steps:
 
 1. **Instantiate a `.Param` section**:
     - This block is found under **Equations**.
     - It allows us to define and modify circuit parameters dynamically.
-2. **Define the starting inductor value**:
-    - Set an initial value (e.g., **Lstab =X nH**).
+2. **Define the starting value**:
+    - Set an initial value (e.g., **Rstab =10k Ohm**).
     - This will act as our first guess before fine-tuning through simulation.
 
 Once these steps are completed, your schematic should look like the following:
 <p align="center"> <img src="../../../media/module_2/schematic_bias_3.png" width="800" height="500" /> </p>
-## Simulating and Fine-Tuning the Inductor
+## Simulating and Fine-Tuning
 
 Now that the circuit is set up, we can proceed with the **simulation** and visualization of key parameters. Instead of using a **.dpl file**, we will directly add a **Smith chart** and a **Cartesian plot** to the testbench. These will allow us to observe:
 
@@ -158,23 +158,10 @@ Now that the circuit is set up, we can proceed with the **simulation** and visua
 ### Tuning the Inductor for Optimal Stability
 
 1. **Launch the tuner**:
-    
     - Click on the **Tune** button next to the **Simulation** button.
     - This opens the **tuning interface**, allowing real-time adjustments to circuit parameters.
-2. **Select the inductor parameter (`Lstab`)**:
-    
-    - Navigate to the **Param** section and select `Lstab`.
-    - This parameter represents the **stabilizing inductor** in the emitter degeneration.
-3. **Fine-tune the inductor value**:
-    
-    - Adjust the **inductor size** while observing the **S11, S22, and K-factor**.
-    - The goal is to optimize matching and stability without excessive degradation of gain.
+    - Click the **Rstab** value under the .param section
+2. **Fine-tune the inductor value**:
+    - Adjust the **resistor size** while observing the **S11, S22, and K-factor**.
 
-### Example Inductor Value
-
-For this example, an inductor value of **300 pH** was used. The corresponding results are shown below:
-<p align="center"> <img src="../../../media/module_2/results_bias_2.png" width="800" height="400" /> </p>
-
-As seen in the results, the circuit is **conditionally stable** in the frequency range of **0 to 12 GHz**. However, this is acceptable for now, as the circuit is composed of **ideal components**, and **parasitic effects** have not been accounted for.
-
-To gain further insight into how parasitics might affect stability, **lumped elements with a Q-factor** can be introduced. This will provide a more realistic representation of the circuit's behavior and may lead to slight improvements in stability. However, at this stage, it is not a critical concern.
+REMARK: As we have introduced a resistor that basically attenuates our bias we may need to increase the bias voltage. The reader is encouraged to explore different tuning parameters for bias, resistor value etc. Remember RF design is loop so getting the exact solution is nearly impossible :) Find your own sweat spot. 
