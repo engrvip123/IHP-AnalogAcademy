@@ -16,8 +16,8 @@ From this point, you can use a Smith chart tool of your choice to facilitate the
 #### Step 2: L-Section Matching
 
 After using the Smith chart tool, we determined that an inductor of 105 pH and a capacitor of approximately 45 fF provide a good starting point for matching the input. These values were chosen based on the Smith chart's behavior at the given frequency.
-<p align="center"> <img src="../../../media/module_2/smith_chart_software_1.png" width="800" height="500" /> </p>
-<p align="center"> <img src="../../../media/module_2/smith_chart_software_2.png" width="800" height="600" /> </p>
+<p align="center"> <img src="../../../media/module_2/smith_chart_software_1.png" width="800" height="600" /> </p>
+<p align="center"> <img src="../../../media/module_2/smith_chart_software_2.png" width="800" height="700" /> </p>
 
 With the estimated component values in hand, we return to the schematic and insert the components accordingly. This results in the updated schematic, where the inductor and capacitor are now part of the matching network.
 
