@@ -1,0 +1,79 @@
+* Import the compiled digital library
+adut [Op En Om clk rst]
++ [B.7 B.6 B.5 B.4 B.3 B.2 B.1 B.0
++  BN.7 BN.6 BN.5 BN.4 BN.3 BN.2 BN.1 BN.0
++  D.7 D.6 D.5 D.4 D.3 D.2 D.1 D.0] null dut
+.model dut d_cosim simulation="../sar_algorithm.so" delay=10p
+
+* Inputs
+Rsvi0 Op 0 1G
+Rsvi1 En 0 1G
+Rsvi2 Om 0 1G
+Rsvi3 clk 0 1G
+Rsvi4 rst 0 1G
+
+* Outputs
+Rsvo0 B.7 0 1G
+Rsvo1 B.6 0 1G
+Rsvo2 B.5 0 1G
+Rsvo3 B.4 0 1G
+Rsvo4 B.3 0 1G
+Rsvo5 B.2 0 1G
+Rsvo6 B.1 0 1G
+Rsvo7 B.0 0 1G
+
+Rsvo8  BN.7 0 1G
+Rsvo9  BN.6 0 1G
+Rsvo10 BN.5 0 1G
+Rsvo11 BN.4 0 1G
+Rsvo12 BN.3 0 1G
+Rsvo13 BN.2 0 1G
+Rsvo14 BN.1 0 1G
+Rsvo15 BN.0 0 1G
+
+Rsvo16 D.7 0 1G
+Rsvo17 D.6 0 1G
+Rsvo18 D.5 0 1G
+Rsvo19 D.4 0 1G
+Rsvo20 D.3 0 1G
+Rsvo21 D.2 0 1G
+Rsvo22 D.1 0 1G
+Rsvo23 D.0 0 1G
+
+* Convert buses to real values for easier reading
+E_STATE_B dec_B 0 value={( 0 
++ + 128*v(B.7)/AVDD
++ + 64*v(B.6)/AVDD
++ + 32*v(B.5)/AVDD
++ + 16*v(B.4)/AVDD
++ + 8*v(B.3)/AVDD
++ + 4*v(B.2)/AVDD
++ + 2*v(B.1)/AVDD
++ + 1*v(B.0)/AVDD
++)/1000}
+.save v(dec_B)
+
+E_STATE_BN dec_BN 0 value={( 0 
++ + 128*v(BN.7)/AVDD
++ + 64*v(BN.6)/AVDD
++ + 32*v(BN.5)/AVDD
++ + 16*v(BN.4)/AVDD
++ + 8*v(BN.3)/AVDD
++ + 4*v(BN.2)/AVDD
++ + 2*v(BN.1)/AVDD
++ + 1*v(BN.0)/AVDD
++)/1000}
+.save v(dec_BN)
+
+E_STATE_D dec_D 0 value={( 0 
++ + 128*v(D.7)/AVDD
++ + 64*v(D.6)/AVDD
++ + 32*v(D.5)/AVDD
++ + 16*v(D.4)/AVDD
++ + 8*v(D.3)/AVDD
++ + 4*v(D.2)/AVDD
++ + 2*v(D.1)/AVDD
++ + 1*v(D.0)/AVDD
++)/1000}
+.save v(dec_D)
+
