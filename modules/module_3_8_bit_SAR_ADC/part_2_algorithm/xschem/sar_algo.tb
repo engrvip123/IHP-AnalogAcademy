@@ -1,0 +1,74 @@
+v {xschem version=3.4.6 file_version=1.2}
+G {}
+K {}
+V {}
+S {}
+E {}
+N 40 -530 40 -510 {lab=rst}
+N 40 -450 40 -430 {lab=GND}
+N 230 -340 290 -340 {lab=Op}
+N 220 -320 290 -320 {lab=En}
+N 210 -300 290 -300 {lab=Om}
+N 200 -280 290 -280 {lab=clk}
+N 190 -530 190 -260 {lab=rst}
+N 190 -260 290 -260 {lab=rst}
+N 450 -320 520 -320 {lab=B[7:0] bus = true
+}
+N 450 -300 520 -300 {lab=BN[7:0] bus = true
+}
+N 450 -280 520 -280 {lab=D[7:0] bus = true
+}
+N 290 -330 290 -320 {lab=En}
+N 290 -310 290 -300 {lab=Om}
+N 290 -350 290 -340 {lab=Op}
+N 290 -290 290 -280 {lab=clk}
+N 290 -270 290 -260 {lab=rst}
+N 450 -290 450 -280 {lab=D[7:0]}
+N 450 -310 450 -300 {lab=BN[7:0]}
+N 450 -330 450 -320 {lab=B[7:0]}
+N 40 -530 190 -530 {lab=rst}
+N 10 -450 40 -450 {lab=GND}
+N 10 -590 10 -450 {lab=GND}
+N 10 -590 40 -590 {lab=GND}
+N 40 -650 200 -650 {lab=clk}
+N 200 -650 200 -280 {lab=clk}
+N 40 -740 210 -740 {lab=Om}
+N 210 -740 210 -300 {lab=Om}
+N 40 -850 220 -850 {lab=En}
+N 220 -850 220 -320 {lab=En}
+N 40 -940 230 -940 {lab=Op}
+N 230 -940 230 -340 {lab=Op}
+N 10 -790 40 -790 {lab=GND}
+N 10 -680 10 -590 {lab=GND}
+N 10 -880 10 -790 {lab=GND}
+N 10 -880 40 -880 {lab=GND}
+N 10 -680 40 -680 {lab=GND}
+N 10 -790 10 -680 {lab=GND}
+C {vsource.sym} 40 -480 0 0 {name=V1 value="PULSE(0 1.2 50e-6 10e-9 10e-9 0.5e-6 1e-6)"}
+C {gnd.sym} 40 -430 0 0 {name=l1 lab=GND}
+C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_3_8_bit_SAR_ADC/part_2_algorithm/verilog/sar_algo.sym} 370 -310 0 0 {name=adut
+dut=dut
+model=./sar_algo.so
+d_cosim_model= d_cosim
+}
+C {code_shown.sym} 620 -350 0 0 {name=NGSPICE
+only_toplevel=true
+value="
+.control
+save all
+tran 10n 6u
+write test_mim_cap.raw
+.endc
+" name=s1 only_toplevel=false value=blabla}
+C {lab_pin.sym} 520 -320 2 0 {name=p2 sig_type=std_logic lab=B[7:0]}
+C {lab_pin.sym} 520 -300 2 0 {name=p3 sig_type=std_logic lab=BN[7:0]}
+C {lab_pin.sym} 520 -280 2 0 {name=p4 sig_type=std_logic lab=D[7:0]}
+C {lab_pin.sym} 230 -350 2 0 {name=p1 sig_type=std_logic lab=Op}
+C {lab_pin.sym} 220 -370 2 0 {name=p5 sig_type=std_logic lab=En}
+C {lab_pin.sym} 210 -390 2 0 {name=p6 sig_type=std_logic lab=Om}
+C {lab_pin.sym} 200 -410 2 0 {name=p7 sig_type=std_logic lab=clk}
+C {lab_pin.sym} 190 -430 2 0 {name=p8 sig_type=std_logic lab=rst}
+C {vsource.sym} 40 -620 0 0 {name=V2 value="PULSE(0 1.2 50e-6 10e-9 10e-9 0.5e-6 1e-6)"}
+C {vsource.sym} 40 -710 0 0 {name=V3 value="PULSE(0 1.2 50e-6 10e-9 10e-9 0.5e-6 1e-6)"}
+C {vsource.sym} 40 -820 0 0 {name=V4 value="PULSE(0 1.2 50e-6 10e-9 10e-9 0.5e-6 1e-6)"}
+C {vsource.sym} 40 -910 0 0 {name=V5 value="PULSE(0 1.2 50e-6 10e-9 10e-9 0.5e-6 1e-6)"}

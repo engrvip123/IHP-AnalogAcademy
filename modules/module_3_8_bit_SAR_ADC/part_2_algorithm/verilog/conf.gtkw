@@ -1,0 +1,24 @@
+[*]
+[*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
+[*] Mon Sep 30 13:11:15 2024
+[*]
+[dumpfile] "/home/herman/tmp/AnalogMux-Workshop/design_data/verilog/basicBlock/basic_tb.vcd"
+[dumpfile_mtime] "Mon Sep 30 13:10:47 2024"
+[dumpfile_size] 777
+[savefile] "/home/herman/tmp/AnalogMux-Workshop/design_data/verilog/basicBlock/conf.gtkw"
+[timestart] 0
+[size] 1906 985
+[pos] -1 -1
+*-14.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 269
+[signals_width] 102
+[sst_expanded] 1
+[sst_vpaned_height] 291
+@28
+basic_tb.clk
+basic_tb.rst
+basic_tb.dout[1:0]
+@29
+basic_tb.din[1:0]
+[pattern_trace] 1
+[pattern_trace] 0

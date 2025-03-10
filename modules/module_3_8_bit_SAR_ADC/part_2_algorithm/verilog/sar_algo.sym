@@ -1,0 +1,43 @@
+G {}
+K {type=delay
+verilog_ignore=true
+vhdl_ignore=true
+format="@name [ @@Op @@En @@Om @@clk @@rst ] [ @@B[7:0] @@BN[7:0] @@D[7:0] ] null @dut .model @dut @d_cosim_model simulation=@model"
+template="name=adut
+dut=dut
+model=./sar_algo.so
+d_cosim_model= d_cosim
+"}
+V {}
+S {}
+E {}
+B 5 -82.5 -42.5 -77.5 -37.5 {name=Op dir=in verilog_type=wire}
+T {Op} -90 -42.5 0 1 0.12 0.12 {}
+L 4 -80 -40 -50 -40 {}
+B 5 -82.5 -22.5 -77.5 -17.5 {name=En dir=in verilog_type=wire}
+T {En} -90 -22.5 0 1 0.12 0.12 {}
+L 4 -80 -20 -50 -20 {}
+B 5 -82.5 -2.5 -77.5 2.5 {name=Om dir=in verilog_type=wire}
+T {Om} -90 -2.5 0 1 0.12 0.12 {}
+L 4 -80 0 -50 0 {}
+B 5 -82.5 17.5 -77.5 22.5 {name=clk dir=in verilog_type=wire}
+T {clk} -90 17.5 0 1 0.12 0.12 {}
+L 4 -80 20 -50 20 {}
+B 5 -82.5 37.5 -77.5 42.5 {name=rst dir=in verilog_type=wire}
+T {rst} -90 37.5 0 1 0.12 0.12 {}
+L 4 -80 40 -50 40 {}
+B 5 77.5 -22.5 82.5 -17.5 {name=B[7:0] dir=out verilog_type=wire}
+T {B[7:0]} 90 -22.5 0 0 0.12 0.12 {}
+L 4 80 -20 50 -20 {}
+B 5 77.5 -2.5 82.5 2.5 {name=BN[7:0] dir=out verilog_type=wire}
+T {BN[7:0]} 90 -2.5 0 0 0.12 0.12 {}
+L 4 80 0 50 0 {}
+B 5 77.5 17.5 82.5 22.5 {name=D[7:0] dir=out verilog_type=wire}
+T {D[7:0]} 90 17.5 0 0 0.12 0.12 {}
+L 4 80 20 50 20 {}
+L 4 50 -50 50 50 {}
+L 4 -50 -50 -50 50 {}
+L 4 -50 50 50 50 {}
+L 4 -50 -50 50 -50 {}
+T {sar_algorithm} 0 55 0 0 0.12 0.12 {}
+
