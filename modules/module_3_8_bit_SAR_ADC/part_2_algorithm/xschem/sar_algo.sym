@@ -1,0 +1,106 @@
+G {}
+K {type=delay
+verilog_ignore=true
+vhdl_ignore=true
+format="@name [ @@{Op} @@{En} @@{Om} @@{clk} @@{rst} ] [ @@{B_7} @@{B_6} @@{B_5} @@{B_4} @@{B_3} @@{B_2} @@{B_1} @@{B_0} @@{BN_7} @@{BN_6} @@{BN_5} @@{BN_4} @@{BN_3} @@{BN_2} @@{BN_1} @@{BN_0} @@{D_7} @@{D_6} @@{D_5} @@{D_4} @@{D_3} @@{D_2} @@{D_1} @@{D_0} ] null @dut
+.model @dut @d_cosim_model simulation=@model"
+template="name=adut
+dut=dut
+d_cosim_model=d_cosim
+model=./sar_algo.so"
+}
+V {}
+S {}
+E {}
+B 5 -82.5 -42.5 -77.5 -37.5 {name=Op dir=in verilog_type=wire propag=0}
+T {Op} -90 -42.5 0 1 0.12 0.12 {}
+L 4 -80 -40 -50 -40 {}
+B 5 -82.5 -22.5 -77.5 -17.5 {name=En dir=in verilog_type=wire propag=0}
+T {En} -90 -22.5 0 1 0.12 0.12 {}
+L 4 -80 -20 -50 -20 {}
+B 5 -82.5 -2.5 -77.5 2.5 {name=Om dir=in verilog_type=wire propag=0}
+T {Om} -90 -2.5 0 1 0.12 0.12 {}
+L 4 -80 0 -50 0 {}
+B 5 -82.5 17.5 -77.5 22.5 {name=clk dir=in verilog_type=wire propag=0}
+T {clk} -90 17.5 0 1 0.12 0.12 {}
+L 4 -80 20 -50 20 {}
+B 5 -82.5 37.5 -77.5 42.5 {name=rst dir=in verilog_type=wire propag=0}
+T {rst} -90 37.5 0 1 0.12 0.12 {}
+L 4 -80 40 -50 40 {}
+B 5 77.5 -232.5 82.5 -227.5 {name=B_7 dir=out verilog_type=wire propag=1}
+T {B_7} 90 -232.5 0 0 0.12 0.12 {}
+L 4 80 -230 50 -230 {}
+B 5 77.5 -212.5 82.5 -207.5 {name=B_6 dir=out verilog_type=wire propag=1}
+T {B_6} 90 -212.5 0 0 0.12 0.12 {}
+L 4 80 -210 50 -210 {}
+B 5 77.5 -192.5 82.5 -187.5 {name=B_5 dir=out verilog_type=wire propag=1}
+T {B_5} 90 -192.5 0 0 0.12 0.12 {}
+L 4 80 -190 50 -190 {}
+B 5 77.5 -172.5 82.5 -167.5 {name=B_4 dir=out verilog_type=wire propag=1}
+T {B_4} 90 -172.5 0 0 0.12 0.12 {}
+L 4 80 -170 50 -170 {}
+B 5 77.5 -152.5 82.5 -147.5 {name=B_3 dir=out verilog_type=wire propag=1}
+T {B_3} 90 -152.5 0 0 0.12 0.12 {}
+L 4 80 -150 50 -150 {}
+B 5 77.5 -132.5 82.5 -127.5 {name=B_2 dir=out verilog_type=wire propag=1}
+T {B_2} 90 -132.5 0 0 0.12 0.12 {}
+L 4 80 -130 50 -130 {}
+B 5 77.5 -112.5 82.5 -107.5 {name=B_1 dir=out verilog_type=wire propag=1}
+T {B_1} 90 -112.5 0 0 0.12 0.12 {}
+L 4 80 -110 50 -110 {}
+B 5 77.5 -92.5 82.5 -87.5 {name=B_0 dir=out verilog_type=wire propag=1}
+T {B_0} 90 -92.5 0 0 0.12 0.12 {}
+L 4 80 -90 50 -90 {}
+B 5 77.5 -72.5 82.5 -67.5 {name=BN_7 dir=out verilog_type=wire propag=1}
+T {BN_7} 90 -72.5 0 0 0.12 0.12 {}
+L 4 80 -70 50 -70 {}
+B 5 77.5 -52.5 82.5 -47.5 {name=BN_6 dir=out verilog_type=wire propag=1}
+T {BN_6} 90 -52.5 0 0 0.12 0.12 {}
+L 4 80 -50 50 -50 {}
+B 5 77.5 -32.5 82.5 -27.5 {name=BN_5 dir=out verilog_type=wire propag=1}
+T {BN_5} 90 -32.5 0 0 0.12 0.12 {}
+L 4 80 -30 50 -30 {}
+B 5 77.5 -12.5 82.5 -7.5 {name=BN_4 dir=out verilog_type=wire propag=1}
+T {BN_4} 90 -12.5 0 0 0.12 0.12 {}
+L 4 80 -10 50 -10 {}
+B 5 77.5 7.5 82.5 12.5 {name=BN_3 dir=out verilog_type=wire propag=1}
+T {BN_3} 90 7.5 0 0 0.12 0.12 {}
+L 4 80 10 50 10 {}
+B 5 77.5 27.5 82.5 32.5 {name=BN_2 dir=out verilog_type=wire propag=1}
+T {BN_2} 90 27.5 0 0 0.12 0.12 {}
+L 4 80 30 50 30 {}
+B 5 77.5 47.5 82.5 52.5 {name=BN_1 dir=out verilog_type=wire propag=1}
+T {BN_1} 90 47.5 0 0 0.12 0.12 {}
+L 4 80 50 50 50 {}
+B 5 77.5 67.5 82.5 72.5 {name=BN_0 dir=out verilog_type=wire propag=1}
+T {BN_0} 90 67.5 0 0 0.12 0.12 {}
+L 4 80 70 50 70 {}
+B 5 77.5 87.5 82.5 92.5 {name=D_7 dir=out verilog_type=wire propag=1}
+T {D_7} 90 87.5 0 0 0.12 0.12 {}
+L 4 80 90 50 90 {}
+B 5 77.5 107.5 82.5 112.5 {name=D_6 dir=out verilog_type=wire propag=1}
+T {D_6} 90 107.5 0 0 0.12 0.12 {}
+L 4 80 110 50 110 {}
+B 5 77.5 127.5 82.5 132.5 {name=D_5 dir=out verilog_type=wire propag=1}
+T {D_5} 90 127.5 0 0 0.12 0.12 {}
+L 4 80 130 50 130 {}
+B 5 77.5 147.5 82.5 152.5 {name=D_4 dir=out verilog_type=wire propag=1}
+T {D_4} 90 147.5 0 0 0.12 0.12 {}
+L 4 80 150 50 150 {}
+B 5 77.5 167.5 82.5 172.5 {name=D_3 dir=out verilog_type=wire propag=1}
+T {D_3} 90 167.5 0 0 0.12 0.12 {}
+L 4 80 170 50 170 {}
+B 5 77.5 187.5 82.5 192.5 {name=D_2 dir=out verilog_type=wire propag=1}
+T {D_2} 90 187.5 0 0 0.12 0.12 {}
+L 4 80 190 50 190 {}
+B 5 77.5 207.5 82.5 212.5 {name=D_1 dir=out verilog_type=wire propag=1}
+T {D_1} 90 207.5 0 0 0.12 0.12 {}
+L 4 80 210 50 210 {}
+B 5 77.5 227.5 82.5 232.5 {name=D_0 dir=out verilog_type=wire propag=1}
+T {D_0} 90 227.5 0 0 0.12 0.12 {}
+L 4 80 230 50 230 {}
+L 4 50 -240 50 240 {}
+L 4 -50 -240 -50 240 {}
+L 4 -50 240 50 240 {}
+L 4 -50 -240 50 -240 {}
+T {sar_algorithm} 0 245 0 0 0.12 0.12 {}

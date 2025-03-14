@@ -10,7 +10,7 @@ MIXED_OBJ = sar_algo_obj_dir
 VCD_FILE = sar_algo_tb.vcd
 SRC_FILES = sar_algo.v sar_algo_tb.v
 NGSPICE_FILE = sar_algo.v
-DEST_DIR = xschem
+DEST_DIR = ../xschem/simulations
 # Default target
 all: run_wave
 

@@ -1,6 +1,6 @@
 <Qucs Schematic 24.4.1>
 <Properties>
-  <View=1024,-114,2726,546,1.77576,0,0>
+  <View=1256,-79,2505,569,1.71577,0,180>
   <Grid=10,10,1>
   <DataSet=load_pull_final.dat>
   <DataDisplay=load_pull_final.dpl>
@@ -19,9 +19,8 @@
   <Lib npn13G3 1 1780 270 10 64 0 0 "/home/pedersen/.qucs/user_lib/IHP_PDK_nonlinear_components" 0 "npn13G2" 0 "10" 1>
   <IProbe Pr1 1 1780 160 18 -26 1 3>
   <GND * 1 1820 270 0 0 0 0>
-  <C C14 1 1390 270 -26 17 0 0 "42.975fF" 1 "" 0 "neutral" 0>
   <Vdc V3 1 1520 410 18 -26 0 1 "1.25" 1>
-  <INDQ LQ1 1 1520 310 -62 -26 0 3 "103.425pH" 1 "13" 1 "50e9" 0 "Linear" 0 "26.85" 0>
+  <INDQ LQ1 1 1520 310 -62 -26 0 3 "103 pH" 1 "13" 1 "50e9" 0 "Linear" 0 "26.85" 0>
   <IProbe Pr2 1 1330 300 16 -26 0 1>
   <IProbe Pr3 1 2070 100 -26 16 0 0>
   <GND * 1 1920 370 0 0 0 0>
@@ -32,15 +31,16 @@
   <C C13 1 1670 270 -26 17 0 0 "100 fF" 1 "" 0 "neutral" 0>
   <R R1 1 1670 200 -26 15 0 0 "5 kOhm" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "US" 0>
   <GND * 1 2120 280 0 0 0 0>
-  <SpiceLib SpiceLib1 1 1880 -60 -12 16 0 0 "/home/pedersen/IHP-Open-PDK/ihp-sg13g2/libs.tech/xyce/models/cornerHBT.lib" 1 "hbt_typ" 1>
   <.HB HB1 1 1500 -20 0 61 0 0 "50 GHz" 0 "5" 1 "1 pA" 0 "1 uV" 0 "0.001" 0 "150" 0>
   <Iac I1 1 1330 430 20 -26 0 1 "y" 1 "50e9" 0 "0" 0 "0" 0>
   <R R3 1 1330 360 15 -26 0 1 "50 Ohm" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "european" 0>
   <SpicePar SpicePar1 1 1520 110 -28 16 0 0 "y=1" 1>
   <.SW SW3 1 1330 -20 0 61 0 0 "HB1" 1 "lin" 1 "y" 1 "0.0001" 1 "0.0045" 1 "50" 1>
-  <C C15 1 1990 100 -26 17 0 0 "160 fF" 1 "" 0 "neutral" 0>
-  <INDQ LQ2 1 1780 50 -59 -26 0 1 "320pH" 1 "13" 1 "50e9" 0 "Linear" 0 "26.85" 0>
   <R R2 1 2120 190 15 -26 0 1 "50 Ohm" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "US" 0>
+  <SpiceLib SpiceLib1 1 1890 -30 -12 16 0 0 "/home/pedersen/IHP-Open-PDK/ihp-sg13g2/libs.tech/xyce/models/cornerHBT.lib" 1 "hbt_typ" 1>
+  <C C14 1 1390 270 -26 17 0 0 "43 fF" 1 "" 0 "neutral" 0>
+  <C C15 1 1990 100 -26 17 0 0 "160 fF" 1 "" 0 "neutral" 0>
+  <INDQ LQ2 1 1780 50 8 -12 0 3 "320pH" 1 "13" 1 "50e9" 0 "Linear" 0 "26.85" 0>
 </Components>
 <Wires>
   <1780 100 1780 130 "" 0 0 0 "">

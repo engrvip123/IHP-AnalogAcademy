@@ -1,4 +1,3 @@
-
 import os
 import sys
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), 'modules')))
@@ -17,19 +16,18 @@ from openEMS import openEMS
 from openEMS.physical_constants import *
 
 # Model comments
-# Core of PA transistor model, all ports excited for multiport data
 
 
 # ======================== workflow settings ================================
 
 # preview model/mesh only?
 # postprocess existing data without re-running simulation?
-preview_only = False   
+preview_only = True   
 postprocess_only = False
 
 # ===================== input files and path settings =======================
 
-#gds_filename = "test.gds"      # geometries
+# GDS filename
 gds_filename = "/home/pedersen/projects/IHP-AnalogAcademy/modules/module_2_50GHz_MPA/part_4_layout_EMsims/core_1/layout_gds/50_ghz_mpa_core_no_BJT.gds"      # geometries
 XML_filename = "SG13G2.xml"       # stackup
 
@@ -77,9 +75,8 @@ simulation_ports = simulation_setup.all_simulation_ports()
 # instead of in-plane port specified with target_layername, we here use via port specified with from_layername and to_layername. GND means bottom of simulation box
 simulation_ports.add_port(simulation_setup.simulation_port(portnumber=1, voltage=1, port_Z0=50, source_layernum=201, from_layername='Metal3', to_layername='TopMetal2', direction='z'))
 simulation_ports.add_port(simulation_setup.simulation_port(portnumber=2, voltage=1, port_Z0=50, source_layernum=202, from_layername='Metal3', to_layername='TopMetal2', direction='z'))
-simulation_ports.add_port(simulation_setup.simulation_port(portnumber=3, voltage=1, port_Z0=50, source_layernum=203, from_layername='Metal2', to_layername='Metal1', direction='z'))
-simulation_ports.add_port(simulation_setup.simulation_port(portnumber=4, voltage=1, port_Z0=50, source_layernum=204, from_layername='Metal2', to_layername='Metal1', direction='z'))
-
+simulation_ports.add_port(simulation_setup.simulation_port(portnumber=3, voltage=1, port_Z0=50, source_layernum=203, target_layername='Metal2', direction='-x'))
+simulation_ports.add_port(simulation_setup.simulation_port(portnumber=4, voltage=1, port_Z0=50, source_layernum=204, target_layername='Metal2', direction='x'))
 
 # ======================== simulation ================================
 
@@ -166,4 +163,6 @@ if preview_only==False:
 
     # Show all plots
     show()
+
+
 
