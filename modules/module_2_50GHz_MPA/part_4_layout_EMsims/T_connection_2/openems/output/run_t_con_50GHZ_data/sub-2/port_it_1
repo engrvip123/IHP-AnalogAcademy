@@ -1,4 +1,4 @@
-% time-domain current integration by openEMS v0.0.35-108-gc651cce @Fri Mar 14 15:30:17 2025
+% time-domain current integration by openEMS v0.0.35-108-gc651cce @Fri Mar 14 16:32:29 2025
 % start-coordinates: (-6.4535e-05,-2.63165e-05,0.00016438) m -> [18,40,46]
 % stop-coordinates: (-6.4535e-05,-2.302e-05,0.00016798) m -> [18,47,57]
 % t/s	current

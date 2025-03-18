@@ -1,15 +1,14 @@
-* Extracted by KLayout with SG13G2 LVS runset on : 13/02/2025 13:49
+* Extracted by KLayout with SG13G2 LVS runset on : 18/03/2025 08:57
 
-.SUBCKT input_common_centroid v\x2d vdd v+ dn4 dn3
-M$1 vdd vdd \$7 \$3 sg13_lv_pmos L=3.7u W=14.56u AS=4.9504p AD=4.9504p
+.SUBCKT input_common_centroid v+ v\x2d vdd dn4 dn3
+M$1 vdd vdd \$6 \$27 sg13_lv_pmos L=3.7u W=14.56u AS=4.9504p AD=4.9504p
 + PS=31.84u PD=31.84u
-M$2 \$7 v+ dn4 \$3 sg13_lv_pmos L=3.7u W=7.28u AS=2.4752p AD=2.4752p PS=15.92u
+M$2 \$6 v+ dn4 \$27 sg13_lv_pmos L=3.7u W=7.28u AS=2.4752p AD=2.4752p PS=15.92u
 + PD=15.92u
-M$3 dn4 vdd vdd \$3 sg13_lv_pmos L=3.7u W=7.28u AS=2.4752p AD=2.4752p PS=15.92u
-+ PD=15.92u
-M$5 \$7 v\x2d dn3 \$3 sg13_lv_pmos L=3.7u W=7.28u AS=2.4752p AD=2.4752p
+M$3 dn4 vdd vdd \$27 sg13_lv_pmos L=3.7u W=7.28u AS=2.4752p AD=2.4752p
 + PS=15.92u PD=15.92u
-M$6 dn3 vdd vdd \$3 sg13_lv_pmos L=3.7u W=7.28u AS=2.4752p AD=2.4752p PS=15.92u
-+ PD=15.92u
-R$13 \$3 vdd ntap1 A=197.9248p P=243.6u
+M$5 \$6 v\x2d dn3 \$27 sg13_lv_pmos L=3.7u W=7.28u AS=2.4752p AD=2.4752p
++ PS=15.92u PD=15.92u
+M$6 dn3 vdd vdd \$27 sg13_lv_pmos L=3.7u W=7.28u AS=2.4752p AD=2.4752p
++ PS=15.92u PD=15.92u
 .ENDS input_common_centroid

@@ -136,7 +136,7 @@ if preview_only==False:
     s33 = utilities.calculate_Sij (3, 3, f, sim_path, simulation_ports)
 
 
-    s4p_name = os.path.join(sim_path, model_basename + '.s3p')
+    s3p_name = os.path.join(sim_path, model_basename + '.s3p')
     utilities.write_snp (np.array([[s11,s21,s31], [s12,s22,s32], [s13,s23,s33]]),f, s3p_name)
 
     print('\nStarting plots')
