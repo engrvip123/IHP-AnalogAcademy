@@ -12,8 +12,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0
-x2=6e-06
+x1=3e-07
+x2=6.3e-06
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -32,8 +32,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0
-x2=6e-06
+x1=3e-07
+x2=6.3e-06
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -54,8 +54,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0
-x2=6e-06
+x1=3e-07
+x2=6.3e-06
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -75,8 +75,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0
-x2=6e-06
+x1=3e-07
+x2=6.3e-06
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -88,15 +88,15 @@ logy=0
 color=4
 node=en}
 B 2 890 -420 1690 -20 {flags=graph
-y1=0
-y2=0.01
+y1=-0.002
+y2=0.008
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0
-x2=6e-06
+x1=3e-07
+x2=6.3e-06
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -121,8 +121,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0
-x2=6e-06
+x1=3e-07
+x2=6.3e-06
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -148,8 +148,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0
-x2=6e-06
+x1=3e-07
+x2=6.3e-06
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -175,8 +175,8 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0
-x2=6e-06
+x1=3e-07
+x2=6.3e-06
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -274,6 +274,8 @@ N 590 -540 640 -540 {lab=B7}
 N 40 -530 40 -510 {lab=rst}
 N 140 -740 140 -300 {lab=Om}
 N 590 -100 640 -100 {lab=D1}
+N 40 -650 40 -640 {lab=clk}
+N 40 -600 40 -590 {lab=GND}
 C {gnd.sym} 40 -430 0 0 {name=l1 lab=GND}
 C {code_shown.sym} 30 -160 0 0 {name=NGSPICE
 only_toplevel=true
@@ -284,7 +286,6 @@ tran 50n 6u
 write sar_algo.raw
 .endc
 " name=s1 only_toplevel=false value=blabla}
-C {vsource.sym} 40 -620 0 0 {name=V2 value="dc 0 ac 0 pulse(0 1.2 50e-9 10e-15 10e-15 0.5e-6 1e-6)"}
 C {vsource.sym} 40 -710 0 0 {name=V3 value=0}
 C {vsource.sym} 40 -910 0 0 {name=V5 value=1.2}
 C {iopin.sym} 640 -520 0 0 {name=p2 lab=B6}
@@ -324,8 +325,8 @@ C {lab_pin.sym} 120 -450 2 0 {name=p29 sig_type=std_logic lab=rst}
 C {adc_bridge1.sym} 230 -340 0 0 {name=A25
 adc=adc1
 adc_bridge_model=adc_bridge
-in_low=0.4
-in_high=0.6
+in_low=0.2
+in_high=1.0
 }
 C {adc_bridge1.sym} 230 -320 0 0 {name=A26
 adc=adc1
@@ -497,3 +498,8 @@ out_high=1.2
 }
 C {iopin.sym} 640 -540 0 0 {name=p31 lab=B7}
 C {sar_algo.sym} 370 -310 0 0 {}
+C {d_osc.sym} 40 -620 0 0 {name=aclock
+clk=clk
+d_osc_model=d_osc
+freq=1Meg 
+}

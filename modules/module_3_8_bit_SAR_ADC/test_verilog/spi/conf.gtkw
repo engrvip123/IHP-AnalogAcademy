@@ -1,0 +1,30 @@
+[*]
+[*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
+[*] Fri Sep 27 14:29:16 2024
+[*]
+[dumpfile] "/home/herman/tmp/AnalogMux-Workshop/design_data/verilog/spi/control_tb.vcd"
+[dumpfile_mtime] "Fri Sep 27 14:28:09 2024"
+[dumpfile_size] 3045
+[savefile] "/home/herman/tmp/AnalogMux-Workshop/design_data/verilog/spi/conf.gtkw"
+[timestart] 0
+[size] 1906 985
+[pos] -1 -1
+*-15.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] control_tb.
+[sst_width] 269
+[signals_width] 118
+[sst_expanded] 1
+[sst_vpaned_height] 291
+@28
+control_tb.clk
+control_tb.rst
+@29
+control_tb.ss
+@28
+control_tb.sck
+control_tb.mosi
+@22
+control_tb.dout_p[7:0]
+control_tb.dout_n[7:0]
+[pattern_trace] 1
+[pattern_trace] 0

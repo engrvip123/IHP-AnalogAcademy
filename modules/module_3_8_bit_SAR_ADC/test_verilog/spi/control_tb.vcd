@@ -1,0 +1,365 @@
+$date
+	Thu Mar 20 15:52:24 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module control_tb $end
+$var wire 1 ! miso $end
+$var wire 8 " dout_p [7:0] $end
+$var wire 8 # dout_n [7:0] $end
+$var reg 1 $ clk $end
+$var reg 8 % din [7:0] $end
+$var reg 1 & mosi $end
+$var reg 1 ' rst $end
+$var reg 1 ( sck $end
+$var reg 1 ) ss $end
+$scope module uut $end
+$var wire 1 $ clk $end
+$var wire 8 * dout_n [7:0] $end
+$var wire 8 + dout_p [7:0] $end
+$var wire 1 & mosi $end
+$var wire 1 ' rst $end
+$var wire 1 ( sck $end
+$var wire 1 ) ss $end
+$var wire 1 ! miso $end
+$var wire 8 , dout [7:0] $end
+$var wire 1 - done $end
+$var reg 8 . in_reg [7:0] $end
+$scope module uut $end
+$var wire 1 $ clk $end
+$var wire 8 / din [7:0] $end
+$var wire 1 - done $end
+$var wire 1 ! miso $end
+$var wire 1 & mosi $end
+$var wire 1 ' rst $end
+$var wire 1 ( sck $end
+$var wire 1 ) ss $end
+$var wire 8 0 dout [7:0] $end
+$var reg 3 1 bit_ct_d [2:0] $end
+$var reg 3 2 bit_ct_q [2:0] $end
+$var reg 8 3 data_d [7:0] $end
+$var reg 8 4 data_q [7:0] $end
+$var reg 1 5 done_d $end
+$var reg 1 6 done_q $end
+$var reg 8 7 dout_d [7:0] $end
+$var reg 8 8 dout_q [7:0] $end
+$var reg 1 9 miso_d $end
+$var reg 1 : miso_q $end
+$var reg 1 ; mosi_d $end
+$var reg 1 < mosi_q $end
+$var reg 1 = sck_d $end
+$var reg 1 > sck_old_d $end
+$var reg 1 ? sck_old_q $end
+$var reg 1 @ sck_q $end
+$var reg 1 A ss_d $end
+$var reg 1 B ss_q $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+xB
+1A
+x@
+x?
+x>
+0=
+x<
+0;
+x:
+x9
+bx 8
+bx 7
+x6
+05
+bx 4
+bx 3
+bx 2
+bx 1
+bx 0
+bx /
+bx .
+x-
+bx ,
+bx +
+bx *
+1)
+0(
+1'
+0&
+b1000000 %
+0$
+bx #
+bx "
+x!
+$end
+#5000
+b11111111 #
+b11111111 *
+b0 7
+b0 1
+0>
+x9
+1B
+0<
+0@
+1!
+1:
+b0 "
+b0 +
+b0 ,
+b0 0
+b0 8
+b0 2
+0-
+06
+1$
+#10000
+0$
+0'
+#15000
+0?
+x!
+x:
+1$
+#20000
+0A
+0$
+0)
+#25000
+0B
+1$
+#30000
+1=
+0$
+1(
+b10000000 %
+#35000
+b1 1
+bx0 3
+1>
+1@
+1$
+#40000
+b1 1
+bx0 3
+0=
+0$
+0(
+#45000
+0>
+1?
+bx0 4
+0@
+b1 2
+1$
+#50000
+1=
+1;
+0$
+1(
+b0 %
+1&
+#55000
+b10 1
+bx01 3
+1>
+0?
+1<
+1@
+1$
+#60000
+b10 1
+bx01 3
+0=
+0$
+0(
+#65000
+0>
+1?
+bx01 4
+0@
+b10 2
+1$
+#70000
+1=
+0;
+0$
+1(
+0&
+#75000
+b11 1
+bx010 3
+1>
+0?
+0<
+1@
+1$
+#80000
+b11 1
+bx010 3
+0=
+0$
+0(
+#85000
+0>
+1?
+bx010 4
+0@
+b11 2
+1$
+#90000
+1=
+0$
+1(
+#95000
+b100 1
+bx0100 3
+1>
+0?
+1@
+1$
+#100000
+b100 1
+bx0100 3
+0=
+0$
+0(
+#105000
+0>
+1?
+bx0100 4
+0@
+b100 2
+1$
+#110000
+1=
+0$
+1(
+#115000
+b101 1
+bx01000 3
+1>
+0?
+1@
+1$
+#120000
+b101 1
+bx01000 3
+0=
+0$
+0(
+#125000
+0>
+1?
+bx01000 4
+0@
+b101 2
+1$
+#130000
+1=
+0$
+1(
+#135000
+b110 1
+bx010000 3
+1>
+0?
+1@
+1$
+#140000
+b110 1
+bx010000 3
+0=
+0$
+0(
+#145000
+0>
+1?
+bx010000 4
+0@
+b110 2
+1$
+#150000
+1=
+0$
+1(
+#155000
+b111 1
+bx0100000 3
+1>
+0?
+1@
+1$
+#160000
+b111 1
+bx0100000 3
+0=
+0$
+0(
+#165000
+0>
+1?
+bx0100000 4
+0@
+b111 2
+1$
+#170000
+1=
+0$
+1(
+#175000
+15
+b1000000 7
+b0 1
+bx 3
+1>
+0?
+1@
+1$
+#180000
+b1000000 7
+b0 1
+15
+bx 3
+0=
+0$
+0(
+#185000
+b10111111 #
+b10111111 *
+05
+0>
+1?
+bx 4
+0@
+b1000000 "
+b1000000 +
+b1000000 ,
+b1000000 0
+b1000000 8
+b0 2
+1-
+16
+1$
+#190000
+1A
+0$
+1)
+#195000
+0?
+1B
+0-
+06
+1$
+#200000
+0$
+#205000
+1$
+#210000
+0$

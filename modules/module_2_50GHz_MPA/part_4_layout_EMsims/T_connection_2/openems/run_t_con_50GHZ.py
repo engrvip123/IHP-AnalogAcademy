@@ -22,13 +22,13 @@ from openEMS.physical_constants import *
 
 # preview model/mesh only?
 # postprocess existing data without re-running simulation?
-preview_only = False   
+preview_only = True
 postprocess_only = False
 
 # ===================== input files and path settings =======================
 
 # GDS filename
-gds_filename = "/home/pedersen/projects/IHP-AnalogAcademy/modules/module_2_50GHz_MPA/part_4_layout_EMsims/T_connection_2/layout_gds/t_connector.gds"      # geometries
+gds_filename = "../layout_gds/t_connector.gds"      # geometries
 XML_filename = "SG13G2.xml"       # stackup
 
 # preprocess GDSII for safe handling of cutouts/holes?
@@ -51,20 +51,20 @@ print('Simulation data directory: ', sim_path)
 # ======================== simulation settings ================================
 
 unit   = 1e-6   # geometry is in microns
-margin = 100    # distance in microns from GDSII geometry boundary to simulation boundary 
+margin = 50    # distance in microns from GDSII geometry boundary to simulation boundary 
 
 fstart = 0
 fstop  = 350e9
 numfreq = 401
 
-refined_cellsize = 0.3  # mesh cell size in conductor region
+refined_cellsize = 0.2  # mesh cell size in conductor region
 
 # choices for boundary xmin,xmax,ymin,ymax,zmin,zmax: 
 # 'PEC' : perfect electric conductor (default)
 # 'PMC' : perfect magnetic conductor, useful for symmetries
 # 'MUR' : simple MUR absorbing boundary conditions
 # 'PML_8' : PML absorbing boundary conditions
-Boundaries = ['PML_4', 'PML_4', 'PML_4', 'PML_4', 'PEC', 'PML_4']
+Boundaries = ['PEC', 'PEC', 'PEC', 'PEC', 'PEC', 'PEC']
 
 cells_per_wavelength = 20   # how many mesh cells per wavelength, must be 10 or more
 energy_limit = -50          # end criteria for residual energy (dB)
@@ -73,9 +73,9 @@ energy_limit = -50          # end criteria for residual energy (dB)
 # note that for multiport simulation, excitations are switched on/off in simulation_setup.createSimulation below
 simulation_ports = simulation_setup.all_simulation_ports()
 # instead of in-plane port specified with target_layername, we here use via port specified with from_layername and to_layername. GND means bottom of simulation box
-simulation_ports.add_port(simulation_setup.simulation_port(portnumber=1, voltage=1, port_Z0=50, source_layernum=201, target_layername='TopMetal2', direction='x'))
-simulation_ports.add_port(simulation_setup.simulation_port(portnumber=2, voltage=1, port_Z0=50, source_layernum=202, target_layername='TopMetal2', direction='x'))
-simulation_ports.add_port(simulation_setup.simulation_port(portnumber=3, voltage=1, port_Z0=50, source_layernum=203, target_layername='TopMetal2', direction='-y'))
+simulation_ports.add_port(simulation_setup.simulation_port(portnumber=1, voltage=1, port_Z0=50, source_layernum=201, from_layername='Metal3', to_layername='TopMetal2', direction='z'))
+simulation_ports.add_port(simulation_setup.simulation_port(portnumber=2, voltage=1, port_Z0=50, source_layernum=202, from_layername='Metal3', to_layername='TopMetal2', direction='z'))
+simulation_ports.add_port(simulation_setup.simulation_port(portnumber=3, voltage=1, port_Z0=50, source_layernum=203, from_layername='Metal3', to_layername='TopMetal2', direction='z'))
 
 
 # ======================== simulation ================================

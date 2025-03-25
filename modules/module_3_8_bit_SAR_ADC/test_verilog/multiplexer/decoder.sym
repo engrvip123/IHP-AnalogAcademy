@@ -1,0 +1,87 @@
+v {xschem version=3.4.5 file_version=1.2
+*
+* This file is part of XSCHEM,
+* a schematic capture and Spice/Vhdl/Verilog netlisting tool for circuit
+* simulation.
+* Copyright (C) 1998-2023 Stefan Frederik Schippers
+*
+* This program is free software; you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation; either version 2 of the License, or
+* (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program; if not, write to the Free Software
+* Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+}
+G {}
+K {type=delay
+verilog_ignore=true
+vhdl_ignore=true
+format="@name [ @@clk @@rst @@ctrl_1 @@ctrl_2 @@ctrl_3 @@ctrl_4 ] [ @@dout_p0 @@dout_p1 @@dout_p2 @@dout_p3 @@dout_p4 @@dout_p5 @@dout_p6 @@dout_p7  @@dout_n0 @@dout_n1 @@dout_n2 @@dout_n3 @@dout_n4 @@dout_n5 @@dout_n6 @@dout_n7 ] null @dut 
+.model @dut @d_cosim_model  simulation=@model"
+template="name=adut
+dut=dut
+d_cosim_model=d_cosim
+model=./decoder.so
+"
+}
+V {}
+S {}
+E {}
+L 4 -50 -40 -50 170 {}
+L 4 -50 170 50 170 {}
+L 4 -50 -150 50 -150 {}
+L 4 -50 -150 -50 -40 {}
+L 4 50 -150 50 170 {}
+B 5 -52.5 -32.5 -47.5 -27.5 {name=ctrl_1 dir=in verilog_type=wire propag=0}
+B 5 -52.5 -12.5 -47.5 -7.5 {name=ctrl_2 dir=in verilog_type=wire propag=0}
+B 5 -52.5 7.5 -47.5 12.5 {name=ctrl_3 dir=in verilog_type=wire propag=0}
+B 5 -52.5 27.5 -47.5 32.5 {name=ctrl_4 dir=in verilog_type=wire propag=0}
+B 5 47.5 -142.5 52.5 -137.5 {name=dout_p0 dir=out verilog_type=wire propag=1}
+B 5 47.5 -122.5 52.5 -117.5 {name=dout_p1 dir=out verilog_type=wire propag=1}
+B 5 47.5 -102.5 52.5 -97.5 {name=dout_p2 dir=out verilog_type=wire propag=1}
+B 5 47.5 -82.5 52.5 -77.5 {name=dout_p3 dir=out verilog_type=wire propag=1}
+B 5 47.5 -62.5 52.5 -57.5 {name=dout_p4 dir=out verilog_type=wire propag=1}
+B 5 47.5 -42.5 52.5 -37.5 {name=dout_p5 dir=out verilog_type=wire propag=1}
+B 5 47.5 -22.5 52.5 -17.5 {name=dout_p6 dir=out verilog_type=wire propag=1}
+B 5 47.5 -2.5 52.5 2.5 {name=dout_p7 dir=out verilog_type=wire propag=1}
+B 5 47.5 17.5 52.5 22.5 {name=dout_n0 dir=out verilog_type=wire propag=1}
+B 5 47.5 37.5 52.5 42.5 {name=dout_n1 dir=out verilog_type=wire propag=1}
+B 5 47.5 57.5 52.5 62.5 {name=dout_n2 dir=out verilog_type=wire propag=1}
+B 5 47.5 77.5 52.5 82.5 {name=dout_n3 dir=out verilog_type=wire propag=1}
+B 5 47.5 97.5 52.5 102.5 {name=dout_n4 dir=out verilog_type=wire propag=1}
+B 5 47.5 117.5 52.5 122.5 {name=dout_n5 dir=out verilog_type=wire propag=1}
+B 5 47.5 137.5 52.5 142.5 {name=dout_n6 dir=out verilog_type=wire propag=1}
+B 5 47.5 157.5 52.5 162.5 {name=dout_n7 dir=out verilog_type=wire propag=1}
+B 5 -52.5 47.5 -47.5 52.5 {name=clk dir=in verilog_type=wire propag=0}
+B 5 -52.5 67.5 -47.5 72.5 {name=rst dir=in verilog_type=wire propag=0}
+T {@name} -45 -160 0 0 0.12 0.12 {}
+T {@d_cosim_model} -10 -160 0 0 0.12 0.12 {}
+T {ctrl_1} -40 -35 0 0 0.12 0.12 {}
+T {dout_p0} 20 -145 0 0 0.12 0.12 {}
+T {dout_p1} 20 -125 0 0 0.12 0.12 {}
+T {dout_p2} 20 -105 0 0 0.12 0.12 {}
+T {dout_p3} 20 -85 0 0 0.12 0.12 {}
+T {dout_p4} 20 -65 0 0 0.12 0.12 {}
+T {dout_p5} 20 -45 0 0 0.12 0.12 {}
+T {dout_p6} 20 -25 0 0 0.12 0.12 {}
+T {dout_p7} 20 -5 0 0 0.12 0.12 {}
+T {dout_n0} 20 15 0 0 0.12 0.12 {}
+T {dout_n1} 20 35 0 0 0.12 0.12 {}
+T {dout_n2} 20 55 0 0 0.12 0.12 {}
+T {dout_n3} 20 75 0 0 0.12 0.12 {}
+T {dout_n4} 20 95 0 0 0.12 0.12 {}
+T {dout_n5} 20 115 0 0 0.12 0.12 {}
+T {dout_n6} 20 135 0 0 0.12 0.12 {}
+T {dout_n7} 20 155 0 0 0.12 0.12 {}
+T {ctrl_2} -40 -15 0 0 0.12 0.12 {}
+T {ctrl_3} -40 5 0 0 0.12 0.12 {}
+T {ctrl_4} -40 25 0 0 0.12 0.12 {}
+T {clk} -40 45 0 0 0.12 0.12 {}
+T {rst} -40 65 0 0 0.12 0.12 {}

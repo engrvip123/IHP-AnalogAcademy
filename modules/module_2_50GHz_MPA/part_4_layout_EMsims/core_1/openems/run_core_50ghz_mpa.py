@@ -28,7 +28,7 @@ postprocess_only = False
 # ===================== input files and path settings =======================
 
 # GDS filename
-gds_filename = "/home/pedersen/projects/IHP-AnalogAcademy/modules/module_2_50GHz_MPA/part_4_layout_EMsims/core_1/layout_gds/50_ghz_mpa_core_no_BJT.gds"      # geometries
+gds_filename = "../layout_gds/50_ghz_mpa_core_no_BJT.gds"      # geometries
 XML_filename = "SG13G2.xml"       # stackup
 
 # preprocess GDSII for safe handling of cutouts/holes?
