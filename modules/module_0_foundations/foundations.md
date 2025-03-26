@@ -32,7 +32,7 @@ This view includes test cases within the IHP PDK, demonstrating different types 
 The simulation library allows you to explore different designs and understand the simulation setups, which will be covered in detail throughout the course. To get started, try opening dc_lv_nmos by selecting the instance and pressing e. This will open the schematic view.
 
 From here, navigate to the "netlist" button in the top-right corner, then press "simulate." Your first schematic simulation in Xschem will now be complete. View the results by left-clicking the green arrow while holding down Ctrl. The output should look like this:
-<p align="center"> <img src="../../media/module_0/Pasted image 20241017162220.png" width="800" height="400" /> </p>
+<p align="center"> <img src="../../media/module_0/dc_sim.png" width="800" height="400" /> </p>
 
 If the dark mode theme is hard to read, you can toggle it by pressing "Shift + O."
 
