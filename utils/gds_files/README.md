@@ -8,7 +8,7 @@ These files represent designs submitted for the **November 2024** tapeout at **I
 
 ## Acknowledgments
 
-A huge thanks to everyone who contributed to this project—your effort and dedication made this possible!
+A huge thanks to everyone who contributed to this project
 
 ---
 
