@@ -1,4 +1,4 @@
-C# Layout and Physical Verification
+# Layout and Physical Verification
 
 In this tutorial, we will guide you through the systematic process of laying out the bandgap reference circuit. This task is divided into two parts: the design of the two-stage OTA and the bandgap core, both of which were created in parts 1 and 2 of this series. The primary focus here is to transition the design from the schematic editor into KLayout for layout implementation, ensuring that pycells are correctly utilized in the layout process.
 
