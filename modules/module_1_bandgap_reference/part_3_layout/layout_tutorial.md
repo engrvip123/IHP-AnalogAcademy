@@ -81,7 +81,7 @@ klayout two_stage_OTA.gds -e
 ```
 ### Changing the Netlist Format for LVS
 
-As we move into the layout phase, performing LVS (Layout vs. Schematic) checks is crucial to ensure that the layout matches the schematic design. Preparing the netlist in the correct format is a key step in this process. For LVS, we require a `.cdl` format netlist. Here's how to prepare it:
+As we move into the layout phase, performing LVS (Layout vs. Schematic) checks is crucial to ensure that the layout matches the schematic design. Preparing the netlist in the correct format is a key step in this process. 
 
 1. **Generate the Netlist in Xschem**:
     
@@ -90,14 +90,10 @@ As we move into the layout phase, performing LVS (Layout vs. Schematic) checks i
     - Deselect the **Use 'spiceprefix' attribute** checkbox.
     - Enable the option **LVS netlist: Top level is a .subckt**.
     - Click **Netlist** to generate the required file.
-2. **Rename the Extracted Netlist**:
+
+2. **Inspect the CDL File**:
     
-    - Locate the generated `.spice` file in the **simulations** folder (it will have the same name as your schematic).
-    - Rename the file extension from `.spice` to `.cdl`. For example, rename `two_stage_OTA.spice` to `two_stage_OTA.cdl`.
-    - For safety, copy the renamed `.cdl` file to your **layout folder** to prevent accidental overwrites during future operations.
-3. **Inspect the CDL File**:
-    
-    - Open the `.cdl` file in a text editor to ensure its contents look correct. You should see something like this:
+    - Open the `.spice` file in a text editor to ensure its contents look correct. You should see something like this:
 
 ```
 ** sch_path: /home/pedersen/projects/IHP-AnalogAcademy/modules/module_1_bandgap_reference/part_1_OTA/schematic/two_stage_OTA.sch
@@ -125,7 +121,7 @@ C2 net3 vout cap_cmim w=22.295e-6 l=22.295e-6 m=1
 - **Run the LVS in KLayout**:
     
     - Open the **SG13G2 PDK** menu and select **SG13G2 LVS Options**.
-    - In the small menu that appears, specify the path to your `.cdl` netlist file.
+    - In the small menu that appears, specify the path to your `.spice` netlist file (remeber to select .spice as file format).
     - Click **OK** to save the settings.
     - Finally, navigate to the **LVS** option in the same menu to run the LVS check.
 
