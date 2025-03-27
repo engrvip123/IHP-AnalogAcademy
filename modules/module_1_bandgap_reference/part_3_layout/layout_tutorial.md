@@ -42,7 +42,6 @@ A netlist is essentially a list of components and their connections used for sim
 - **Pins (`.iopin`)**: Specifies external connection points for the subcircuit.
 - **End Markers (`.ends`, `.end`)**: Marks the beginning and end of the subcircuit and netlist.
 
-We will also explore the use of CDL (Cadence Design Language) netlists for LVS later in the tutorial.
 
 ### Creating the Device Gallery
 
