@@ -1,0 +1,6 @@
+* Extracted by KLayout with SG13G2 LVS runset on : 27/03/2025 11:05
+
+.SUBCKT lvs_tester gnd G D
+M$1 gnd G D \$1 sg13_lv_nmos L=0.45u W=1u AS=0.34p AD=0.34p PS=2.68u PD=2.68u
+R$2 \$1 gnd ptap1 A=0.6084p P=3.12u
+.ENDS lvs_tester
