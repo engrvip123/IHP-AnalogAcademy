@@ -124,8 +124,9 @@ The `gm/Id` methodology is a powerful design approach for optimizing the perform
 
 ### Additional Resources
 
+- [IHP Open PDK](https://www.ihp-microelectronics.com/en/technologies/](https://ihp-open-pdk-docs.readthedocs.io/en/latest/)](https://github.com/IHP-GmbH/IHP-Open-PDK))
+- [IHP Open PDK Documentation](https://www.ihp-microelectronics.com/en/technologies/](https://ihp-open-pdk-docs.readthedocs.io/en/latest/))
 - [Ngspice Manual](http://ngspice.sourceforge.io/docs/ngspice-manual.pdf)
-- [IHP Open PDK Documentation](https://www.ihp-microelectronics.com/en/technologies/)
 - [gm/Id Methodology Repository](https://github.com/medwatt/gmid)
 
 ### Useful Commands
