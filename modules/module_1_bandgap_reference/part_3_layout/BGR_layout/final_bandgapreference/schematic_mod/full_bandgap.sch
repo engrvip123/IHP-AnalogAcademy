@@ -1,5 +1,4 @@
-v {xschem version=3.4.5 file_version=1.2
-}
+v {xschem version=3.4.6 file_version=1.2}
 G {}
 K {}
 V {}
@@ -53,7 +52,7 @@ N 450 -305 450 -245 {
 lab=#net3}
 N 450 -305 510 -305 {
 lab=#net3}
-N 510 -145 675 -145 {
+N 675 -145 880 -145 {
 lab=vss}
 N 210 -760 310 -760 {
 lab=v-}
@@ -283,32 +282,26 @@ N 510 -585 510 -565 {
 lab=#net6}
 N 510 -670 510 -645 {
 lab=#net7}
-N 675 -350 675 -145 {
-lab=vss}
-N 675 -425 675 -410 {
-lab=#net8}
 N 675 -500 675 -485 {
-lab=#net9}
+lab=#net8}
 N 675 -585 675 -560 {
-lab=#net10}
+lab=#net9}
 N 675 -670 675 -645 {
-lab=#net11}
+lab=#net10}
 N 880 -240 880 -145 {
 lab=vss}
-N 675 -145 880 -145 {
-lab=vss}
 N 880 -675 880 -660 {
-lab=#net12}
+lab=#net11}
 N 880 -600 880 -590 {
-lab=#net13}
+lab=#net12}
 N 880 -530 880 -520 {
-lab=#net14}
+lab=#net13}
 N 880 -460 880 -445 {
-lab=#net15}
+lab=#net14}
 N 880 -385 880 -375 {
-lab=#net16}
+lab=#net15}
 N 880 -315 880 -300 {
-lab=#net17}
+lab=#net16}
 N 210 -215 210 -145 {
 lab=vss}
 N 250 -245 395 -245 {
@@ -328,86 +321,6 @@ lab=vdd}
 N 1755 -620 1755 -590 {
 lab=bulk7}
 N 1755 -530 1755 -490 {
-lab=vdd}
-N 1690 -855 1690 -785 {
-lab=vdd}
-N 1690 -855 1730 -855 {
-lab=vdd}
-N 1730 -855 1730 -815 {
-lab=vdd}
-N 1690 -785 1730 -785 {
-lab=vdd}
-N 1825 -855 1825 -785 {
-lab=vdd}
-N 1825 -855 1865 -855 {
-lab=vdd}
-N 1865 -855 1865 -815 {
-lab=vdd}
-N 1825 -785 1865 -785 {
-lab=vdd}
-N 1695 -770 1695 -700 {
-lab=vdd}
-N 1695 -770 1735 -770 {
-lab=vdd}
-N 1735 -770 1735 -730 {
-lab=vdd}
-N 1695 -700 1735 -700 {
-lab=vdd}
-N 1830 -770 1830 -700 {
-lab=vdd}
-N 1830 -770 1870 -770 {
-lab=vdd}
-N 1870 -770 1870 -730 {
-lab=vdd}
-N 1830 -700 1870 -700 {
-lab=vdd}
-N 1950 -855 1950 -785 {
-lab=vdd}
-N 1950 -855 1990 -855 {
-lab=vdd}
-N 1990 -855 1990 -815 {
-lab=vdd}
-N 1950 -785 1990 -785 {
-lab=vdd}
-N 1950 -775 1950 -705 {
-lab=vdd}
-N 1950 -775 1990 -775 {
-lab=vdd}
-N 1990 -775 1990 -735 {
-lab=vdd}
-N 1950 -705 1990 -705 {
-lab=vdd}
-N 2075 -775 2075 -705 {
-lab=vdd}
-N 2075 -775 2115 -775 {
-lab=vdd}
-N 2115 -775 2115 -735 {
-lab=vdd}
-N 2075 -705 2115 -705 {
-lab=vdd}
-N 2075 -855 2075 -785 {
-lab=vdd}
-N 2075 -855 2115 -855 {
-lab=vdd}
-N 2115 -855 2115 -815 {
-lab=vdd}
-N 2075 -785 2115 -785 {
-lab=vdd}
-N 2200 -775 2200 -705 {
-lab=vdd}
-N 2200 -775 2240 -775 {
-lab=vdd}
-N 2240 -775 2240 -735 {
-lab=vdd}
-N 2200 -705 2240 -705 {
-lab=vdd}
-N 2200 -855 2200 -785 {
-lab=vdd}
-N 2200 -855 2240 -855 {
-lab=vdd}
-N 2240 -855 2240 -815 {
-lab=vdd}
-N 2200 -785 2240 -785 {
 lab=vdd}
 N 1355 -365 1355 -330 {
 lab=vss}
@@ -429,13 +342,12 @@ N 1670 -360 1670 -325 {
 lab=vss}
 N 1670 -445 1670 -420 {
 lab=sub!}
-C {devices/code_shown.sym} 1110 -215 0 0 {name=MODEL only_toplevel=true
-format="tcleval( @value )"
-value="
-.lib $::SG13G2_MODELS/cornerCAP.lib cap_typ
-.lib $::SG13G2_MODELS/cornerRES.lib res_typ
-.lib cornerMOSlv.lib mos_tt
-"}
+N 1887.5 -607.5 1887.5 -585 {lab=vdd}
+N 1887.5 -527.5 1887.5 -507.5 {lab=vss}
+N 675 -340 675 -145 {lab=vss}
+N 510 -145 675 -145 {
+lab=vss}
+N 675 -425 675 -400 {lab=#net17}
 C {sg13g2_pr/sg13_lv_nmos.sym} 1520 -1320 2 0 {name=M8
 l=10u
 w=150n
@@ -471,7 +383,7 @@ spiceprefix=X
 C {lab_pin.sym} 1735 -1535 0 1 {name=p5 sig_type=std_logic lab=vdd}
 C {lab_pin.sym} 1690 -1485 0 1 {name=p4 sig_type=std_logic lab=bulk6}
 C {lab_pin.sym} 1440 -1485 0 0 {name=p17 sig_type=std_logic lab=bulk6}
-C {sg13g2_pr/sg13_lv_nmos.sym} 230 -245 2 0 {name=M1
+C {sg13g2_pr/sg13_lv_nmos.sym} 230 -245 0 1 {name=M1
 l=5u
 w=7.14u
 ng=4
@@ -479,7 +391,7 @@ m=1
 model=sg13_lv_nmos
 spiceprefix=X
 }
-C {sg13g2_pr/sg13_lv_nmos.sym} 490 -245 2 1 {name=M2
+C {sg13g2_pr/sg13_lv_nmos.sym} 490 -245 0 0 {name=M2
 l=5u
 w=21u
 ng=8
@@ -591,7 +503,7 @@ spiceprefix=X
 C {lab_pin.sym} 1255 -865 0 0 {name=p50 sig_type=std_logic lab=vdd}
 C {lab_pin.sym} 1295 -785 0 0 {name=p53 sig_type=std_logic lab=dn2}
 C {lab_pin.sym} 1490 -785 0 0 {name=p54 sig_type=std_logic lab=dn2}
-C {sg13g2_pr/ntap1.sym} 1300 -560 0 0 {name=R4
+C {sg13g2_pr/ntap1.sym} 1300 -560 2 0 {name=R4
 model=ntap1
 spiceprefix=X
 w=13e-6
@@ -615,7 +527,7 @@ spiceprefix=X
 C {iopin.sym} 505 -1070 1 1 {name=p30 lab=vss}
 C {iopin.sym} 505 -1580 1 1 {name=p31 lab=vdd}
 C {lab_pin.sym} 695 -1130 0 1 {name=p32 sig_type=std_logic lab=sub!}
-C {sg13g2_pr/ptap1.sym} 1275 -400 0 0 {name=R5
+C {sg13g2_pr/ptap1.sym} 1275 -400 2 0 {name=R5
 model=ptap1
 spiceprefix=X
 w=10e-6
@@ -625,7 +537,7 @@ C {lab_pin.sym} 1275 -335 0 0 {name=p33 sig_type=std_logic lab=vss}
 C {lab_pin.sym} 1275 -455 0 1 {name=p34 sig_type=std_logic lab=sub!}
 C {lab_pin.sym} 1415 -495 0 0 {name=p35 sig_type=std_logic lab=vdd}
 C {lab_pin.sym} 1415 -615 0 1 {name=p36 sig_type=std_logic lab=bulk1}
-C {sg13g2_pr/ntap1.sym} 1415 -560 0 0 {name=R6
+C {sg13g2_pr/ntap1.sym} 1415 -560 2 0 {name=R6
 model=ntap1
 spiceprefix=X
 w=0.78e-6
@@ -686,7 +598,7 @@ C {lab_pin.sym} 75 -1530 0 0 {name=p46 sig_type=std_logic lab=bulk4}
 C {lab_pin.sym} 950 -1525 2 0 {name=p47 sig_type=std_logic lab=bulk4}
 C {lab_pin.sym} 1520 -620 0 1 {name=p48 sig_type=std_logic lab=bulk4}
 C {lab_pin.sym} 1520 -490 0 0 {name=p51 sig_type=std_logic lab=vdd}
-C {sg13g2_pr/ntap1.sym} 1520 -560 0 0 {name=R8
+C {sg13g2_pr/ntap1.sym} 1520 -560 2 0 {name=R8
 model=ntap1
 spiceprefix=X
 R=262.847.0
@@ -701,7 +613,7 @@ C {lab_pin.sym} 675 -1385 0 1 {name=p19 sig_type=std_logic lab=v+}
 C {lab_pin.sym} 1810 -1205 3 0 {name=p1 sig_type=std_logic lab=v-}
 C {lab_pin.sym} 1675 -620 0 1 {name=p7 sig_type=std_logic lab=bulk6}
 C {lab_pin.sym} 1675 -490 0 0 {name=p16 sig_type=std_logic lab=vdd}
-C {sg13g2_pr/ntap1.sym} 1675 -560 0 0 {name=R9
+C {sg13g2_pr/ntap1.sym} 1675 -560 2 0 {name=R9
 model=ntap1
 spiceprefix=X
 R=8.463
@@ -749,14 +661,6 @@ spiceprefix=X
 b=0
 m=1
 }
-C {sg13g2_pr/rppd.sym} 675 -700 0 0 {name=R1
-w=0.5e-6
-l=38.65e-6
-model=rppd
-spiceprefix=X
-b=0
-m=1
-}
 C {sg13g2_pr/rppd.sym} 675 -615 0 0 {name=R16
 w=0.5e-6
 l=38.65e-6
@@ -781,7 +685,7 @@ spiceprefix=X
 b=0
 m=1
 }
-C {sg13g2_pr/rppd.sym} 675 -380 0 0 {name=R19
+C {sg13g2_pr/rppd.sym} 675 -370 0 0 {name=R19
 w=3e-6
 l=38.65e-6
 model=rppd
@@ -842,7 +746,7 @@ C {lab_pin.sym} 1435 -1320 0 0 {name=p63 sig_type=std_logic lab=sub!}
 C {lab_pin.sym} 1800 -1405 0 1 {name=p64 sig_type=std_logic lab=bulk5}
 C {lab_pin.sym} 1600 -620 0 1 {name=p65 sig_type=std_logic lab=bulk5}
 C {lab_pin.sym} 1600 -490 0 0 {name=p66 sig_type=std_logic lab=vdd}
-C {sg13g2_pr/ntap1.sym} 1600 -560 0 0 {name=R26
+C {sg13g2_pr/ntap1.sym} 1600 -560 2 0 {name=R26
 model=ntap1
 spiceprefix=X
 R=8.463
@@ -850,103 +754,13 @@ Imax=0.3e-6
 }
 C {lab_pin.sym} 1755 -620 0 1 {name=p67 sig_type=std_logic lab=bulk7}
 C {lab_pin.sym} 1755 -490 0 0 {name=p68 sig_type=std_logic lab=vdd}
-C {sg13g2_pr/ntap1.sym} 1755 -560 0 0 {name=R27
+C {sg13g2_pr/ntap1.sym} 1755 -560 2 0 {name=R27
 model=ntap1
 spiceprefix=X
 R=8.463
 Imax=0.3e-6
 }
-C {sg13g2_pr/sg13_lv_pmos.sym} 1710 -815 0 0 {name=M22
-l=5u
-w=10u
-ng=4
-m=1
-model=sg13_lv_pmos
-spiceprefix=X
-}
-C {lab_pin.sym} 1690 -855 0 0 {name=p69 sig_type=std_logic lab=vdd}
-C {sg13g2_pr/sg13_lv_pmos.sym} 1845 -815 0 0 {name=M23
-l=5u
-w=10u
-ng=4
-m=1
-model=sg13_lv_pmos
-spiceprefix=X
-}
-C {lab_pin.sym} 1825 -855 0 0 {name=p70 sig_type=std_logic lab=vdd}
-C {sg13g2_pr/sg13_lv_pmos.sym} 1715 -730 0 0 {name=M24
-l=5u
-w=10u
-ng=4
-m=1
-model=sg13_lv_pmos
-spiceprefix=X
-}
-C {lab_pin.sym} 1695 -770 0 0 {name=p71 sig_type=std_logic lab=vdd}
-C {sg13g2_pr/sg13_lv_pmos.sym} 1850 -730 0 0 {name=M25
-l=5u
-w=10u
-ng=4
-m=1
-model=sg13_lv_pmos
-spiceprefix=X
-}
-C {lab_pin.sym} 1830 -770 0 0 {name=p72 sig_type=std_logic lab=vdd}
-C {sg13g2_pr/sg13_lv_pmos.sym} 1970 -815 0 0 {name=M26
-l=5u
-w=10u
-ng=4
-m=1
-model=sg13_lv_pmos
-spiceprefix=X
-}
-C {lab_pin.sym} 1950 -855 0 0 {name=p73 sig_type=std_logic lab=vdd}
-C {sg13g2_pr/sg13_lv_pmos.sym} 1970 -735 0 0 {name=M27
-l=4u
-w=5u
-ng=2
-m=1
-model=sg13_lv_pmos
-spiceprefix=X
-}
-C {lab_pin.sym} 1950 -775 0 0 {name=p74 sig_type=std_logic lab=vdd}
-C {sg13g2_pr/sg13_lv_pmos.sym} 2095 -735 0 0 {name=M28
-l=4u
-w=5u
-ng=2
-m=1
-model=sg13_lv_pmos
-spiceprefix=X
-}
-C {lab_pin.sym} 2075 -775 0 0 {name=p75 sig_type=std_logic lab=vdd}
-C {sg13g2_pr/sg13_lv_pmos.sym} 2095 -815 0 0 {name=M29
-l=4u
-w=5u
-ng=2
-m=1
-model=sg13_lv_pmos
-spiceprefix=X
-}
-C {lab_pin.sym} 2075 -855 0 0 {name=p76 sig_type=std_logic lab=vdd}
-C {sg13g2_pr/sg13_lv_pmos.sym} 2220 -735 0 0 {name=M30
-l=4u
-w=5u
-ng=2
-m=1
-model=sg13_lv_pmos
-spiceprefix=X
-}
-C {lab_pin.sym} 2200 -775 0 0 {name=p77 sig_type=std_logic lab=vdd}
-C {sg13g2_pr/sg13_lv_pmos.sym} 2220 -815 0 0 {name=M31
-l=4u
-w=5u
-ng=2
-m=1
-model=sg13_lv_pmos
-spiceprefix=X
-}
-C {lab_pin.sym} 2200 -855 0 0 {name=p78 sig_type=std_logic lab=vdd}
-C {sg13g2_pr/ptap1.sym} 1355 -395 0 0 {name=R7
+C {sg13g2_pr/ptap1.sym} 1355 -395 2 0 {name=R7
 model=ptap1
 spiceprefix=X
 w=10e-6
@@ -954,7 +768,7 @@ l=1.0e-6
 }
 C {lab_pin.sym} 1355 -330 0 0 {name=p42 sig_type=std_logic lab=vss}
 C {lab_pin.sym} 1355 -450 0 1 {name=p44 sig_type=std_logic lab=sub!}
-C {sg13g2_pr/ptap1.sym} 1430 -395 0 0 {name=R10
+C {sg13g2_pr/ptap1.sym} 1430 -395 2 0 {name=R10
 model=ptap1
 spiceprefix=X
 w=10e-6
@@ -962,7 +776,7 @@ l=1.0e-6
 }
 C {lab_pin.sym} 1430 -330 0 0 {name=p58 sig_type=std_logic lab=vss}
 C {lab_pin.sym} 1430 -450 0 1 {name=p59 sig_type=std_logic lab=sub!}
-C {sg13g2_pr/ptap1.sym} 1510 -395 0 0 {name=R11
+C {sg13g2_pr/ptap1.sym} 1510 -395 2 0 {name=R11
 model=ptap1
 spiceprefix=X
 w=10e-6
@@ -970,7 +784,7 @@ l=1.0e-6
 }
 C {lab_pin.sym} 1510 -330 0 0 {name=p60 sig_type=std_logic lab=vss}
 C {lab_pin.sym} 1510 -450 0 1 {name=p61 sig_type=std_logic lab=sub!}
-C {sg13g2_pr/ptap1.sym} 1590 -395 0 0 {name=R28
+C {sg13g2_pr/ptap1.sym} 1590 -395 2 0 {name=R28
 model=ptap1
 spiceprefix=X
 w=10e-6
@@ -978,7 +792,7 @@ l=1.0e-6
 }
 C {lab_pin.sym} 1590 -330 0 0 {name=p79 sig_type=std_logic lab=vss}
 C {lab_pin.sym} 1590 -450 0 1 {name=p80 sig_type=std_logic lab=sub!}
-C {sg13g2_pr/ptap1.sym} 1670 -390 0 0 {name=R29
+C {sg13g2_pr/ptap1.sym} 1670 -390 2 0 {name=R29
 model=ptap1
 spiceprefix=X
 w=10e-6
@@ -986,3 +800,19 @@ l=1.0e-6
 }
 C {lab_pin.sym} 1670 -325 0 0 {name=p81 sig_type=std_logic lab=vss}
 C {lab_pin.sym} 1670 -445 0 1 {name=p82 sig_type=std_logic lab=sub!}
+C {sg13g2_pr/cap_cmim.sym} 1887.5 -555 0 0 {name=C3
+model=cap_cmim
+w=5e-6
+l=5e-6
+m=15
+spiceprefix=X}
+C {lab_pin.sym} 1887.5 -607.5 0 1 {name=p83 sig_type=std_logic lab=vdd}
+C {lab_pin.sym} 1887.5 -507.5 0 1 {name=p84 sig_type=std_logic lab=vss}
+C {sg13g2_pr/rppd.sym} 675 -700 0 0 {name=R31
+w=0.5e-6
+l=38.65e-6
+model=rppd
+spiceprefix=X
+b=0
+m=1
+}

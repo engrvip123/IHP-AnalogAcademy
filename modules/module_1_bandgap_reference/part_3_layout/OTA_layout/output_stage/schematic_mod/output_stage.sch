@@ -1,5 +1,4 @@
-v {xschem version=3.4.5 file_version=1.2
-}
+v {xschem version=3.4.6 file_version=1.2}
 G {}
 K {}
 V {}
@@ -40,7 +39,7 @@ lab=vout}
 N 860 -375 860 -305 {
 lab=vss}
 N 1265 -385 1265 -355 {
-lab=bulk3}
+lab=sub!}
 N 1265 -295 1265 -255 {
 lab=vss}
 N 860 -400 940 -400 {
@@ -98,7 +97,7 @@ C {lab_pin.sym} 1265 -385 0 0 {name=p23 sig_type=std_logic lab=sub!
 }
 C {lab_pin.sym} 1265 -255 2 0 {name=p24 sig_type=std_logic lab=vss}
 C {lab_pin.sym} 940 -400 0 1 {name=p27 sig_type=std_logic lab=sub!}
-C {sg13g2_pr/ptap1.sym} 1265 -325 0 0 {name=R2
+C {sg13g2_pr/ptap1.sym} 1265 -325 2 0 {name=R2
 model=ptap1
 spiceprefix=X
 R=262.847.0
@@ -108,7 +107,7 @@ C {lab_pin.sym} 505 -625 0 0 {name=p36 sig_type=std_logic lab=bulk4}
 C {lab_pin.sym} 930 -625 2 0 {name=p37 sig_type=std_logic lab=bulk4}
 C {lab_pin.sym} 1455 -385 0 0 {name=p38 sig_type=std_logic lab=bulk4}
 C {lab_pin.sym} 1455 -255 0 0 {name=p39 sig_type=std_logic lab=vdd}
-C {sg13g2_pr/ntap1.sym} 1455 -325 0 0 {name=R5
+C {sg13g2_pr/ntap1.sym} 1455 -325 2 0 {name=R5
 model=ntap1
 spiceprefix=X
 R=262.847.0

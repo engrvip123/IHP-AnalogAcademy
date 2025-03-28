@@ -1,5 +1,4 @@
-v {xschem version=3.4.5 file_version=1.2
-}
+v {xschem version=3.4.6 file_version=1.2}
 G {}
 K {}
 V {}
@@ -121,7 +120,7 @@ spiceprefix=X
 C {lab_pin.sym} 55 -445 0 0 {name=p50 sig_type=std_logic lab=vdd}
 C {lab_pin.sym} 95 -365 0 0 {name=p53 sig_type=std_logic lab=dn2}
 C {lab_pin.sym} 290 -365 0 0 {name=p54 sig_type=std_logic lab=dn2}
-C {sg13g2_pr/ntap1.sym} 650 -240 0 0 {name=R1
+C {sg13g2_pr/ntap1.sym} 650 -240 2 0 {name=R1
 model=ntap1
 spiceprefix=X
 w=13e-6
