@@ -7,4 +7,5 @@
 *.dat.ngspice
 *.dat
 *.txt
+*.npy
 
