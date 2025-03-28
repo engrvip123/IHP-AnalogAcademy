@@ -74,7 +74,7 @@ Modifications have been made to the Lookup Table (LUT) generator class to ensure
 ```
 python gmid_launcher.py
 ```
-This will open a simple terminal-based GUI, allowing you to select which transistor you would like to generate the gm/Id LUT for. You just need to specify the sweeping parameters, and the tool will parse a netlist to Ngspice. The generated LUTs will be saved in a folder named LUTs. From here, you can navigate to the scripting folder and open JupyterLab, where an implemented GUI for viewing the data has been created.
+This will open a simple terminal-based GUI, allowing you to select which transistor you would like to generate the gm/Id LUT for. You just need to specify the sweeping parameters, and the tool will parse a netlist to Ngspice. The generated LUTs will be saved in a folder named LUTs. From here, you can navigate to the scripting folder and open JupyterLab, where an implemented GUI for viewing the data has been created. NOTE: The LUT data is not provided in the repository since the datasets are quite large. You can refer to the slides over module_1 to see a more graphic explination on how to generate the LUTs.
 
 
 
