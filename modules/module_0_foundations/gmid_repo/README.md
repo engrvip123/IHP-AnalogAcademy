@@ -1,5 +1,23 @@
+# Modified gmid Script for IHP Open PDK
 
-## All credits for the original repository goes to : https://github.com/medwatt/gmid
+This repository contains a modified version of the original [gmid](https://github.com/medwatt/gmid) script, adapted specifically for use with the IHP Open PDK.
+
+## Acknowledgements
+
+We extend our thanks to [medwatt](https://github.com/medwatt) for providing a robust environment for generating GmID lookup tables with NgSpice.
+
+## Credits
+
+All credit for the original repository and script goes to [medwatt](https://github.com/medwatt).
+
+## Changes and Enhancements
+
+- **Terminal GUI**: A terminal-based GUI was developed to facilitate easy selection of MOSFETs in the IHP Open PDK for generating LUTs.
+- **LUT Class**: The lookup table generator was modified to ensure compatibility with the IHP Open PDK netlisting format.
+- **Automation Handling**: A dedicated handling script was created to automate the GUI process for improved workflow.
+
+
+
 
 # MOSFET Characterization in Python
 
