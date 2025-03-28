@@ -1,3 +1,6 @@
+
+## All credits for the original repository goes to : https://github.com/medwatt/gmid
+
 # MOSFET Characterization in Python
 
 ## Motivation
