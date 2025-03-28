@@ -62,7 +62,7 @@ Analog design requires a solid foundation in analog electronics to ensure high-p
 
 For a deeper dive into the gm/Id methodology, consider watching this video by Mastering Microelectronics: https://www.youtube.com/watch?v=dzz4z3ijVts
 
-Refer to the next section for instructions on setting up the gm/Id tools using pygmid/maddwet gmid lib.
+Refer to the next section for instructions on setting up the gm/Id tools.
 
 ## Setting Up gm/Id Methodology (Optional)
 
