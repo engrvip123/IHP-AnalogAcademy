@@ -1,0 +1,28 @@
+[*]
+[*] GTKWave Analyzer v3.3.116 (w)1999-2023 BSI
+[*] Mon Sep 30 13:11:15 2024
+[*]
+[dumpfile] "sar_logic_tb.vcd"
+[dumpfile_mtime] "Mon Sep 30 13:10:47 2024"
+[dumpfile_size] 777
+[savefile] "conf.gtkw"
+[timestart] 0
+[size] 1906 985
+[pos] -1 -1
+*-14.000000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 269
+[signals_width] 102
+[sst_expanded] 1
+[sst_vpaned_height] 291
+@28
+sar_logic_tb.Op
+sar_logic_tb.Om
+sar_logic_tb.B[6:0]
+sar_logic_tb.BN[6:0]
+sar_logic_tb.D[7:0]
+sar_logic_tb.clk
+sar_logic_tb.rst
+sar_logic_tb.En
+@29
+[pattern_trace] 1
+[pattern_trace] 0

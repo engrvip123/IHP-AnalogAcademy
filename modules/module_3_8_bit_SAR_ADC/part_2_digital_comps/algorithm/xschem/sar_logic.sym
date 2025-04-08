@@ -1,0 +1,121 @@
+v {xschem version=3.4.5 file_version=1.2
+*
+* This file is part of XSCHEM,
+* a schematic capture and Spice/Vhdl/Verilog netlisting tool for circuit
+* simulation.
+* Copyright (C) 1998-2023 Stefan Frederik Schippers
+*
+* This program is free software; you can redistribute it and/or modify
+* it under the terms of the GNU General Public License as published by
+* the Free Software Foundation; either version 2 of the License, or
+* (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+* GNU General Public License for more details.
+*
+* You should have received a copy of the GNU General Public License
+* along with this program; if not, write to the Free Software
+* Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+}
+G {}
+K {type=delay
+verilog_ignore=true
+vhdl_ignore=true
+format="@name [ @@clk @@Op @@En @@Om @@rst ] [ @@B6 @@B5 @@B4 @@B3 @@B2 @@B1 @@B0 @@BN6 @@BN5 @@BN4 @@BN3 @@BN2 @@BN1 @@BN0 @@D7 @@D6 @@D5 @@D4 @@D3 @@D2 @@D1 @@D0 ] null @dut
+.model @dut @d_cosim_model simulation=@model"
+template="name=adut
+dut=dut
+d_cosim_model= d_cosim
+model=./sar_logic.so" }
+V {}
+S {}
+E {}
+L 4 -82.5 -40 -77.5 -40 {}
+L 4 -82.5 -20 -77.5 -20 {}
+L 4 -82.5 0 -77.5 0 {}
+L 4 -82.5 20 -77.5 20 {}
+L 4 -82.5 40 -77.5 40 {}
+L 4 82.5 -210 77.5 -210 {}
+L 4 82.5 -190 77.5 -190 {}
+L 4 82.5 -170 77.5 -170 {}
+L 4 82.5 -150 77.5 -150 {}
+L 4 82.5 -130 77.5 -130 {}
+L 4 82.5 -110 77.5 -110 {}
+L 4 82.5 -90 77.5 -90 {}
+L 4 82.5 -70 77.5 -70 {}
+L 4 82.5 -50 77.5 -50 {}
+L 4 82.5 -30 77.5 -30 {}
+L 4 82.5 -10 77.5 -10 {}
+L 4 82.5 10 77.5 10 {}
+L 4 82.5 30 77.5 30 {}
+L 4 82.5 50 77.5 50 {}
+L 4 82.5 70 77.5 70 {}
+L 4 82.5 90 77.5 90 {}
+L 4 82.5 110 77.5 110 {}
+L 4 82.5 130 77.5 130 {}
+L 4 82.5 150 77.5 150 {}
+L 4 82.5 170 77.5 170 {}
+L 4 82.5 190 77.5 190 {}
+L 4 82.5 210 77.5 210 {}
+B 5 -82.5 -42.5 -77.5 -37.5 {name=clk dir=in verilog_type=wire propag=0}
+B 5 -82.5 -22.5 -77.5 -17.5 {name=Op dir=in verilog_type=wire propag=0}
+B 5 -82.5 -2.5 -77.5 2.5 {name=En dir=in verilog_type=wire propag=0}
+B 5 -82.5 17.5 -77.5 22.5 {name=Om dir=in verilog_type=wire propag=0}
+B 5 -82.5 37.5 -77.5 42.5 {name=rst dir=in verilog_type=wire propag=0}
+B 5 77.5 -212.5 82.5 -207.5 {name=B6 dir=out verilog_type=wire propag=1}
+B 5 77.5 -192.5 82.5 -187.5 {name=B5 dir=out verilog_type=wire propag=1}
+B 5 77.5 -172.5 82.5 -167.5 {name=B4 dir=out verilog_type=wire propag=1}
+B 5 77.5 -152.5 82.5 -147.5 {name=B3 dir=out verilog_type=wire propag=1}
+B 5 77.5 -132.5 82.5 -127.5 {name=B2 dir=out verilog_type=wire propag=1}
+B 5 77.5 -112.5 82.5 -107.5 {name=B1 dir=out verilog_type=wire propag=1}
+B 5 77.5 -92.5 82.5 -87.5 {name=B0 dir=out verilog_type=wire propag=1}
+B 5 77.5 -72.5 82.5 -67.5 {name=BN6 dir=out verilog_type=wire propag=1}
+B 5 77.5 -52.5 82.5 -47.5 {name=BN5 dir=out verilog_type=wire propag=1}
+B 5 77.5 -32.5 82.5 -27.5 {name=BN4 dir=out verilog_type=wire propag=1}
+B 5 77.5 -12.5 82.5 -7.5 {name=BN3 dir=out verilog_type=wire propag=1}
+B 5 77.5 7.5 82.5 12.5 {name=BN2 dir=out verilog_type=wire propag=1}
+B 5 77.5 27.5 82.5 32.5 {name=BN1 dir=out verilog_type=wire propag=1}
+B 5 77.5 47.5 82.5 52.5 {name=BN0 dir=out verilog_type=wire propag=1}
+B 5 77.5 67.5 82.5 72.5 {name=D7 dir=out verilog_type=wire propag=1}
+B 5 77.5 87.5 82.5 92.5 {name=D6 dir=out verilog_type=wire propag=1}
+B 5 77.5 107.5 82.5 112.5 {name=D5 dir=out verilog_type=wire propag=1}
+B 5 77.5 127.5 82.5 132.5 {name=D4 dir=out verilog_type=wire propag=1}
+B 5 77.5 147.5 82.5 152.5 {name=D3 dir=out verilog_type=wire propag=1}
+B 5 77.5 167.5 82.5 172.5 {name=D2 dir=out verilog_type=wire propag=1}
+B 5 77.5 187.5 82.5 192.5 {name=D1 dir=out verilog_type=wire propag=1}
+B 5 77.5 207.5 82.5 212.5 {name=D0 dir=out verilog_type=wire propag=1}
+T {@name} 0 225 0 0 0.12 0.12 {}
+T {@d_cosim_model} 0 -215 0 0 0.12 0.12 {}
+T {clk} -90 -42.5 0 1 0.12 0.12 {}
+T {Op} -90 -22.5 0 1 0.12 0.12 {}
+T {En} -90 -2.5 0 1 0.12 0.12 {}
+T {Om} -90 17.5 0 1 0.12 0.12 {}
+T {rst} -90 37.5 0 1 0.12 0.12 {}
+T {B6} 90 -212.5 0 0 0.12 0.12 {}
+T {B5} 90 -192.5 0 0 0.12 0.12 {}
+T {B4} 90 -172.5 0 0 0.12 0.12 {}
+T {B3} 90 -152.5 0 0 0.12 0.12 {}
+T {B2} 90 -132.5 0 0 0.12 0.12 {}
+T {B1} 90 -112.5 0 0 0.12 0.12 {}
+T {B0} 90 -92.5 0 0 0.12 0.12 {}
+T {BN6} 90 -72.5 0 0 0.12 0.12 {}
+T {BN5} 90 -52.5 0 0 0.12 0.12 {}
+T {BN4} 90 -32.5 0 0 0.12 0.12 {}
+T {BN3} 90 -12.5 0 0 0.12 0.12 {}
+T {BN2} 90 7.5 0 0 0.12 0.12 {}
+T {BN1} 90 27.5 0 0 0.12 0.12 {}
+T {BN0} 90 47.5 0 0 0.12 0.12 {}
+T {D7} 90 67.5 0 0 0.12 0.12 {}
+T {D6} 90 87.5 0 0 0.12 0.12 {}
+T {D5} 90 107.5 0 0 0.12 0.12 {}
+T {D4} 90 127.5 0 0 0.12 0.12 {}
+T {D3} 90 147.5 0 0 0.12 0.12 {}
+T {D2} 90 167.5 0 0 0.12 0.12 {}
+T {D1} 90 187.5 0 0 0.12 0.12 {}
+T {D0} 90 207.5 0 0 0.12 0.12 {}
+L 4 50 -220 50 220 {}
+L 4 -50 -220 -50 220 {}
+L 4 -50 220 50 220 {}
+L 4 -50 -220 50 -220 {}
