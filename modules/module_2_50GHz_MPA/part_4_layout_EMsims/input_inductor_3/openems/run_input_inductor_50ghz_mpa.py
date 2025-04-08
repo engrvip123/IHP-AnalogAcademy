@@ -28,7 +28,7 @@ postprocess_only = False
 # ===================== input files and path settings =======================
 
 # GDS filename
-gds_filename = "../layout_gds/input_inductor.gds"      # geometries
+gds_filename = "../layout_gds/inductor_input.gds"      # geometries
 XML_filename = "SG13G2.xml"       # stackup
 
 # preprocess GDSII for safe handling of cutouts/holes?
