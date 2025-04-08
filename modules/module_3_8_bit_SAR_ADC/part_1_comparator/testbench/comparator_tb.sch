@@ -1,10 +1,131 @@
-v {xschem version=3.4.5 file_version=1.2
-}
+v {xschem version=3.4.6 file_version=1.2}
 G {}
 K {}
 V {}
 S {}
 E {}
+B 2 20 -1225 820 -825 {flags=graph
+y1=0.046228722
+y2=1.0862287
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0
+
+divx=5
+subdivx=4
+xlabmag=1.0
+ylabmag=1.0
+
+
+dataset=-1
+unitx=1
+logx=0
+logy=0
+x2=1e-06
+color=4
+node=clk}
+B 2 20 -805 820 -405 {flags=graph
+y1=0.59
+y2=0.61
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0
+
+divx=5
+subdivx=4
+xlabmag=1.0
+ylabmag=1.0
+
+
+dataset=-1
+unitx=1
+logx=0
+logy=0
+x2=1e-06
+
+
+color=4
+node=vinp}
+B 2 850 -1225 1650 -825 {flags=graph
+y1=-1.3
+y2=1.3
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0
+
+divx=5
+subdivx=4
+xlabmag=1.0
+ylabmag=1.0
+
+
+dataset=-1
+unitx=1
+logx=0
+logy=0
+x2=1e-06
+
+
+color=4
+node=vout}
+B 2 850 -805 1650 -405 {flags=graph
+y1=-0.7005027
+y2=1.1959773
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0
+
+divx=5
+subdivx=4
+xlabmag=1.0
+ylabmag=1.0
+
+
+dataset=-1
+unitx=1
+logx=0
+logy=0
+x2=1e-06
+
+color=4
+node=outp}
+B 2 850 -395 1650 5 {flags=graph
+y1=0.24502661
+y2=1.4615386
+ypos1=0
+ypos2=2
+divy=5
+subdivy=1
+unity=1
+x1=0
+
+divx=5
+subdivx=4
+xlabmag=1.0
+ylabmag=1.0
+
+
+dataset=-1
+unitx=1
+logx=0
+logy=0
+x2=1e-06
+
+
+color=4
+node=outm}
 N -540 -180 -540 -160 {
 lab=vbias}
 N -610 -180 -610 -160 {
@@ -61,6 +182,32 @@ N 460 -150 460 -140 {
 lab=GND}
 N 460 -300 460 -290 {
 lab=GND}
+C {devices/code_shown.sym} -675 -490 0 0 {name=MODEL only_toplevel=false
+format="tcleval( @value )"
+value="
+.lib $::SG13G2_MODELS/cornerCAP.lib cap_typ
+.lib cornerMOSlv.lib mos_tt
+"}
+C {devices/code_shown.sym} -685 -780 0 0 {name=NGSPICE only_toplevel=false 
+value="
+.control
+op
+.param clock = 100e6    ; 100 MHz clock
+.param period = 1 / clock
+.param num_cycles = 100  ; number of evaluation cycles
+.param tr = num_cycles * period
+tran 500p 1u
+.save all
+let vindiff = (v(vinp))-(v(vbias))
+let clk = v(clk)
+let vout = (v(outp))-(v(outm))
+write output_file.raw
+.endc
+"}
+C {launcher.sym} -160 -855 0 0 {name=h5
+descr="load waves" 
+tclcommand="xschem raw_read $netlist_dir/output_file.raw tran"
+}
 C {vsource.sym} -610 -130 0 0 {name=V3 value="DC 1.2"}
 C {vsource.sym} -540 -130 0 0 {name=V4 value="DC 0.6"}
 C {gnd.sym} -310 -70 0 0 {name=l1 lab=GND}
@@ -71,7 +218,6 @@ C {lab_pin.sym} -420 -180 2 0 {name=p1 sig_type=std_logic lab=clk}
 C {gnd.sym} -570 -70 0 0 {name=l2 lab=GND}
 C {vsource.sym} -210 -130 0 0 {name=V2 value="PULSE(595e-3 605e-3 0 tr 1S 1S)"}
 C {lab_pin.sym} -210 -180 2 0 {name=p2 sig_type=std_logic lab=vinp}
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_3_8_bit_SAR_ADC/part_1_comparator/schematic/dynamic_comparator.sym} 270 -220 0 0 {name=x1}
 C {lab_pin.sym} 60 -280 2 1 {name=p5 sig_type=std_logic lab=vinp}
 C {lab_pin.sym} 200 -350 2 0 {name=p6 sig_type=std_logic lab=vdd}
 C {lab_pin.sym} 60 -220 2 1 {name=p7 sig_type=std_logic lab=vbias}
@@ -94,45 +240,14 @@ footprint=1206
 device="ceramic capacitor"}
 C {capa.sym} 460 -260 2 0 {name=C4
 m=1
-value=10f
+value=15f
 footprint=1206
 device="ceramic capacitor"}
 C {capa.sym} 460 -180 0 0 {name=C3
 m=1
-value=10f
+value=15f
 footprint=1206
 device="ceramic capacitor"}
 C {gnd.sym} 460 -140 0 0 {name=l6 lab=GND}
 C {gnd.sym} 460 -300 2 0 {name=l7 lab=GND}
-C {devices/code_shown.sym} 15 -480 0 0 {name=MODEL1 only_toplevel=false
-format="tcleval( @value )"
-value="
-.lib cornerMOSlv.lib mos_tt_mismatch
-"}
-C {devices/code_shown.sym} -675 -780 0 0 {name=NGSPICE1 only_toplevel=false 
-value="
-.control
-  let run = 1
-  let mc_runs = 100
-  let results = unitvec(mc_runs)
-  dowhile run <= mc_runs
-    reset
-    .param clock = 100e6    ; 100 MHz clock
-    .param period = 1 / clock
-    .param num_cycles = 200  ; number of evaluation cycles
-    .param tr = num_cycles * period
-    tran 300p 2u
-    set run = $&run
-    let vdiff = v(outp) - v(outm)
-    
-    meas tran cross_time WHEN vdiff = 0.6
-    let vindiff = v(vinp) - v(vbias)
-    meas tran offset_voltage_\{$run\} find vindiff at=cross_time
-    let results[$run - 1] = offset_voltage_\{$run\}
-    let run = run + 1
-  end
-  print results > offset_MC_analysis.txt
-  write offset_MC_analysis.raw
-.endc
-
-"}
+C {dynamic_comparator.sym} 270 -220 0 0 {name=x1}

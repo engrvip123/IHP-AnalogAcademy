@@ -124,7 +124,6 @@ C {launcher.sym} 820 -310 0 0 {name=h5
 descr="load waves" 
 tclcommand="xschem raw_read $netlist_dir/T_gate_tb.raw tran"
 }
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_3_8_bit_SAR_ADC/part_2_digital_comps/bootstrap_switch/schematic/inverter.sym} 240 -850 0 0 {name=x3}
 C {gnd.sym} 260 -690 0 0 {name=l5 lab=GND}
 C {gnd.sym} 260 -640 0 0 {name=l6 lab=GND}
 C {lab_pin.sym} 260 -730 0 0 {name=p6 sig_type=std_logic lab=vdd}
@@ -140,5 +139,6 @@ value=7p
 footprint=1206
 device="ceramic capacitor"}
 C {gnd.sym} 570 -770 0 0 {name=l7 lab=GND}
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_3_8_bit_SAR_ADC/part_2_digital_comps/T_gate/schematic/T_gate.sym} 400 -1020 0 0 {name=x1}
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_3_8_bit_SAR_ADC/part_2_digital_comps/T_gate/schematic/T_gate.sym} 400 -690 0 0 {name=x2}
+C {inverter.sym} 240 -850 0 0 {name=x1}
+C {T_gate.sym} 400 -1020 0 0 {name=x2}
+C {T_gate.sym} 400 -690 0 0 {name=x3}

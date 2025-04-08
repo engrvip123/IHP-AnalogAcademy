@@ -1,5 +1,6 @@
 /misc/
 **/.vscode/
+**/sar_logic_obj_dir/
 **/.ipynb_checkpoints/
 *.raw
 *.spice
@@ -8,4 +9,7 @@
 *.dat
 *.txt
 *.npy
+*.so
+*.out
+*.vcd
 

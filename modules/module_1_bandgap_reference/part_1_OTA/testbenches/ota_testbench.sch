@@ -1,5 +1,4 @@
-v {xschem version=3.4.5 file_version=1.2
-}
+v {xschem version=3.4.6 file_version=1.2}
 G {}
 K {}
 V {}
@@ -311,7 +310,6 @@ C {lab_pin.sym} 335 65 0 0 {name=p8 sig_type=std_logic lab=VDDac}
 C {vsource.sym} 95 230 0 0 {name=V4 value="DC 0.6"
 }
 C {gnd.sym} 95 280 0 0 {name=l12 lab=GND}
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_1_bandgap_reference/part_2_full_bgr/schematic/verilog/veriloga_tbs/diff_amp.sym} 1310 120 0 0 {name=U1 model=diff_amp_cell spiceprefix=X}
 C {ind.sym} 1275 330 1 0 {name=L16
 m=1
 value=4G
@@ -325,6 +323,7 @@ device="ceramic capacitor"}
 C {gnd.sym} 1180 400 0 0 {name=l17 lab=GND}
 C {iopin.sym} 1570 120 0 0 {name=p9 lab=vout3}
 C {lab_pin.sym} 1110 80 0 0 {name=p14 sig_type=std_logic lab=vp}
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_1_bandgap_reference/part_1_OTA/schematic/two_stage_OTA.sym} 350 240 0 0 {name=x4}
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_1_bandgap_reference/part_1_OTA/schematic/two_stage_OTA.sym} 360 -410 0 0 {name=x1}
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_1_bandgap_reference/part_1_OTA/schematic/two_stage_OTA.sym} 1305 -255 0 0 {name=x2}
+C {two_stage_OTA.sym} 360 -410 0 0 {name=x1}
+C {two_stage_OTA.sym} 350 240 0 0 {name=x2}
+C {two_stage_OTA.sym} 1305 -255 0 0 {name=x3}
+C {diff_amp.sym} 1310 120 0 0 {name=U1 model=diff_amp_cell spiceprefix=X}

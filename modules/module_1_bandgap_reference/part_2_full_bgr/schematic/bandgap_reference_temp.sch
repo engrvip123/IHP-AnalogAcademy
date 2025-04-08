@@ -1,5 +1,4 @@
-v {xschem version=3.4.5 file_version=1.2
-}
+v {xschem version=3.4.6 file_version=1.2}
 G {}
 K {}
 V {}
@@ -235,7 +234,6 @@ model=sg13_lv_pmos
 spiceprefix=X
 }
 C {lab_pin.sym} -485 -980 0 1 {name=p5 sig_type=std_logic lab=vdd}
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_1_bandgap_reference/part_1_OTA/schematic/two_stage_OTA.sym} -260 -695 0 0 {name=x2}
 C {lab_pin.sym} -275 -795 0 1 {name=p1 sig_type=std_logic lab=vdd}
 C {gnd.sym} -275 -520 0 1 {name=l4 lab=GND}
 C {isource.sym} -350 -565 0 1 {name=I1 value=80u}
@@ -331,3 +329,4 @@ C {launcher.sym} 1181.40625 -918.28125 0 0 {name=h5
 descr="load waves" 
 tclcommand="xschem raw_read $netlist_dir/bgr_temp.raw dc"
 }
+C {two_stage_OTA.sym} -260 -695 0 0 {name=x1}

@@ -107,7 +107,6 @@ tclcommand="xschem raw_read $netlist_dir/nand_tb.raw tran"
 C {devices/lab_pin.sym} 140 440 2 0 {name=p1 sig_type=std_logic lab=B}
 C {devices/gnd.sym} 140 530 0 0 {name=l1 lab=GND}
 C {devices/vsource.sym} 140 490 0 0 {name=V2 value="dc 0 ac 0 PULSE(0 1 0 1n 1n 1u 2u)"}
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_3_8_bit_SAR_ADC/part_2_digital_comps/nand_gate/schematic/nand_gate.sym} 720 380 0 0 {name=x1}
 C {devices/lab_pin.sym} 550 340 2 1 {name=p2 sig_type=std_logic lab=A}
 C {devices/lab_pin.sym} 550 400 2 1 {name=p3 sig_type=std_logic lab=B}
 C {devices/lab_pin.sym} 660 260 2 1 {name=p4 sig_type=std_logic lab=vdd}
@@ -119,3 +118,4 @@ value=50f
 footprint=1206
 device="ceramic capacitor"}
 C {opin.sym} 820 370 0 0 {name=p5 lab=Vo}
+C {nand_gate.sym} 720 380 0 0 {name=x1}

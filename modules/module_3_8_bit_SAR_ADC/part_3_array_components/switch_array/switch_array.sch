@@ -28,7 +28,7 @@ N 300 -870 300 -860 {lab=gnd}
 N 580 -940 630 -940 {lab=S_MSB}
 N 1040 -700 1040 -670 {lab=D6}
 N 1120 -780 1180 -780 {lab=S6}
-N 1040 -1030 1040 -860 {lab=#net3}
+N 1040 -1030 1040 -860 {lab=#net2}
 N 1120 -1110 1180 -1110 {lab=S6}
 N 1180 -950 1180 -780 {lab=S6}
 N 1180 -1110 1180 -950 {lab=S6}
@@ -50,7 +50,7 @@ N 900 -880 900 -870 {lab=gnd}
 N 1180 -950 1230 -950 {lab=S6}
 N 1610 -710 1610 -680 {lab=D5}
 N 1690 -790 1750 -790 {lab=S5}
-N 1610 -1040 1610 -870 {lab=#net4}
+N 1610 -1040 1610 -870 {lab=#net3}
 N 1690 -1120 1750 -1120 {lab=S5}
 N 1750 -960 1750 -790 {lab=S5}
 N 1750 -1120 1750 -960 {lab=S5}
@@ -72,7 +72,7 @@ N 1470 -890 1470 -880 {lab=gnd}
 N 1750 -960 1800 -960 {lab=S5}
 N 440 -80 440 -50 {lab=D4}
 N 520 -160 580 -160 {lab=S4}
-N 440 -410 440 -240 {lab=#net5}
+N 440 -410 440 -240 {lab=#net4}
 N 520 -490 580 -490 {lab=S4}
 N 580 -330 580 -160 {lab=S4}
 N 580 -490 580 -330 {lab=S4}
@@ -94,7 +94,7 @@ N 300 -260 300 -250 {lab=gnd}
 N 580 -330 630 -330 {lab=S4}
 N 1040 -90 1040 -60 {lab=D3}
 N 1120 -170 1180 -170 {lab=S3}
-N 1040 -420 1040 -250 {lab=#net6}
+N 1040 -420 1040 -250 {lab=#net5}
 N 1120 -500 1180 -500 {lab=S3}
 N 1180 -340 1180 -170 {lab=S3}
 N 1180 -500 1180 -340 {lab=S3}
@@ -116,7 +116,7 @@ N 900 -270 900 -260 {lab=gnd}
 N 1180 -340 1230 -340 {lab=S3}
 N 1620 -100 1620 -70 {lab=D2}
 N 1700 -180 1760 -180 {lab=S2}
-N 1620 -430 1620 -260 {lab=#net7}
+N 1620 -430 1620 -260 {lab=#net6}
 N 1700 -510 1760 -510 {lab=S2}
 N 1760 -350 1760 -180 {lab=S2}
 N 1760 -510 1760 -350 {lab=S2}
@@ -138,7 +138,7 @@ N 1480 -280 1480 -270 {lab=gnd}
 N 1760 -350 1810 -350 {lab=S2}
 N 2190 -110 2190 -80 {lab=D1}
 N 2270 -190 2330 -190 {lab=S1}
-N 2190 -440 2190 -270 {lab=#net8}
+N 2190 -440 2190 -270 {lab=#net7}
 N 2270 -520 2330 -520 {lab=S1}
 N 2330 -360 2330 -190 {lab=S1}
 N 2330 -520 2330 -360 {lab=S1}
@@ -159,67 +159,46 @@ N 2050 -420 2050 -410 {lab=vdd}
 N 2050 -290 2050 -280 {lab=gnd}
 N 2330 -360 2380 -360 {lab=S1}
 C {iopin.sym} 630 -940 0 0 {name=p5 lab=S_MSB}
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_3_8_bit_SAR_ADC/part_2_digital_comps/bootstrap_switch/schematic/inverter.sym} 280 -930 0 0 {name=x3}
 C {lab_pin.sym} 300 -810 0 0 {name=p6 sig_type=std_logic lab=vdd}
 C {lab_pin.sym} 300 -1140 0 0 {name=p7 sig_type=std_logic lab=vdd}
 C {lab_pin.sym} 300 -1100 0 0 {name=p8 sig_type=std_logic lab=vref}
 C {lab_pin.sym} 300 -1000 0 0 {name=p4 sig_type=std_logic lab=vdd}
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_3_8_bit_SAR_ADC/part_2_digital_comps/T_gate/schematic/T_gate.sym} 440 -1100 0 0 {name=x1}
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_3_8_bit_SAR_ADC/part_2_digital_comps/T_gate/schematic/T_gate.sym} 440 -770 0 0 {name=x2}
 C {iopin.sym} 1230 -950 0 0 {name=p13 lab=S6}
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_3_8_bit_SAR_ADC/part_2_digital_comps/bootstrap_switch/schematic/inverter.sym} 880 -940 0 0 {name=x7}
 C {lab_pin.sym} 900 -820 0 0 {name=p14 sig_type=std_logic lab=vdd}
 C {lab_pin.sym} 900 -1150 0 0 {name=p15 sig_type=std_logic lab=vdd}
 C {lab_pin.sym} 900 -1110 0 0 {name=p16 sig_type=std_logic lab=vref}
 C {lab_pin.sym} 900 -1010 0 0 {name=p18 sig_type=std_logic lab=vdd}
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_3_8_bit_SAR_ADC/part_2_digital_comps/T_gate/schematic/T_gate.sym} 1040 -1110 0 0 {name=x8}
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_3_8_bit_SAR_ADC/part_2_digital_comps/T_gate/schematic/T_gate.sym} 1040 -780 0 0 {name=x9}
 C {iopin.sym} 190 -930 0 1 {name=p19 lab=D_MSB}
 C {iopin.sym} 790 -940 0 1 {name=p11 lab=D6}
 C {iopin.sym} 1800 -960 0 0 {name=p17 lab=S5}
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_3_8_bit_SAR_ADC/part_2_digital_comps/bootstrap_switch/schematic/inverter.sym} 1450 -950 0 0 {name=x10}
 C {lab_pin.sym} 1470 -830 0 0 {name=p20 sig_type=std_logic lab=vdd}
 C {lab_pin.sym} 1470 -1160 0 0 {name=p21 sig_type=std_logic lab=vdd}
 C {lab_pin.sym} 1470 -1120 0 0 {name=p22 sig_type=std_logic lab=vref}
 C {lab_pin.sym} 1470 -1020 0 0 {name=p23 sig_type=std_logic lab=vdd}
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_3_8_bit_SAR_ADC/part_2_digital_comps/T_gate/schematic/T_gate.sym} 1610 -1120 0 0 {name=x11}
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_3_8_bit_SAR_ADC/part_2_digital_comps/T_gate/schematic/T_gate.sym} 1610 -790 0 0 {name=x12}
 C {iopin.sym} 1360 -950 0 1 {name=p24 lab=D5}
 C {iopin.sym} 630 -330 0 0 {name=p25 lab=S4}
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_3_8_bit_SAR_ADC/part_2_digital_comps/bootstrap_switch/schematic/inverter.sym} 280 -320 0 0 {name=x13}
 C {lab_pin.sym} 300 -200 0 0 {name=p26 sig_type=std_logic lab=vdd}
 C {lab_pin.sym} 300 -530 0 0 {name=p27 sig_type=std_logic lab=vdd}
 C {lab_pin.sym} 300 -490 0 0 {name=p28 sig_type=std_logic lab=vref}
 C {lab_pin.sym} 300 -390 0 0 {name=p29 sig_type=std_logic lab=vdd}
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_3_8_bit_SAR_ADC/part_2_digital_comps/T_gate/schematic/T_gate.sym} 440 -490 0 0 {name=x14}
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_3_8_bit_SAR_ADC/part_2_digital_comps/T_gate/schematic/T_gate.sym} 440 -160 0 0 {name=x15}
 C {iopin.sym} 1230 -340 0 0 {name=p30 lab=S3}
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_3_8_bit_SAR_ADC/part_2_digital_comps/bootstrap_switch/schematic/inverter.sym} 880 -330 0 0 {name=x16}
 C {lab_pin.sym} 900 -210 0 0 {name=p31 sig_type=std_logic lab=vdd}
 C {lab_pin.sym} 900 -540 0 0 {name=p32 sig_type=std_logic lab=vdd}
 C {lab_pin.sym} 900 -500 0 0 {name=p33 sig_type=std_logic lab=vref}
 C {lab_pin.sym} 900 -400 0 0 {name=p34 sig_type=std_logic lab=vdd}
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_3_8_bit_SAR_ADC/part_2_digital_comps/T_gate/schematic/T_gate.sym} 1040 -500 0 0 {name=x17}
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_3_8_bit_SAR_ADC/part_2_digital_comps/T_gate/schematic/T_gate.sym} 1040 -170 0 0 {name=x18}
 C {iopin.sym} 1810 -350 0 0 {name=p35 lab=S2}
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_3_8_bit_SAR_ADC/part_2_digital_comps/bootstrap_switch/schematic/inverter.sym} 1460 -340 0 0 {name=x19}
 C {lab_pin.sym} 1480 -220 0 0 {name=p36 sig_type=std_logic lab=vdd}
 C {lab_pin.sym} 1480 -550 0 0 {name=p37 sig_type=std_logic lab=vdd}
 C {lab_pin.sym} 1480 -510 0 0 {name=p38 sig_type=std_logic lab=vref}
 C {lab_pin.sym} 1480 -410 0 0 {name=p39 sig_type=std_logic lab=vdd}
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_3_8_bit_SAR_ADC/part_2_digital_comps/T_gate/schematic/T_gate.sym} 1620 -510 0 0 {name=x20}
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_3_8_bit_SAR_ADC/part_2_digital_comps/T_gate/schematic/T_gate.sym} 1620 -180 0 0 {name=x21}
 C {iopin.sym} 190 -320 0 1 {name=p40 lab=D4}
 C {iopin.sym} 790 -330 0 1 {name=p41 lab=D3}
 C {iopin.sym} 1370 -340 0 1 {name=p42 lab=D2}
 C {iopin.sym} 2380 -360 0 0 {name=p43 lab=S1}
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_3_8_bit_SAR_ADC/part_2_digital_comps/bootstrap_switch/schematic/inverter.sym} 2030 -350 0 0 {name=x22}
 C {lab_pin.sym} 2050 -230 0 0 {name=p44 sig_type=std_logic lab=vdd}
 C {lab_pin.sym} 2050 -560 0 0 {name=p45 sig_type=std_logic lab=vdd}
 C {lab_pin.sym} 2050 -520 0 0 {name=p46 sig_type=std_logic lab=vref}
 C {lab_pin.sym} 2050 -420 0 0 {name=p47 sig_type=std_logic lab=vdd}
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_3_8_bit_SAR_ADC/part_2_digital_comps/T_gate/schematic/T_gate.sym} 2190 -520 0 0 {name=x23}
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_3_8_bit_SAR_ADC/part_2_digital_comps/T_gate/schematic/T_gate.sym} 2190 -190 0 0 {name=x24}
 C {iopin.sym} 1940 -350 0 1 {name=p48 lab=D1}
 C {iopin.sym} 1160 -1350 0 1 {name=p49 lab=vdd}
 C {iopin.sym} 1240 -1350 0 1 {name=p50 lab=vref}
@@ -252,3 +231,24 @@ C {lab_pin.sym} 2050 -470 0 0 {name=p81 sig_type=std_logic lab=gnd}
 C {lab_pin.sym} 2050 -280 0 0 {name=p82 sig_type=std_logic lab=gnd}
 C {lab_pin.sym} 2050 -190 0 0 {name=p83 sig_type=std_logic lab=gnd}
 C {lab_pin.sym} 2050 -140 0 0 {name=p84 sig_type=std_logic lab=gnd}
+C {T_gate.sym} 440 -1100 0 0 {name=x1}
+C {T_gate.sym} 440 -490 0 0 {name=x2}
+C {T_gate.sym} 440 -160 0 0 {name=x4}
+C {T_gate.sym} 1040 -170 0 0 {name=x5}
+C {T_gate.sym} 1620 -180 0 0 {name=x6}
+C {T_gate.sym} 2190 -190 0 0 {name=x8}
+C {T_gate.sym} 2190 -520 0 0 {name=x9}
+C {T_gate.sym} 1620 -510 0 0 {name=x11}
+C {T_gate.sym} 1610 -790 0 0 {name=x12}
+C {T_gate.sym} 1610 -1120 0 0 {name=x14}
+C {T_gate.sym} 1040 -1110 0 0 {name=x15}
+C {T_gate.sym} 1040 -780 0 0 {name=x17}
+C {T_gate.sym} 440 -770 0 0 {name=x18}
+C {T_gate.sym} 1040 -500 0 0 {name=x20}
+C {inverter.sym} 280 -320 0 0 {name=x3}
+C {inverter.sym} 280 -930 0 0 {name=x7}
+C {inverter.sym} 880 -940 0 0 {name=x10}
+C {inverter.sym} 1450 -950 0 0 {name=x13}
+C {inverter.sym} 880 -330 0 0 {name=x16}
+C {inverter.sym} 1460 -340 0 0 {name=x19}
+C {inverter.sym} 2030 -350 0 0 {name=x21}

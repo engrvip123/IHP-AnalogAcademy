@@ -74,7 +74,6 @@ tran 100u 1.463m
 write test_bootstrap.raw
 .endc
 " }
-C {/home/pedersen/projects/IHP-AnalogAcademy/modules/module_3_8_bit_SAR_ADC/part_2_digital_comps/bootstrap_switch/schematic/bootstrap_switch.sym} 340 -430 0 0 {name=x1}
 C {vsource.sym} 60 -370 0 0 {name=V1 value="PULSE(0 5 0 1n 1n 0.5u 1u)"}
 C {gnd.sym} 60 -320 0 1 {name=l2 lab=GND}
 C {lab_pin.sym} 60 -430 0 0 {name=p1 sig_type=std_logic lab=clk}
@@ -99,3 +98,4 @@ value=7p
 footprint=1206
 device="ceramic capacitor"}
 C {gnd.sym} 500 -300 0 1 {name=l1 lab=GND}
+C {bootstrap_switch.sym} 340 -430 0 0 {name=x1}
