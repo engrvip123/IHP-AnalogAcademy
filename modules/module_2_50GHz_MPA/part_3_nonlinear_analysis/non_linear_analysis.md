@@ -73,43 +73,13 @@ The expected table output is shown below:
 
 As seen in the results table, the simulation has run successfully. This confirms that the **sweeping parameter**, **frequency axis**, and **raw data** are correctly recorded.
 
-Within the **part_3_non_linear_analysis** section, a folder named **python** contains a script designed to facilitate post-processing. This script aims to provide an easy way to **plot gain vs. input power** and **output power vs. input power**.
+Within the **part_3_non_linear_analysis** section, a folder named **python** contains a jupyter lab script designed to facilitate post-processing. This script aims to provide an easy way to **plot gain vs. input power** and **output power vs. input power**. In order to use this extract the I/O current and voltages. This should be done by instantiating a cartesian plot founder under diagrams:
+<p align="center"> <img src="../../../media/module_2/diagram_main_dock.png" width="350" height="550" /> </p> 
 
-**Note:** There may be potential issues with the script, so adjustments might be required depending on the data format or specific cases encountered.
 
-To use the script, navigate to its location and run the following command:
+and plot the I/O current and voltages. This is done by double clicking the plot and selecting the appropriate data. 
 
-```
-python3 plot_xyce.py
-```
-
-this will print the following information, to show functionality:
-```
-This script processes and extracts variables from a specified dataset file.
-You can use the script in the following ways:
-1. To list all independent and dependent variables in the dataset:
-   python3 script.py <file_path>
-2. To print all values for a specific variable:
-   python3 script.py <file_path> <variable_name>
-3. To run the analysis and generate plots, pass the following arguments:
-   python3 script.py <file_path> <vout_var> <vin_var> <iin_var> <iout_var> <sweep_var> <freq_interest> [xlim_min xlim_max]
-
-```
-From here, navigate to the simulation directory containing the dataset file and execute the following command:
-
-```
-python3 ../../python/plot_xyce.py load_pull.dat.xyce "V(VOUT)" "V(VIN)" "I(PR2)" "I(PR3)" "Y" 50e9 -30 -10 -1 16
-```
-This command generates a readable plot of **gain vs. input power**. For **output power vs. input power**, adjust the boundaries accordingly.
-
-If the naming conventions of the variables differ in your schematic, use the following command to list all available parameters in the dataset:
-```
-python3 ../../python/plot_xyce.py load_pull.dat.xyce
-```
-Once the script runs successfully, the **gain vs. input power** plot should resemble the following:
-<p align="center"> <img src="../../../media/module_2/gain_vs_input_power_2.png" width="600" height="500" /> </p> 
-
-<p align="center"> <img src="../../../media/module_2/output_power_vs_input_power.png" width="600" height="500" /> </p> 
+<p align="center"> <img src="../../../media/module_2/edit_diagram_properties.png" width="400" height="450" /> </p> 
 
 
 ## Performing Load Pull
