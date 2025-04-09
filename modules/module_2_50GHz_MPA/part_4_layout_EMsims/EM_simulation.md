@@ -42,25 +42,28 @@ core_1/layout_gds
 ```
 The layout can be seen Below:
 <p align="center"> 
-  <img src="../../../media/module_2/core_picture_bjt.png" width="700" height="650" /> 
+  <img src="../../../media/module_2/core_picture_bjt.png" width="900" height="700" /> 
 </p>
 
 
 As shown in the layout, the transistor is placed at the center of the design. For the purpose of our EM simulation, we remove the transistor, leaving only the core structure. This simplified version of the layout is then used for simulating the electromagnetic behavior of the circuit.
 
 <p align="center"> 
-  <img src="../../../media/module_2/core_picture_no_bjt.png" width="700" height="650" /> 
+  <img src="../../../media/module_2/core_picture_no_bjt.png" width="900" height="700" /> 
 </p>
-![[core_picture_no_bjt.png]]
+
 
 The attentive reader may notice small layers at the ends of each of the TopMetal2 lines, as well as at the center of the design. These layers are highlighted with arrows in the image below:
 <p align="center"> 
-  <img src="../../../media/module_2/core_picture_no_bjt_arrows.png" width="700" height="650" /> 
+  <img src="../../../media/module_2/core_picture_no_bjt_arrows.png" width="900" height="700" /> 
 </p>
-![[core_picture_no_bjt_arrows.png]]
+
 These are the definitions of the ports for the openEMS simulation, which are created by adding a "custom" layer in KLayout. The layer can be seen in the pane, and it follows the syntax shown below:
 
-![[Pasted image 20250409090752.png]]
+<p> 
+  <img src="../../../media/module_2/list_costum_layers.png" width="200" height="100" /> 
+</p>
+
 
 More about this later...
 
@@ -288,7 +291,7 @@ In openEMS, ports are always measured between the signal and ground, where the s
 For via ports, which extend from one metal layer to another (e.g., from Metal3 to TopMetal2), it's important to ensure that the ground is present on the bottom layer or the nearest reference layer, such as the GND layer. If Metal3 is used for the signal, the ground for that signal should be located in the bottom metal layer or GND, which will serve as the return path. For in-plane ports, where both the signal and ground are on the same metal layer, the polarity of the ground needs to be set correctly, ensuring that it has the same effective polarity as the signal. Lets look at the example from above:
 
 <p align="center"> 
-  <img src="../../../media/module_2/core_picture_no_bjt_center.png" width="700" height="650" /> 
+  <img src="../../../media/module_2/core_picture_no_bjt_center.png" width="900" height="700" /> 
 </p>
 
 From this, we can see that **P1** and **P2** are VIA ports connecting Metal3 to **TopMetal2**. In this configuration, Metal3 serves as the ground reference layer, both in practice and for the port abstraction. Therefore, when considering signal propagation and current flow, the signals flow from Metal3 to TopMetal2, in the _Z_ direction.
@@ -305,27 +308,26 @@ python run_core_50ghz_mpa.py
 This will launch the 3D viewer, which displays the layout. It serves as an important sanity check to ensure that the code correctly interprets the layout. Pay particular attention to the port placement, as shown below:
 
 <p align="center"> 
-  <img src="../../../media/module_2/3d_viewer_general.png" width="300" height="250" /> 
+  <img src="../../../media/module_2/3d_viewer_general.png" width="700" height="550" /> 
 </p>
-![[3d_viewer_general.png]]
+
 
 Here, we can confirm that the ports are positioned correctly. Specifically, check the following views:
 <p align="center"> 
-  <img src="../../../media/module_2/3d_viewer_port_1_2.png" width="300" height="250" /> 
+  <img src="../../../media/module_2/3d_viewer_port_1_2.png" width="700" height="550" /> 
 </p>
-![[3d_viewer_port_1_2.png]]
+
+
 <p align="center"> 
-  <img src="../../../media/module_2/3d_viewer_port_3_4.png" width="300" height="250" /> 
+  <img src="../../../media/module_2/3d_viewer_port_3_4.png" width="700" height="550" /> 
 </p>
-![[3d_viewer_port_3_4.png]]
 
 Both the top and bottom views show that our ports are placed properly. Once this is confirmed, we can disable the **preview_only** flag and proceed with the actual simulation of the core.
 
 After running the script again with the flag set to **False**, you should see the following in the terminal:
 <p align="center"> 
-  <img src="../../../media/module_2/terminal_status.png" width="300" height="250" /> 
+  <img src="../../../media/module_2/terminal_status.png" width="800" height="150" /> 
 </p>
-![[terminal_status.png]]
 
 From here, the simulation will continue until it completes.
 
@@ -342,9 +344,8 @@ python spar_plot.py your_spar_file.s4p
 
 This will produce a plot of the S-parameters for the core layout in the module, as shown below:
 <p align="center"> 
-  <img src="../../../media/module_2/spar_plot.png" width="300" height="250" /> 
+  <img src="../../../media/module_2/spar_plot.png" width="900" height="700" /> 
 </p>
-![[spar_plot.png]]
 
 Additionally, the plots will be saved in the **sparam_plots** folder for future reference.
 
@@ -364,9 +365,8 @@ Next, navigate to the **main dock** in Qucs-S and go to **File > Components**. F
 Double-click the S-parameter component to open its properties. In the component properties window, click the **File data** box. From there, press **Browse** and locate the S-parameter file you want to use. Set the number of ports to 4 and leave the other parameters at their default settings. You should now have something similar to the following setup:
 
 <p align="center"> 
-  <img src="../../../media/module_2/s_param_box_props.png" width="300" height="250" /> 
+  <img src="../../../media/module_2/s_param_box_props.png" width="600" height="450" /> 
 </p>
-![[s_param_box_props.png]]
 
 #### Step 3: Connecting the S-Parameter Data
 
@@ -374,7 +374,7 @@ Next, you will connect the S-parameter data for the core to your schematic. This
 
 
 <p align="center"> 
-  <img src="../../../media/module_2/post_layout_sim_core.png" width="500" height="700" /> 
+  <img src="../../../media/module_2/post_layout_sim_core.png" width="900" height="700" /> 
 </p>
 
 #### Step 4: Running the Simulation
@@ -384,16 +384,15 @@ At this point, you are ready to simulate the behavior of the circuit. Once the s
 For this circuit, the behavior with the core implemented is shown in the following plot:
 
 <p align="center"> 
-  <img src="../../../media/module_2/Av_vs_IP_core.png" width="300" height="250" /> 
+  <img src="../../../media/module_2/Av_vs_IP_core.png" width="500" height="500" /> 
 </p>
 
 #### Step 5: DC Bias Issue and T-Connector Layout
 
 In the next part of the module, you will find a layout for a **T-connector**, where you can explore its implementation and simulation. This part presented some challenges because **Xyce** had difficulty defining the DC operating points. As seen in the schematic, the solution was to place extremely large resistors on ports 1 and 2 to set proper biasing for the simulator:
 <p align="center"> 
-  <img src="../../../media/module_2/DC_bias_problem.png" width="300" height="250" /> 
+  <img src="../../../media/module_2/DC_bias_problem.png" width="500" height="400" /> 
 </p>
-![[DC_bias_problem.png]]
-#### Final Steps
+### Final Steps
 
 At this stage, the reader is encouraged to finish the layout by creating corresponding layouts for each component and EM simulating them accordingly.
