@@ -5,14 +5,14 @@ V {}
 S {}
 E {}
 B 2 20 -1225 820 -825 {flags=graph
-y1=0.046228722
-y2=1.0862287
+y1=0
+y2=1.3
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0
+x1=-1e-07
 
 divx=5
 subdivx=4
@@ -24,10 +24,10 @@ dataset=-1
 unitx=1
 logx=0
 logy=0
-x2=1e-06
+x2=9e-07
 color=4
 node=clk}
-B 2 20 -805 820 -405 {flags=graph
+B 2 20 -885 820 -485 {flags=graph
 y1=0.59
 y2=0.61
 ypos1=0
@@ -35,7 +35,7 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0
+x1=-1e-07
 
 divx=5
 subdivx=4
@@ -47,7 +47,7 @@ dataset=-1
 unitx=1
 logx=0
 logy=0
-x2=1e-06
+x2=9e-07
 
 
 color=4
@@ -60,7 +60,7 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0
+x1=-1e-07
 
 divx=5
 subdivx=4
@@ -72,7 +72,7 @@ dataset=-1
 unitx=1
 logx=0
 logy=0
-x2=1e-06
+x2=9e-07
 
 
 color=4
@@ -85,7 +85,7 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0
+x1=-1e-07
 
 divx=5
 subdivx=4
@@ -97,7 +97,7 @@ dataset=-1
 unitx=1
 logx=0
 logy=0
-x2=1e-06
+x2=9e-07
 
 color=4
 node=outp}
@@ -109,7 +109,7 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0
+x1=-1e-07
 
 divx=5
 subdivx=4
@@ -121,7 +121,7 @@ dataset=-1
 unitx=1
 logx=0
 logy=0
-x2=1e-06
+x2=9e-07
 
 
 color=4
@@ -185,7 +185,6 @@ lab=GND}
 C {devices/code_shown.sym} -675 -490 0 0 {name=MODEL only_toplevel=false
 format="tcleval( @value )"
 value="
-.lib $::SG13G2_MODELS/cornerCAP.lib cap_typ
 .lib cornerMOSlv.lib mos_tt
 "}
 C {devices/code_shown.sym} -685 -780 0 0 {name=NGSPICE only_toplevel=false 
@@ -228,24 +227,24 @@ C {lab_pin.sym} 500 -230 2 0 {name=p10 sig_type=std_logic lab=outp}
 C {lab_pin.sym} 500 -210 2 0 {name=p11 sig_type=std_logic lab=outm}
 C {capa.sym} 80 -110 0 0 {name=C1
 m=1
-value=16.384p
+value=6.4p
 footprint=1206
 device="ceramic capacitor"}
 C {gnd.sym} 80 -60 0 0 {name=l4 lab=GND}
 C {gnd.sym} 80 -380 2 0 {name=l5 lab=GND}
 C {capa.sym} 80 -330 2 0 {name=C2
 m=1
-value=16.384p
+value=6.4p
 footprint=1206
 device="ceramic capacitor"}
 C {capa.sym} 460 -260 2 0 {name=C4
 m=1
-value=15f
+value=50f
 footprint=1206
 device="ceramic capacitor"}
 C {capa.sym} 460 -180 0 0 {name=C3
 m=1
-value=15f
+value=50f
 footprint=1206
 device="ceramic capacitor"}
 C {gnd.sym} 460 -140 0 0 {name=l6 lab=GND}

@@ -153,7 +153,7 @@ C {opin.sym} 140 -470 0 1 {name=p8 lab=out+}
 C {lab_pin.sym} 650 -570 3 0 {name=p9 sig_type=std_logic lab=vdd}
 C {lab_pin.sym} 700 -740 2 0 {name=p10 sig_type=std_logic lab=vdd}
 C {sg13g2_pr/sg13_lv_pmos.sym} 630 -740 0 0 {name=M13
-l=0.300u
+l=0.3u
 w=18u
 ng=4
 m=1

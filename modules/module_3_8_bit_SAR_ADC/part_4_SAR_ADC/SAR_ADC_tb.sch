@@ -28,8 +28,8 @@ cdac_v-"
 hilight_wave=0
 hcursor1_y=1.2502139}
 B 2 2015 -1430 2815 -1030 {flags=graph
-y1=-0.6
-y2=0.6
+y1=-0.36
+y2=0.84
 ypos1=0
 ypos2=2
 divy=5
@@ -115,12 +115,8 @@ N 1750 -1090 1750 -1060 {lab=clk_comp}
 N 260 -1240 260 -1220 {lab=bias}
 N 260 -1160 260 -1150 {lab=GND}
 N 900 -1040 900 -1020 {lab=clk_samp}
-N 1940 -1210 1940 -1180 {lab=Op}
-N 1900 -1180 1940 -1180 {lab=Op}
-N 1940 -1160 1940 -1130 {lab=Om}
-N 1900 -1160 1940 -1160 {lab=Om}
-N 1940 -1290 1940 -1270 {lab=GND}
-N 1940 -1070 1940 -1050 {lab=GND}
+N 1900 -1180 1950 -1180 {lab=Op}
+N 1900 -1160 1950 -1160 {lab=Om}
 N 920 -1230 1040 -1230 {lab=#net25}
 N 1300 -1330 1300 -1290 {lab=vdd}
 N 1300 -1330 1370 -1330 {lab=vdd}
@@ -146,8 +142,6 @@ N 1300 -1050 1300 -1020 {lab=vdd}
 N 1370 -1020 1370 -870 {lab=vdd}
 N 1360 -1230 1620 -1230 {lab=CDAC_v+}
 N 1360 -1110 1620 -1110 {lab=CDAC_v-}
-N 1940 -1180 1950 -1180 {lab=Op}
-N 1940 -1160 1950 -1160 {lab=Om}
 N 300 -1240 300 -1220 {lab=clk_samp}
 N 300 -1180 300 -1150 {lab=GND}
 N 300 -980 300 -960 {lab=dac_clk}
@@ -291,18 +285,6 @@ C {devices/lab_pin.sym} 260 -1240 2 1 {name=p68 sig_type=std_logic lab=bias}
 C {devices/lab_pin.sym} 900 -1140 2 0 {name=p22 sig_type=std_logic lab=clk_samp}
 C {devices/lab_pin.sym} 840 -1020 2 0 {name=p21 sig_type=std_logic lab=vdd}
 C {devices/lab_pin.sym} 900 -1020 2 0 {name=p23 sig_type=std_logic lab=clk_samp}
-C {capa.sym} 1940 -1240 2 0 {name=C1
-m=1
-value=50f
-footprint=1206
-device="ceramic capacitor"}
-C {capa.sym} 1940 -1100 0 0 {name=C2
-m=1
-value=50f
-footprint=1206
-device="ceramic capacitor"}
-C {gnd.sym} 1940 -1050 0 1 {name=l5 lab=GND}
-C {gnd.sym} 1940 -1290 2 1 {name=l14 lab=GND}
 C {devices/lab_pin.sym} 1400 -1230 3 1 {name=p74 sig_type=std_logic lab=CDAC_v+}
 C {devices/lab_pin.sym} 1400 -1110 1 1 {name=p73 sig_type=std_logic lab=CDAC_v-}
 C {devices/lab_pin.sym} 700 -1230 2 1 {name=p25 sig_type=std_logic lab=vin_pos}

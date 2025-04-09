@@ -80,24 +80,24 @@ C {lab_pin.sym} 500 -230 2 0 {name=p10 sig_type=std_logic lab=outp}
 C {lab_pin.sym} 500 -210 2 0 {name=p11 sig_type=std_logic lab=outm}
 C {capa.sym} 80 -110 0 0 {name=C1
 m=1
-value=16.384p
+value=6.4p
 footprint=1206
 device="ceramic capacitor"}
 C {gnd.sym} 80 -60 0 0 {name=l4 lab=GND}
 C {gnd.sym} 80 -380 2 0 {name=l5 lab=GND}
 C {capa.sym} 80 -330 2 0 {name=C2
 m=1
-value=16.384p
+value=6.4p
 footprint=1206
 device="ceramic capacitor"}
 C {capa.sym} 460 -260 2 0 {name=C4
 m=1
-value=10f
+value=50f
 footprint=1206
 device="ceramic capacitor"}
 C {capa.sym} 460 -180 0 0 {name=C3
 m=1
-value=10f
+value=50f
 footprint=1206
 device="ceramic capacitor"}
 C {gnd.sym} 460 -140 0 0 {name=l6 lab=GND}
