@@ -1,6 +1,6 @@
 <Qucs Schematic 24.4.1>
 <Properties>
-  <View=1009,-114,2771,838,0.852941,0,0>
+  <View=1009,-114,2868,838,0.852941,0,0>
   <Grid=10,10,1>
   <DataSet=core_pl_sim.dat>
   <DataDisplay=core_pl_sim.dpl>
@@ -41,8 +41,8 @@
   <GND * 1 1660 390 0 0 0 0>
   <GND * 1 1690 490 0 0 0 0>
   <GND * 1 1720 440 0 0 0 0>
-  <SPfile X1 1 1660 310 -26 -68 0 0 "/home/pedersen/projects/IHP-AnalogAcademy/modules/module_2_50GHz_MPA/part_4_layout_EMsims/core_1/openems/output/run_core_50ghz_mpa_data/run_core_50ghz_mpa.s4p" 0 "rectangular" 0 "linear" 0 "open" 0 "4" 0>
   <R R6 1 1220 350 15 -26 0 1 "50 Ohm" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "european" 0>
+  <SPfile X1 1 1660 310 -26 -68 0 0 "../../openems/output/run_core_50ghz_mpa_data/run_core_50ghz_mpa.s4" 0 "rectangular" 0 "linear" 0 "open" 0 "4" 0>
 </Components>
 <Wires>
   <1780 100 1780 130 "" 0 0 0 "">
@@ -85,13 +85,13 @@
   <1220 280 1220 280 "Vin" 1170 240 0 "">
 </Wires>
 <Diagrams>
-  <Rect 2250 379 351 279 3 #c0c0c0 1 00 1 -2.5e+11 1e+11 2.5e+11 1 -0.00102131 0.002 0.0112344 1 -1 0.5 1 315 0 225 1 0 0 "" "" "">
-	<"xyce/V(VOUT)" #0000ff 0 3 0 0 0>
-	<"xyce/V(VIN)" #ff0000 0 3 0 0 0>
-  </Rect>
-  <Rect 2240 729 351 279 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 1 0 0 "" "" "">
+  <Rect 2470 729 351 279 3 #c0c0c0 1 00 1 0 0.2 1 1 -0.1 0.5 1.1 1 -0.1 0.5 1.1 315 0 225 1 0 0 "" "" "">
 	<"xyce/I(PR2)" #0000ff 0 3 0 0 0>
 	<"xyce/I(PR3)" #ff0000 0 3 0 0 0>
+  </Rect>
+  <Rect 2470 399 351 279 3 #c0c0c0 1 00 1 -2.5e+11 1e+11 2.5e+11 1 -0.00102131 0.002 0.0112344 1 -1 0.5 1 315 0 225 1 0 0 "" "" "">
+	<"xyce/V(VOUT)" #0000ff 0 3 0 0 0>
+	<"xyce/V(VIN)" #ff0000 0 3 0 0 0>
   </Rect>
 </Diagrams>
 <Paintings>
