@@ -393,6 +393,6 @@ In the next part of the module, you will find a layout for a **T-connector**, wh
 <p align="center"> 
   <img src="../../../media/module_2/DC_bias_problem.png" width="500" height="400" /> 
 </p>
-### Final Steps
 
+## Final Steps
 At this stage, the reader is encouraged to finish the layout by creating corresponding layouts for each component and EM simulating them accordingly.
