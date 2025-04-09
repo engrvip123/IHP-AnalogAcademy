@@ -1,4 +1,4 @@
-### Introduction to the Comparator
+# Introduction to the Comparator
 
 At the core of the Successive Approximation Register (SAR) Analog-to-Digital Converter (ADC) lies one of its most critical components—the **comparator**. Its primary role is to determine whether the analog input voltage is higher or lower than the DAC output during each bit trial. The precision and speed of this decision directly influence the overall accuracy and performance of the ADC.
 
