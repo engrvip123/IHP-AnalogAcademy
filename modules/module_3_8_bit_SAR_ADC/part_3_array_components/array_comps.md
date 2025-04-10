@@ -8,7 +8,6 @@ The first component we'll create is the Capacitive DAC (C-DAC). This is a simple
 <p align="center"> 
   <img src="../../../media/module_3/C-DAC.png" width="0" height="0" /> 
 </p>
-![[C-DAC.png]]
 
 The C-DAC is formed by placing 8 capacitors in parallel, with the following dimensions:
 
@@ -37,13 +36,11 @@ The symbol for the C-DAC can be seen below:
 <p align="center"> 
   <img src="../../../media/module_3/C-DAC_sym.png" width="0" height="0" /> 
 </p>
-![[C-DAC_sym.png]]
 
 ## Switch Bank
 
 Next, we will create the "switch bank." This block contains all the switches that control the bottom plates of the C-DAC capacitors. The schematic for the switch bank is simple and closely follows the structure we used earlier in this module's testbench:
 
-![[switch_bank_schem.png]]
 
 The naming convention for the I/Os is as follows:
 
@@ -68,7 +65,6 @@ The symbol for this switch bank is shown below:
 <p align="center"> 
   <img src="../../../media/module_3/switch_bank_sym.png" width="0" height="0" /> 
 </p>
-![[switch_bank_sym.png]]
 
 **TIP:**
 
