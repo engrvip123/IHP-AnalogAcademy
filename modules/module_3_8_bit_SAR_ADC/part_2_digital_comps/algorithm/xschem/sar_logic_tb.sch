@@ -107,8 +107,9 @@ logy=0
 
 
 
-color=4
-node=en}
+color="4 7"
+node="en
+rst"}
 B 2 1580 -1670 2380 -1280 {flags=graph
 y1=0
 y2=1.3
@@ -163,30 +164,7 @@ b4
 b5
 b6
 b7"}
-B 2 760 -1670 1560 -1280 {flags=graph
-y1=0
-y2=1.3
-ypos1=0
-ypos2=2
-divy=5
-subdivy=1
-unity=1
-x1=0
-x2=0.0002
-divx=5
-subdivx=1
-
-
-dataset=-1
-unitx=1
-logx=0
-logy=0
-
-
-
-color=4
-node=rst}
-T {Analog} 960 -1020 0 0 0.4 0.4 {}
+T {Analog} 350 -1130 0 0 0.4 0.4 {}
 T {Digital} 770 -1010 0 0 0.4 0.4 {}
 N 670 -680 730 -680 {
 lab=#net1}
@@ -208,8 +186,6 @@ N 590 -740 610 -740 {lab=Op}
 N 590 -760 610 -760 {lab=clk}
 N 670 -700 730 -700 {
 lab=#net5}
-N 610 -570 610 -540 {lab=clk_reserve}
-N 610 -480 610 -470 {lab=GND}
 N 1000 -930 1200 -930 {
 lab=B5}
 N 1000 -910 1200 -910 {lab=B4}
@@ -257,7 +233,7 @@ N 1000 -510 1200 -510 {lab=D0}
 N 890 -510 940 -510 {lab=#net27}
 N 340 -720 340 -710 {lab=clk}
 N 340 -650 340 -640 {lab=GND}
-C {devices/code_shown.sym} 620 -1130 0 0 {name=NGSPICE only_toplevel=true 
+C {devices/code_shown.sym} 1250 -910 0 0 {name=NGSPICE only_toplevel=true 
 value="
 .param temp=27
 .control
@@ -350,9 +326,6 @@ C {devices/lab_pin.sym} 1200 -890 2 0 {name=p15 sig_type=std_logic lab=B3}
 C {devices/lab_pin.sym} 1200 -910 2 0 {name=p16 sig_type=std_logic lab=B4}
 C {devices/vsource.sym} 340 -1030 0 0 {name=V6 value="dc 0 ac 0 PULSE(1.2 0 100u 1n 1n 500u 1m)"}
 C {devices/vsource.sym} 340 -550 0 0 {name=V2 value="dc 0 ac 0 PULSE(0 1.2 100u 1n 1n 10u 1m)"}
-C {devices/vsource.sym} 610 -510 0 0 {name=V1 value="dc 0 ac 0 pulse(0 1 0 1n 1n 5n 10n)"}
-C {devices/gnd.sym} 610 -470 0 0 {name=l3 lab=GND}
-C {devices/lab_pin.sym} 610 -570 2 0 {name=p17 sig_type=std_logic lab=clk_reserve}
 C {devices/lab_pin.sym} 590 -680 2 1 {name=p2 sig_type=std_logic lab=rst}
 C {devices/lab_pin.sym} 590 -760 2 1 {name=p12 sig_type=std_logic lab=clk}
 C {devices/vsource.sym} 340 -810 0 0 {name=V5 value="dc 0 ac 0 PULSE(0 1.2 100u 1n 1n 500u 1m)"}

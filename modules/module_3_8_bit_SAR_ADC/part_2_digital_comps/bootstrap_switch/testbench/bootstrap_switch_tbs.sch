@@ -5,15 +5,15 @@ V {}
 S {}
 E {}
 B 2 620 -870 1420 -470 {flags=graph
-y1=-0.0041666666
-y2=0.0058333334
+y1=-0.033
+y2=1.3
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0.0010238745
-x2=0.0024868745
+x1=-0.00014753886
+x2=0.00114631
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -26,15 +26,15 @@ logx=0
 logy=0
 }
 B 2 620 -460 1420 -60 {flags=graph
-y1=0.00069444443
-y2=0.010694444
+y1=0
+y2=1.3
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=0.0010238745
-x2=0.0024868745
+x1=-0.00014753886
+x2=0.00114631
 divx=5
 subdivx=1
 xlabmag=1.0
@@ -60,7 +60,7 @@ N 360 -360 360 -290 {lab=vdd}
 N 500 -340 500 -300 {lab=GND}
 N 500 -430 500 -400 {lab=vo}
 N 440 -430 500 -430 {lab=vo}
-C {devices/code_shown.sym} 0 -80 0 0 {name=MODEL only_toplevel=true
+C {devices/code_shown.sym} 10 -40 0 0 {name=MODEL only_toplevel=true
 format="tcleval( @value )"
 value=".lib cornerMOSlv.lib mos_tt
 .lib $::SG13G2_MODELS/cornerCAP.lib cap_typ
@@ -70,14 +70,17 @@ only_toplevel=true
 value="
 .control
 save all
-tran 100u 1.463m
+tran 1u 1.024m
+set wr_singlescale
+set wr_vecnames
 write test_bootstrap.raw
+wrdata vout_data.txt v(vo)
 .endc
 " }
-C {vsource.sym} 60 -370 0 0 {name=V1 value="PULSE(0 5 0 1n 1n 0.5u 1u)"}
+C {vsource.sym} 60 -370 0 0 {name=V1 value="PULSE(0 5 0 10p 10p 0.5u 1u)"}
 C {gnd.sym} 60 -320 0 1 {name=l2 lab=GND}
 C {lab_pin.sym} 60 -430 0 0 {name=p1 sig_type=std_logic lab=clk}
-C {vsource.sym} 60 -510 0 0 {name=V2 value="SIN(0.6 0.6 683 0 0 0)"}
+C {vsource.sym} 60 -510 0 0 {name=V2 value="SIN(0.6 0.6 12.695e3 0 0 0)"}
 C {gnd.sym} 60 -460 0 1 {name=l3 lab=GND}
 C {lab_pin.sym} 60 -570 0 0 {name=p2 sig_type=std_logic lab=vin}
 C {iopin.sym} 510 -430 0 0 {name=p3 lab=vo}
