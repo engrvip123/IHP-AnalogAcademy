@@ -6,7 +6,7 @@ In this section, we won't focus on heavy simulation but instead use this step as
 
 The first component we'll create is the Capacitive DAC (C-DAC). This is a simple array of capacitors, and the design in Xschem looks like this:
 <p align="center"> 
-  <img src="../../../media/module_3/C-DAC.png" width="0" height="0" /> 
+  <img src="../../../media/module_3/C-DAC.png" width="800" height="800" /> 
 </p>
 
 The C-DAC is formed by placing 8 capacitors in parallel, with the following dimensions:
@@ -34,7 +34,7 @@ Additionally, you will notice that an extra resistor is placed between the input
 
 The symbol for the C-DAC can be seen below:
 <p align="center"> 
-  <img src="../../../media/module_3/C-DAC_sym.png" width="0" height="0" /> 
+  <img src="../../../media/module_3/C-DAC_sym.png" width="800" height="800" /> 
 </p>
 
 ## Switch Bank
@@ -63,7 +63,7 @@ Where the D's are digital inputs from the algorithm, and the S's correspond to t
 
 The symbol for this switch bank is shown below:
 <p align="center"> 
-  <img src="../../../media/module_3/switch_bank_sym.png" width="0" height="0" /> 
+  <img src="../../../media/module_3/switch_bank_sym.png" width="800" height="800" /> 
 </p>
 
 **TIP:**
