@@ -148,7 +148,7 @@ To make tuning easier, we will define the **resistor value as a parameter**. Thi
     - This will act as our first guess before fine-tuning through simulation.
 
 Once these steps are completed, your schematic should look like the following:
-<p align="center"> <img src="../../../media/module_2/schematic_bias_3.png" width="800" height="500" /> </p>
+<p align="center"> <img src="../../../media/module_2/schematic_bias_3.png" width="800" height="600" /> </p>
 ## Simulating and Fine-Tuning
 
 Now that the circuit is set up, we can proceed with the **simulation** and visualization of key parameters. Instead of using a **.dpl file**, we will directly add a **Smith chart** and a **Cartesian plot** to the testbench. These will allow us to observe:
