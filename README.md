@@ -19,6 +19,7 @@ For a structured learning experience, we encourage you to follow the **slides fo
 ## Table of contents
 - [Introduction to IHP Open PDK and SG13G2 Technology](#introduction-to-ihp-open-pdk-and-sg13g2-technology)
 - [Foundations](#module-0-foundations)
+- [Bandgap Reference](#module-1-bandgap-reference)
 - [50 GHz Medium Power Amplifier](#module-2-50-ghz-medium-power-amplifier)
 - [8-bit SAR ADC](#module-3-8-bit-sar-adc)
 - [Final Thoughts](#final-thoughts)
