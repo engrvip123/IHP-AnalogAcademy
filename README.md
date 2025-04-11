@@ -17,11 +17,11 @@ For a structured learning experience, we encourage you to follow the **slides fo
 
 
 ## Table of contents
-- [Introduction to IHP Open PDK and SG13G2 Technology](#Introduction to IHP Open PDK and SG13G2 Technology)
-- [Foundations](#Module 0 – Foundations)
-- [50 GHz Medium Power Amplifier](#Module 2 – 50 GHz Medium Power Amplifier)
-- [8-bit SAR ADC](#Module 3 – 8-bit SAR ADC)
-- [Final Thoughts](#Final Thoughts)
+- [Introduction to IHP Open PDK and SG13G2 Technology](#introduction-to-ihp-open-pdk-and-sg13g2-technology)
+- [Foundations](#module-0-foundations)
+- [50 GHz Medium Power Amplifier](#module-2-50-ghz-medium-power-amplifier)
+- [8-bit SAR ADC](#module-3-8-bit-sar-adc)
+- [Final Thoughts](#final-thoughts)
 
 
 ## Introduction to IHP Open PDK and SG13G2 Technology
