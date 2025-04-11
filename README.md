@@ -83,6 +83,8 @@ For further information, please visit the following sources:
 - 📚 [IHP Open PDK Docs](https://ihp-open-pdk-docs.readthedocs.io/en/latest/)
 - 💬 [IHP Open PDK Discussion on ChatGPT](https://chatgpt.com/g/g-sovooLd0V-ihp-open-pdk)
 
+
+
 ## Module 0 – Foundations
 
 This introductory module sets up the essential tools and methodologies for working with the IHP Open PDK in analog IC design. You'll begin by installing and verifying key tools like Xschem and KLayout, guided by the official documentation. Once installed, you’ll explore basic simulations—including DC, transient, AC, Monte Carlo, and S-parameter analyses—through example test cases provided within the PDK.
@@ -90,6 +92,8 @@ This introductory module sets up the essential tools and methodologies for worki
 A modern design flow is introduced, emphasizing the **gm/Id methodology**, which replaces traditional square-law models with a more robust, data-driven approach. The course provides optional tools and scripts to generate and visualize gm/Id lookup tables compatible with the IHP PDK, laying the groundwork for advanced circuit design in later modules.
 
 Whether you're new to IC design or transitioning to an open-source flow, this module ensures your environment is fully prepared for hands-on analog development using the IHP 130nm technology node.
+
+
 
 
 ## Module 1 – Bandgap Reference
@@ -137,6 +141,9 @@ Finally, we introduce the **layout flow** using **KLayout**. A video guide is av
 Although the complete layout of the bandgap reference isn’t covered step-by-step (as it's relatively straightforward), the **final layout is provided** for reference.
 
 > 📌 **Note**: Be sure to consult both the slides and the Markdown file for this module. The slides include additional insights and layout screenshots not shown in the Markdown notes.
+
+
+
 
 
 
@@ -201,6 +208,9 @@ This part showcases the **iterative nature of RF design**, where component model
 > 📌 **Note**: Be sure to consult the slides for this module. It includes additional resources from the developer of the Python–OpenEMS interface for the IHP stackup, not covered in the Markdown file.
 
 
+
+
+
 ## Module 3 – 8-bit SAR ADC
 
 In the final module, we shift focus to **mixed-signal design** by building a simple yet functional **8-bit Successive Approximation Register (SAR) ADC**. The chosen architecture is a **synchronous SAR**. 
@@ -262,6 +272,9 @@ The final part brings everything together:
 This section offers a clear view of the **end-to-end data conversion**.
 
 > 📌 Be sure to explore both the Markdown and the accompanying slides for this module. Some additional insights and visualizations are included in the slides that aren’t covered in the Markdown material.
+
+
+
 
 
 ## Final Thoughts
