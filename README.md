@@ -4,134 +4,271 @@
 </p>
 
 
-## Introduction
+# Welcome to the IHP Analog Certificate Course
 
-Welcome to the IHP-AnalogAcademy course! This repository contains a series of exercises and tutorials designed to guide you through various topics related to analog IC design using the IHP Open PDK (Process Design Kit). The goal of this course is to help you gain hands-on experience with both circuit design and layout, as well as to provide a deeper understanding of analog design methodologies.
+This course is designed to guide you through the world of analog, mixed-signal, and RF design using open-source tools and the IHP Open PDK, tailored for the 130nm technology node. The goal is to provide a practical understanding of analog workflows, from the basics to advanced techniques such as EM simulations, mixed-signal analysis, and Monte Carlo scripting.
 
-The course is broken down into several modules, with each module building on the knowledge and skills from the previous one. Each module will contain a mix of theory, practical exercises, and challenges to complete, with ample documentation to guide you along the way.
+**Please note**: This course is not an introduction to IC design. It assumes that you have a basic understanding of electronics and microelectronics. If you are unfamiliar with these topics, you may need supplementary resources to build foundational knowledge in these areas. This course is physically conducted at IHP, and while the workflow and procedures are outlined in this markdown, the course content is best understood in conjunction with the slides provided.
 
----
+### Course Structure
 
-## Table of Contents
+The course is divided into several modules, each designed to build upon the previous one. Each module primarily emphasizes hands-on exercises and practical applications, with brief theory sections to support your learning.
 
-1. [Module 0: Introduction to the IHP Open PDK](#module-0-introduction-to-the-ihp-open-pdk)
-2. [Module 1: Inverter Design and Simulation](#module-1-inverter-design-and-simulation)
-3. [Module 2: Physical Design and Layout](#module-2-physical-design-and-layout)
-4. [Module 3: Operational Transconductance Amplifier (OTA) Design](#module-3-operational-transconductance-amplifier-ota-design)
-5. [Module 4: Bandgap Voltage Reference Design](#module-4-bandgap-voltage-reference-design)
-6. [Module 5: Layout Competition and Design Verification](#module-5-layout-competition-and-design-verification)
-7. [Advanced Topics: gm/Id Methodology](#advanced-topics-gmid-methodology)
-8. [Appendix](#appendix)
+For a structured learning experience, we encourage you to follow the **slides folder** in the repository to see the course outline and the schedule for the 5-day tutorial week. The slides can be used as the primary tutorial, but keep in mind that some parts were presented live, and you may need to refer to the markdown files for additional details..
 
----
 
-## Module 0: Introduction to the IHP Open PDK
+## Table of contents
+- [Introduction to IHP Open PDK and SG13G2 Technology](#Introduction to IHP Open PDK and SG13G2 Technology)
+- [Foundations](#Module 0 – Foundations)
+- [50 GHz Medium Power Amplifier](#Module 2 – 50 GHz Medium Power Amplifier)
+- [8-bit SAR ADC](#Module 3 – 8-bit SAR ADC)
+- [Final Thoughts](#Final Thoughts)
 
-In this module, you'll get familiar with the IHP Open PDK, an essential toolset for analog IC design. We start by setting up your environment and creating the first schematic in Xschem. Here's the basic workflow:
 
-1. **Creating Your First Schematic**: Start by creating a schematic in the `xschem` environment.
-   - Navigate to your desired location and create the schematic.
-   - Organize components, instantiate libraries, and connect components.
+## Introduction to IHP Open PDK and SG13G2 Technology
 
-2. **Netlist Extraction**: Learn how to extract the netlist from your schematic and how the simulator interprets it.
-   - Use the `.subckt` definitions for different subcircuits.
-   - Ensure proper formatting for compatibility with ngspice.
+### What is the IHP Open PDK?
 
-3. **Simulation Setup**: Set up simulations in Xschem and use ngspice for accurate circuit analysis.
-   - Define the input voltages, components, and transistor models.
+The **IHP Open Source PDK** is a freely available Process Design Kit targeted at the **SG13G2 node**—a part of IHP’s 130nm SiGe BiCMOS process line. This PDK allows academic, research, and open-hardware communities to design **analog, digital, mixed-signal, and RF integrated circuits** using real-world manufacturing technology.
 
-4. **Opening and Viewing the Schematic**: Learn how to open your schematic in Xschem, search for components, and check the simulation results.
+The IHP Open PDK includes the following:
 
----
+- **Primitive and standard cell libraries**
+    
+- **Layout and DRC rules for KLayout**
+    
+- **Device models for simulation** (ngspice/Xyce)
+    
+- **Design examples and testbenches**
+    
+- **Documentation** including process specs and layout rules
+    
 
-## Module 1: Inverter Design and Simulation
+> ⚠️ **Important**: The IHP Open PDK is currently in _preview status_ and is not yet qualified for production use. However, it serves as an ideal tool for educational and research purposes​.
 
-In this module, you will design a basic CMOS inverter and perform simulations to verify its functionality. Here's the workflow:
+### SG13G2 Technology Highlights
 
-1. **Inverter Schematic**: Create an inverter circuit using NMOS and PMOS transistors.
-   - Start with defining the transistor models and component sizes (e.g., `w=1.0u l=0.45u` for NMOS).
-   
-2. **Running Simulations**: Perform DC and transient simulations to evaluate the inverter's performance.
+The **SG13G2 process** offers a wide range of advanced features:
 
-3. **Creating Testbench for Inverter**: Set up a testbench to verify your inverter design.
-   - Explore how to link your schematic to a simulation environment (e.g., ngspice).
-   
-4. **Layout Design**: Once the inverter is functioning correctly in simulation, move on to a simple layout of the inverter.
+- **0.13 µm CMOS technology** for efficient fabrication
+    
+- High-speed **SiGe:C NPN HBTs** with:
+    
+    - Up to **350 GHz** transition frequency (_fT_)
+        
+    - Up to **500 GHz** maximum oscillation frequency (_fmax_)
+        
+- **Dual gate oxides** for versatile applications:
+    
+    - Thin oxide for **1.2 V logic**
+        
+    - Thick oxide for **3.3 V I/O**
+        
+- Comprehensive device portfolio including:
+    
+    - **NMOS, PMOS, iNMOS, and HV devices**
+        
+    - **Poly resistors** (Rsil, Rppd), **MIM capacitors**
+        
+    - **5 thin and 2 thick Al metal layers** for routing
+        
+- Designed for **high-frequency** and **high-performance applications**
+    
 
-5. **Physical Verification**: Although this step isn't mandatory at this point, it is helpful to check the layout for any design rule violations.
+For further information, please visit the following sources:
 
----
+- 🌐 [IHP Website](https://www.ihp-microelectronics.com/)
+- 🏠 [IHP Open PDK Repository](https://github.com/IHP-GmbH/IHP-Open-PDK)
+- 📚 [IHP Open PDK Docs](https://ihp-open-pdk-docs.readthedocs.io/en/latest/)
+- 💬 [IHP Open PDK Discussion on ChatGPT](https://chatgpt.com/g/g-sovooLd0V-ihp-open-pdk)
 
-## Module 2: Physical Design and Layout
+## Module 0 – Foundations
 
-This module teaches you the process of translating your schematic into a layout and performing design rule checks (DRC). The workflow is as follows:
+This introductory module sets up the essential tools and methodologies for working with the IHP Open PDK in analog IC design. You'll begin by installing and verifying key tools like Xschem and KLayout, guided by the official documentation. Once installed, you’ll explore basic simulations—including DC, transient, AC, Monte Carlo, and S-parameter analyses—through example test cases provided within the PDK.
 
-1. **Layout Creation**: After successfully simulating the inverter, create a layout version of the circuit.
-   - Use the correct grid and component placement for layout.
-   
-2. **Moving Components**: Learn how to move and place components within your layout editor.
-   - Use the scaling function (F) to adjust the view and align components.
-   
-3. **Running DRC and LVS**: Perform design rule checks (DRC) and layout versus schematic (LVS) checks to ensure the layout adheres to fabrication constraints.
-   - Understand the difference between the "Max" and "Min" DRC decks and when to use each.
+A modern design flow is introduced, emphasizing the **gm/Id methodology**, which replaces traditional square-law models with a more robust, data-driven approach. The course provides optional tools and scripts to generate and visualize gm/Id lookup tables compatible with the IHP PDK, laying the groundwork for advanced circuit design in later modules.
 
----
+Whether you're new to IC design or transitioning to an open-source flow, this module ensures your environment is fully prepared for hands-on analog development using the IHP 130nm technology node.
 
-## Module 3: Operational Transconductance Amplifier (OTA) Design
 
-In this module, we focus on designing an Operational Transconductance Amplifier (OTA). You will perform the following analyses:
+## Module 1 – Bandgap Reference
 
-1. **DC Analysis**: Analyze the DC operating points of the OTA and ensure it is biased correctly.
-2. **AC Analysis**: Perform an AC analysis to investigate the frequency response and stability of the amplifier.
-3. **Design Metrics**: Measure the key design metrics such as transconductance (gm), gain, and power consumption.
-
----
-
-## Module 4: Bandgap Voltage Reference Design
-
-This module introduces you to the design of a bandgap voltage reference (BGR) circuit.
-
-1. **DC and Transient Analysis**: Perform DC analysis to check the voltage reference's operating point and transient analysis for its dynamic behavior.
-2. **Mismatch Analysis**: Use Monte Carlo simulations to analyze the effects of process variation on your bandgap reference.
-   
----
-
-## Module 5: Layout Competition and Design Verification
-
-This module brings together all the skills you’ve learned in the previous modules and culminates in a friendly layout competition.
-
-1. **Inverter Layout Challenge**: Compete to design the best layout for an inverter, optimizing for minimal DRC and LVS errors.
-   
-2. **Final Layout Review**: Review the final layouts and compare the results to industry standards.
-   
-3. **Going to Tape-Out**: Discuss the final steps of the design process, including the transition from layout to tape-out for fabrication.
+In this module, you'll begin your first analog design: an all-CMOS bandgap reference. The module is divided into three parts, guiding you from OTA design to full schematic simulation and layout considerations.
 
 ---
 
-## Advanced Topics: gm/Id Methodology
+### 🔧 Part 1 – Designing the OTA
 
-The `gm/Id` methodology is a powerful design approach for optimizing the performance of analog circuits. This optional section introduces you to using the `gmid` toolset:
+We begin by designing the **operational transconductance amplifier (OTA)** used in the bandgap reference. A Jupyter Notebook with the `gm/Id` procedure is provided to assist in device sizing. While this procedure isn’t covered in depth, it serves as a helpful tool for those interested in data-driven transistor selection.
 
-1. **Installing and Using `gmid`**: Learn how to set up the `gmid` tool and use it to generate lookup tables (LUTs) for your transistors.
-   
-2. **LUT Generation**: Use the GUI to select the transistor you want to analyze and specify the sweeping parameters.
-   
-3. **Viewing the Data**: Open the generated LUTs in the provided JupyterLab GUI to analyze the results.
+The focus of this stage is on the **AC performance** of the OTA. You’ll learn how to:
+
+- Create a symbol for the OTA in **Xschem**,
+    
+- Simulate the design using **Ngspice**,
+    
+- And analyze the amplifier’s AC performance
+    
 
 ---
 
-## Appendix
+### ⚙️ Part 2 – Building the Bandgap Reference
 
-### Additional Resources
+Next, you'll construct the full **bandgap reference schematic**. Here, you’ll start making practical design choices with eventual fabrication in mind.
 
-- [IHP Open PDK](https://www.ihp-microelectronics.com/en/technologies/](https://ihp-open-pdk-docs.readthedocs.io/en/latest/)](https://github.com/IHP-GmbH/IHP-Open-PDK))
-- [IHP Open PDK Documentation](https://www.ihp-microelectronics.com/en/technologies/](https://ihp-open-pdk-docs.readthedocs.io/en/latest/))
-- [Ngspice Manual](http://ngspice.sourceforge.io/docs/ngspice-manual.pdf)
-- [gm/Id Methodology Repository](https://github.com/medwatt/gmid)
+This section covers:
 
-### Useful Commands
+- **DC and transient analysis** of the reference voltage,
+    
+- Considerations for component selection (e.g., resistors, transistor sizing),
+    
+- Incorporating **mismatch parameters** into your simulation models,
+    
+- Running your first **Monte Carlo analysis** to assess mismatch effects.
+    
 
-- To run the `gmid_launcher.py`, use the following command:
-  ```bash
-  python gmid_launcher.py
- 
+---
+
+### 🧱 Part 3 – Layout Introduction
+
+Finally, we introduce the **layout flow** using **KLayout**. A video guide is available to demonstrate the **common-centroid layout** technique for the OTA's input pair.
+
+Although the complete layout of the bandgap reference isn’t covered step-by-step (as it's relatively straightforward), the **final layout is provided** for reference.
+
+> 📌 **Note**: Be sure to consult both the slides and the Markdown file for this module. The slides include additional insights and layout screenshots not shown in the Markdown notes.
+
+
+
+## Module 2 – 50 GHz Medium Power Amplifier
+
+In this module, we take our first steps into the world of **RF design** by developing a **50 GHz Medium Power Amplifier (MPA)** using **QUCS-S** as the schematic editor.
+
+---
+
+### 🧪 Part 1 – Biasing & Familiarization with QUCS-S
+
+We begin with the **biasing of a single-transistor amplifier**, a fundamental step in RF amplifier design. This part also serves as an introduction to **QUCS-S**, helping you get comfortable with its interface and simulation flow.
+
+---
+
+### 🎯 Part 2 – Input Matching with Smith Chart
+
+Next, we tackle **input matching**, an essential part of ensuring power transfer and minimizing reflections. In QUCS-S, you’ll:
+
+- Explore the **Smith chart** in Qucs-s,
+    
+- Use **tuner sliders** to adjust matching elements interactively,
+    
+- Generally plot relevant information
+    
+
+
+---
+
+### 📈 Part 3 – Nonlinear Simulations with Xyce
+
+Linear analysis is only part of the story—**nonlinear behavior** is critical for power amplifiers. Since **Ngspice currently lacks nonlinear support**, we shift to the **Xyce** simulator.
+
+In this section:
+
+- You’ll learn how to **run nonlinear simulations** using Xyce,
+    
+- Deal with some OS-related setup challenges,
+    
+- Perform **Python-based post-processing** of simulation data (scripts are provided).
+    
+
+This part introduces a more **realistic and complete RF design flow**, where we will look at how to extract key performance aspects. 
+
+---
+
+### 📡 Part 4 – EM Simulation with OpenEMS
+
+The final section covers **electromagnetic (EM) simulation** of custom components, which is crucial when designing circuits at these frequencies.
+
+Highlights include:
+
+- Performing **3D EM simulations** with **OpenEMS** on a BJT core design,
+    
+- Using the **Python-based interface** developed specifically for the IHP process stack,
+    
+- Extracting **S-parameter files** from the EM simulation for use in schematic-level simulation.
+    
+
+This part showcases the **iterative nature of RF design**, where component models are refined through EM simulations.
+
+> 📌 **Note**: Be sure to consult the slides for this module. It includes additional resources from the developer of the Python–OpenEMS interface for the IHP stackup, not covered in the Markdown file.
+
+
+## Module 3 – 8-bit SAR ADC
+
+In the final module, we shift focus to **mixed-signal design** by building a simple yet functional **8-bit Successive Approximation Register (SAR) ADC**. The chosen architecture is a **synchronous SAR**. 
+
+---
+
+### ⚙️ Part 1 – Dynamic Comparator Design & Analysis
+
+We begin by designing the **dynamic comparator**, a crucial component of the ADC. The selected topology offers:
+
+- **Low common-mode sensitivity**
+    
+- **Relatively low offset voltage**
+    
+
+In this section, we analyze the comparator through **transient simulations**, followed by an extended **Monte Carlo simulation** to estimate its offset behavior. You’ll learn how to:
+
+- Set up parameter sweeps and statistical variations
+    
+- Write equations for automatic **offset extraction**
+    
+- Visualize results using a **Python script** to generate a histogram of Monte Carlo outcomes
+    
+
+---
+
+### 🧩 Part 2 – Auxiliary Circuit Blocks
+
+Next, we design and simulate some of the **supporting blocks** required for the ADC, such as:
+
+- **Bootstrapped switches**
+    
+- **Transmission gates**
+    
+- **Inverters**
+    
+
+This part focuses on verifying the **basic functionality** of each block, which are essential building elements in the final system.
+
+---
+
+### 🔁 Part 3 – SAR Logic and Mixed-Signal Integration
+
+With the analog blocks in place, we introduce the **SAR algorithm** and integrate it into a **mixed-signal simulation environment**. This part marks the first hands-on exposure to **co-simulation of analog and digital** behavior.
+
+---
+
+### 🧪 Part 4 – Final ADC Testbench and Output Analysis
+
+The final part brings everything together:
+
+- The **complete SAR ADC circuit** is assembled
+    
+- A **testbench** is built to verify the digital output
+    
+- A **Jupyter Lab notebook** is provided to post-process the output and reconstruct the analog input using an **ideal DAC model**
+    
+
+This section offers a clear view of the **end-to-end data conversion**.
+
+> 📌 Be sure to explore both the Markdown and the accompanying slides for this module. Some additional insights and visualizations are included in the slides that aren’t covered in the Markdown material.
+
+
+## Final Thoughts
+
+This course emphasizes **key steps in the workflow** for analog, RF, and mixed-signal IC design using open-source tools. While we haven't covered every detail in depth, the aim was to provide a **strong foundation** for navigating the complexities of these workflows. We hope this serves as a good starting point, and that you'll take what you've learned here to explore further on your own.
+
+Remember, this is just the beginning! We encourage you to experiment, adapt, and build upon the provided resources to strengthen your individual workflow.
+
+We're also very open to feedback—whether it's pointing out errors, suggesting improvements, or sharing additional insights. Please feel free to submit any issues or ideas through the **Issues tab**.
+
+Thanks for following along, and happy designing! 🚀
