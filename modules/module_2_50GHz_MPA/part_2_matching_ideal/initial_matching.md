@@ -1,5 +1,5 @@
 
-# Input and Output Matching for the MPA
+# Input Matching for the MPA
 
 In this section, we will focus on matching the input and output of the MPA (Monolithic Power Amplifier) for a 50-ohm termination. For now, we will use ideal components to estimate starting values, which will later be refined through electromagnetic (EM) simulations. The goal at this stage is to explore the possible design space, not to finalize the design.
 
