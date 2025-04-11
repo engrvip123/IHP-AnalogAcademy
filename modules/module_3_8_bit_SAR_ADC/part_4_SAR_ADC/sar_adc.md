@@ -8,10 +8,14 @@ In this section, we’ll dive into creating the final schematic for the SAR ADC.
 Before diving into the full ADC schematic, it's essential to check whether the SAR algorithm can be simulated in the testbench. This can be done by copying the schematic from earlier in the module that uses mixed-signal simulation. You can then use this as the starting point for the rest of the schematic.
 
 > ⚠️ **Note:** Make sure to copy the shared object file (`.so`) and place it relative to the testbench, just like we did before. Create a simulation folder and include it there:
-> 
+
+
 ├── SAR_ADC_tb.sch
+
 ├── simulations
+
 │   └── sar_logic.so
+
 └── xschemrc
 
 In this example, the wiring looks like this:
