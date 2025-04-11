@@ -9,7 +9,7 @@ The first step in the procedure is to create the schematic for the two-stage OTA
 Step 2: Instantiating Transistors
 
 Next, instantiate six MOSFETs (three PMOS and two NMOS) using the IHP Open PDK. Refer to the foundation markdown file from Module 0 for guidance on adding these components. Arrange the transistors as illustrated below, configuring their parameters accordingly:
-<p align="center"> <img src="../../../media/module_1/OTA_images/first_stage_img.png" width="1000" height="900" /> </p>
+<p align="center"> <img src="../../../media/module_1/OTA_images/first_stage_img.png" width="1000" height="700" /> </p>
 
 To locate the required labels, open the Components Manager and search for iopin.sym under xschem_library/devices.
 
@@ -28,7 +28,7 @@ First step in our procedure is to create the schematic for the OTA we will use i
 Next, instantiate six MOSFETs (three PMOS and two NMOS) from the IHP Open PDK. Refer to the foundations markdown file from Module 0 for guidance on adding these components. Arrange the transistors as shown in the image below and configure their parameters accordingly.
 
 <p align="center">
-  <img src="../../../media/module_1/OTA_images/first_stage_img.png" width="1000" height="900" />
+  <img src="../../../media/module_1/OTA_images/first_stage_img.png" width="1000" height="700" />
 </p>
 
 To locate the necessary labels, open the Components Manager and search for `iopin.sym` under `xschem_library/devices`.
