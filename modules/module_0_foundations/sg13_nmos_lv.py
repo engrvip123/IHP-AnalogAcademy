@@ -16,7 +16,7 @@ ngspice = NgspiceSimulator(
 
     # Files to include with `.LIB`.
     lib_mappings = [
-        ("/home/pedersen/IHP-Open-PDK/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib", " mos_tt")
+        ("/home/pedersen/IHP-Open-PDK/ihp-sg13g2/libs.tech/ngspice/models/cornerMOSlv.lib", " mos_tt") # Put your own path to the corner lib
     ],
 
     # If the transistor is defined inside a subcircuit in
