@@ -12,7 +12,7 @@ ypos2=2
 divy=5
 subdivy=4
 unity=1
-x1=-1.75
+x1=-0.22184875
 
 divx=5
 subdivx=8
@@ -38,16 +38,16 @@ y2=33.964
 y1=-136.006
 color=4
 node=ph(vout)
-x2=5.25}
+x2=-0.22184875}
 B 2 680 -1295 1480 -895 {flags=graph
-y1=33
-y2=74
+y1=27
+y2=71
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=-1.75
+x1=-0.22184875
 
 divx=5
 subdivx=8
@@ -59,7 +59,7 @@ dataset=-1
 unitx=1
 logx=1
 logy=0
-x2=5.25}
+x2=-0.22184875}
 B 2 1535 -1295 2335 -895 {flags=graph
 y1=37
 y2=86
@@ -68,7 +68,7 @@ ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=-1.75
+x1=-0.22184875
 
 divx=5
 subdivx=8
@@ -80,18 +80,18 @@ dataset=-1
 unitx=1
 logx=1
 logy=0
-x2=5.25
+x2=-0.22184875
 color=4
 node=cmrr}
 B 2 1525 -875 2325 -475 {flags=graph
-y1=0.05
-y2=28
+y1=0.055
+y2=30
 ypos1=0
 ypos2=2
 divy=5
 subdivy=1
 unity=1
-x1=-1.75
+x1=-0.22184875
 
 divx=5
 subdivx=8
@@ -103,7 +103,7 @@ dataset=-1
 unitx=1
 logx=1
 logy=0
-x2=5.25
+x2=-0.22184875
 color=4
 node=psrr}
 N 775 -265 775 -235 {
@@ -235,7 +235,7 @@ footprint=1206
 device="ceramic capacitor"}
 C {gnd.sym} 530 -335 0 0 {name=l5 lab=GND}
 C {iopin.sym} 620 -410 0 0 {name=p7 lab=vout}
-C {devices/code_shown.sym} -445 -290 0 0 {name=MODEL only_toplevel=false
+C {devices/code_shown.sym} -415 -290 0 0 {name=MODEL only_toplevel=false
 format="tcleval( @value )"
 value="
 .lib $::SG13G2_MODELS/cornerCAP.lib cap_typ
