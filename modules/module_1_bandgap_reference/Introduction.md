@@ -12,7 +12,7 @@ $$V_{BE} = V_T \cdot ln(\frac{I_C}{I_S})$$
 Where $I_C$ is the collector current and $I_S$ is the saturation current. 
 The theory behind different circuit topology regarding the bandgap references are quite comprehensive, and will therefore not be covered here. Instead the circuit seen below is proposed:
 
-<p align="center"> <img src="../../media/module_1/bandgap_circuit.png" width="800" height="700" /> </p>
+<p align="center"> <img src=".media/bandgap_circuit.png" width="800" height="700" /> </p>
 
 
 From the following criteria, $I_{C,Q1}=I_{C,Q2}$ if $R_2 = R_3$, we can try to understand the circuit functionality. The voltage X and Y is forced to be equal due to the operation of the feedback of the OP-amps. This means that we can write the following expression

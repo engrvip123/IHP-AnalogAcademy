@@ -20,7 +20,7 @@ Before diving into the full ADC schematic, it's essential to check whether the S
 
 In this example, the wiring looks like this:
 <p align="center"> 
-  <img src="../../../media/module_3/sar_algo_mixed_schem.png" width="900" height="550" /> 
+  <img src=".media/sar_algo_mixed_schem.png" width="900" height="550" /> 
 </p>
 
 
@@ -30,7 +30,7 @@ Notice that the output numbering is reversed for B and BN because the first bit 
 
 Next, we import the bootstrap switch, comparator, and C-DAC, which will form the core of the ADC. These components are implemented as follows:
 <p align="center"> 
-  <img src="../../../media/module_3/adc_core.png" width="950" height="300" /> 
+  <img src=".media/adc_core.png" width="950" height="300" /> 
 </p>
 
 The labeling can be done in any way that suits your design preferences.
@@ -39,7 +39,7 @@ The labeling can be done in any way that suits your design preferences.
 
 Now, we connect the switch bank to the C-DAC and label it according to the outputs from the SAR algorithm. The wiring setup is shown below:
 <p align="center"> 
-  <img src="../../../media/module_3/SAR_ADC_setup.png" width="950" height="700" /> 
+  <img src=".media/SAR_ADC_setup.png" width="950" height="700" /> 
 </p>
 
 ## Defining Signals and Biasing
@@ -84,12 +84,12 @@ value=0.4
 
 These signals are configured as shown below:
 <p align="center"> 
-  <img src="../../../media/module_3/source_setup.png" width="700" height="700" /> 
+  <img src=".media/source_setup.png" width="700" height="700" /> 
 </p>
 
 To generate the clock for the algorithm, we use a NAND gate connected to the output of the comparator. This creates a "valid" signal when one output is high and the other is low. The connection is as follows:
 <p align="center"> 
-  <img src="../../../media/module_3/nand_con.png" width="700" height="500" /> 
+  <img src=".media/nand_con.png" width="700" height="500" /> 
 </p>
 
 ## Code Blocks
@@ -175,16 +175,16 @@ Below, the clock waveforms are shown. As seen, the sampling phase ends when `clk
 
 After the 8th comparison (i.e., once all bits are resolved), the `DAC_clk` signal is triggered. This clock is later used in post-processing when an ideal DAC is implemented in Python.
 <p align="center"> 
-  <img src="../../../media/module_3/clks_conversion.png" width="900" height="600" /> 
+  <img src=".media/clks_conversion.png" width="900" height="600" /> 
 </p>
 
 <p align="center"> 
-  <img src="../../../media/module_3/clocks_last_convertion.png" width="900" height="600" /> 
+  <img src=".media/clocks_last_convertion.png" width="900" height="600" /> 
 </p>
 
 Looking at the voltage across the C-DAC during the conversion phase, we observe the following waveform:
 <p align="center"> 
-  <img src="../../../media/module_3/cdac_conversion.png" width="900" height="600" /> 
+  <img src=".media/cdac_conversion.png" width="900" height="600" /> 
 </p>
 
 This confirms that the SAR conversion is functioning correctly.
@@ -266,7 +266,7 @@ you will find a Jupyter Notebook that loads this data and reconstructs the analo
 
 When the `bit_data.txt` is imported, the dataframe looks as follows:
 <p align="center"> 
-  <img src="../../../media/module_3/jupyter_lab_data.png" width="600" height="500" /> 
+  <img src=".media/jupyter_lab_data.png" width="600" height="500" /> 
 </p>
 
 ### The `virtual_dac()` Function
@@ -326,12 +326,12 @@ def virtual_dac(df, vmin=-1.2, vmax=1.2, vdd=1.2, vss=0.0,
 
 If the Ngspice simulation was successful, the `vin_diff` plot should look like:
 <p align="center"> 
-  <img src="../../../media/module_3/vin_diff.png" width="900" height="500" /> 
+  <img src=".media/vin_diff.png" width="900" height="500" /> 
 </p>
 
 And the reconstructed output from the ideal DAC will appear as:
 <p align="center"> 
-  <img src="../../../media/module_3/SAR_ADC_output.png" width="900" height="600" /> 
+  <img src=".media/SAR_ADC_output.png" width="900" height="600" /> 
 </p>
 
 ## Conclusion

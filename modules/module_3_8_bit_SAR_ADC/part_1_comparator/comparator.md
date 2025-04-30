@@ -10,7 +10,7 @@ However, with dynamic comparators, another challenge emerges: **input-referred o
 
 In this context, we will work with the following comparator structure:
 <p align="center"> 
-  <img src="../../../media/module_3/comparator.png" width="900" height="750" /> 
+  <img src=".media/comparator.png" width="900" height="750" /> 
 </p>
 
 Link to Paper: [A 10-bit 50-MS/s SAR ADC With a Monotonic Capacitor Switching Procedure](https://ieeexplore.ieee.org/document/5437496)
@@ -25,7 +25,7 @@ Authors: [Ying-Zu Lin](https://ieeexplore.ieee.org/author/37292128800), [Guan-Yi
 By now, you should be comfortable creating schematics in **xschem**. As such, the schematic diagram is provided with key design considerations rather than an exhaustive walkthrough. Below is the comparator schematic, along with the symbol created for the design:
 
 <p align="center"> 
-  <img src="../../../media/module_3/comparator_xschem.png" width="900" height="750" /> 
+  <img src=".media/comparator_xschem.png" width="900" height="750" /> 
 </p>
 
 
@@ -44,7 +44,7 @@ The transistor dimensions in the schematic (shown above, not in **xschem**) are 
 
 From this schematic, the corresponding symbol was created as follows:
 <p align="center"> 
-  <img src="../../../media/module_3/sym_comp.png" width="900" height="750" /> 
+  <img src=".media/sym_comp.png" width="900" height="750" /> 
 </p>
 
 
@@ -74,7 +74,7 @@ name=V1 value="PULSE(0 1.2 0 0 0 5N {period})"
 PULSE(V1 V2 TD TR TF PW PER NP)
 ```
 <p > 
-  <img src="../../../media/module_3/v_pulse_params.png" width="350" height="200" /> 
+  <img src=".media/v_pulse_params.png" width="350" height="200" /> 
 </p>
     
 - The **positive input** is given by:
@@ -138,7 +138,7 @@ write output_file.raw
 
 Once the simulation runs, you can plot the output as described in previous modules. The expected result is shown below as `vout`:
 <p align="center"> 
-  <img src="../../../media/module_3/comparator_output_vout.png" width="800" height="550" /> 
+  <img src=".media/comparator_output_vout.png" width="800" height="550" /> 
 </p>
 
 As seen in the output, once the positive input voltage crosses the **0.6V** threshold (the bias voltage at the negative input), the comparator's output goes high.
@@ -152,7 +152,7 @@ Below is the schematic for the mismatch Monte Carlo (MC) analysis of the compara
 
 
 <p align="center"> 
-  <img src="../../../media/module_3/mc_analysis_tb.png" width="950" height="700" /> 
+  <img src=".media/mc_analysis_tb.png" width="950" height="700" /> 
 </p>
 As you can see, this setup closely resembles the testbench used for the simple transient analysis. However, there are some important differences. The most notable change is that the positive input voltage is now represented as a slow ramp, defined as:
 
@@ -283,7 +283,7 @@ Do you want to create a histogram plot? (y/n): y
 ```
 If you respond with `y`, the script generates a histogram of the offset voltage distribution and saves it in a newly created folder called `histogram_plots`. An example of the resulting plot is shown below:
 <p align="center"> 
-  <img src="../../../media/module_3/monte_histo.png" width="900" height="750" /> 
+  <img src=".media/monte_histo.png" width="900" height="750" /> 
 </p>
 
 This visualization allows for easy inspection of the variation in offset voltage due to mismatch. The reader is encouraged to experiment with transistor sizing and other design parameters—such as rise/fall time or bias currents—to observe their influence on standard deviation, mean offset, and overall comparator behavior, including power consumption and decision speed.

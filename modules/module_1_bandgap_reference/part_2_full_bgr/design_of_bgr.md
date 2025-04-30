@@ -2,14 +2,14 @@
 
 In this tutorial, we will design a functional bandgap reference circuit and perform the necessary simulations to evaluate its performance. Our analysis will cover both the DC characteristics and transient behavior of the bandgap reference. Additionally, to understand the effects of mismatch, we will delve into the concept of mismatch analysis and conduct Monte Carlo simulations. Unlike the traditional BJT-based reference discussed in the introduction, the circuit we will design here uses an all-CMOS implementation. This approach leverages transistors M1 and M2 operating in weak inversion to achieve the desired performance.
 
-<p align="center"> <img src="../../../media/module_1/BGR_images/CMOS_bandgap.png" width="1000" height="900" /> </p>
+<p align="center"> <img src=".media/CMOS_bandgap.png" width="1000" height="900" /> </p>
 
 
 In the schematic above, we observe an all-CMOS bandgap reference circuit, which we will design in the following tutorial. As previously discussed in the introduction, achieving a temperature-dependent characteristic is essential to generate a CTAT (Complementary to Absolute Temperature) behavior in terms of current.
 
 For an NMOS transistor operating in the weak inversion (subthreshold) region, the current exhibits an exponential dependence on VGS​. This makes the NMOS transistor suitable for generating a CTAT characteristic, particularly because VGS​ varies with temperature.
 
-<p align="center"> <img src="../../../media/module_1/BGR_images/vgs_cmos.png" width="1000" height="900" /> </p>
+<p align="center"> <img src=".media/vgs_cmos.png" width="1000" height="900" /> </p>
 
 Similarly, by exploiting the voltage difference between the VGS​ values of transistors M1​ and M2​, we can generate a PTAT (Proportional to Absolute Temperature). 
 
@@ -62,7 +62,7 @@ Rppd’s low temperature coefficient, good precision, and moderate resistance ma
 
 First, we will build the core of the bandgap reference.
 
-<p align="center"> <img src="../../../media/module_1/BGR_images/bandgap_core.png" width="1000" height="700" /> </p>
+<p align="center"> <img src=".media/bandgap_core.png" width="1000" height="700" /> </p>
 
 As shown here, the setup is quite basic. You can adjust it to your needs, as long as the proper connections are maintained. The new component introduced is the RPPD resistors, which can be found in the components library under the PDK directory. Ensure the device sizes match those shown in the image, and don't forget to add a voltage source to supply VDD.
 
@@ -149,7 +149,7 @@ At this stage, you have two options for proceeding with the bandgap reference de
 
 The circuit, including the amplifier and startup circuitry, is shown in the image below. Ensure proper connections as depicted. Refer to the next section for details on setting up the testbench.
 
-<p align="center"> <img src="../../../media/module_1/BGR_images/OTA_amp.png" width="1000" height="600" /> </p>
+<p align="center"> <img src=".media/OTA_amp.png" width="1000" height="600" /> </p>
 
 
 ## Bandgap Reference Testbench
@@ -237,7 +237,7 @@ write bgr_transient.raw
 ### Final Schematic
 
 Ensure the schematic matches the design below:
-<p align="center"> <img src="../../../media/module_1/BGR_images/final_bandgap_core.png" width="1000" height="500" /> </p>
+<p align="center"> <img src=".media/final_bandgap_core.png" width="1000" height="500" /> </p>
 
 
 ### Visualizing Results
@@ -256,10 +256,10 @@ To visualize the results:
 Expected results should resemble the following plots:
 
 **Temperature Sweep (DC Simulation)**:
-<p align="center"> <img src="../../../media/module_1/BGR_images/dc_temp_plot.png" width="1000" height="900" /> </p>
+<p align="center"> <img src=".media/dc_temp_plot.png" width="1000" height="900" /> </p>
 
 **Transient Analysis**:
-<p align="center"> <img src="../../../media/module_1/BGR_images/tran_temp_plot.png" width="1000" height="900" /> </p>
+<p align="center"> <img src=".media/tran_temp_plot.png" width="1000" height="900" /> </p>
 
 
 ### Mismatch and Monte Carlo Simulations
@@ -436,7 +436,7 @@ value="
 
 From the written raw file the output is then plotted in python to extract the following result
 
-<p align="center"> <img src="../../../media/module_1/BGR_images/monte_carlo.png" width="700" height="500" /> </p>
+<p align="center"> <img src=".media/monte_carlo.png" width="700" height="500" /> </p>
 
 
 

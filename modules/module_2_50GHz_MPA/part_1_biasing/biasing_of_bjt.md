@@ -46,7 +46,7 @@ Next, search for **DC Voltage Source** and **two power sources**  and create a t
 
 
 
-<p align="center"> <img src="../../../media/module_2/schematic_bias_1.png" width="800" height="500" /> </p>
+<p align="center"> <img src=".media/schematic_bias_1.png" width="800" height="500" /> </p>
 
 
 Now, we need to set up our **analysis mode** and configure the necessary parameters to capture the circuit's behavior in the first step. This includes:
@@ -100,7 +100,7 @@ In the **SG13G2** technology, the **npn13G2** transistor has a maximum **current
     - To keep the testbench clean, open a new **.dpl** window to analyze results.
     - This format is used to display simulation data visually.
     - Click the **button with the following icon** (insert icon) to create it.
-      <img src="../../../media/module_2/dpl_window.png" width="30" height="30" /> </p>
+      <img src=".media/dpl_window.png" width="30" height="30" /> </p>
 3. **Add Visualization Elements**:
     - Navigate to the **Diagram** tab under **Components** and insert:
         - **Smith Chart** → Used to analyze **reflection coefficients** (**S11** and **S22**), which provide insight into the necessary impedance matching (ac.v(s_1_1),  ac.v(s_2_2)).
@@ -116,10 +116,10 @@ K = (1 - abs(s_1_1)^2 - abs(s_2_2)^2 + abs(s_1_1 * s_2_2 - s_1_2 * s_2_1)^2) / (
 When these steps are done, your schematic should look like the following:
 (remember to set the frequency in the elements that need it as we go !)
 And you results/.dpl file should look like the following:
-<p align="center"> <img src="../../../media/module_2/schematic_bias_2.png" width="800" height="600" /> </p>
+<p align="center"> <img src=".media/schematic_bias_2.png" width="800" height="600" /> </p>
 (remember to set the frequency in the elements that need it as we go !)
 And you results/.dpl file should look like the following:
-<p align="center"> <img src="../../../media/module_2/results_bias_1.png" width="800" height="500" /> </p>
+<p align="center"> <img src=".media/results_bias_1.png" width="800" height="500" /> </p>
 At this point we can add markers to the lines in order to analyze the results more precisely. 
 
 ## Finding the Optimal Number of Fingers
@@ -148,7 +148,7 @@ To make tuning easier, we will define the **resistor value as a parameter**. Thi
     - This will act as our first guess before fine-tuning through simulation.
 
 Once these steps are completed, your schematic should look like the following:
-<p align="center"> <img src="../../../media/module_2/schematic_bias_3.png" width="800" height="600" /> </p>
+<p align="center"> <img src=".media/schematic_bias_3.png" width="800" height="600" /> </p>
 ## Simulating and Fine-Tuning
 
 Now that the circuit is set up, we can proceed with the **simulation** and visualization of key parameters. Instead of using a **.dpl file**, we will directly add a **Smith chart** and a **Cartesian plot** to the testbench. These will allow us to observe:
