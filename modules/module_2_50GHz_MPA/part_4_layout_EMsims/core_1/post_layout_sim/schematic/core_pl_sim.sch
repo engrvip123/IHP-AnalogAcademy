@@ -1,6 +1,6 @@
-<Qucs Schematic 24.4.1>
+<Qucs Schematic 25.1.2>
 <Properties>
-  <View=1009,-114,2868,838,0.852941,0,0>
+  <View=1129,-114,2870,838,1.23109,0,0>
   <Grid=10,10,1>
   <DataSet=core_pl_sim.dat>
   <DataDisplay=core_pl_sim.dpl>
@@ -35,14 +35,14 @@
   <GND * 1 1220 490 0 0 0 0>
   <C C14 1 1340 280 -26 17 0 0 "43 fF" 1 "" 0 "neutral" 0>
   <INDQ LQ1 1 1440 330 -62 -26 0 3 "103 pH" 1 "13" 1 "50e9" 0 "Linear" 0 "26.85" 0>
-  <Iac I1 1 1220 420 20 -26 0 1 "y" 1 "50 GHz" 0 "0" 0 "0" 0>
+  <Iac I1 1 1220 420 20 -26 0 1 "y" 1 "50 GHz" 0 "0" 0 "0" 0 "0" 0 "0" 0>
   <IProbe Pr2 1 1260 280 -26 16 0 0>
   <Lib npn13G3 1 1690 440 10 64 0 0 "/home/pedersen/.qucs/user_lib/IHP_PDK_nonlinear_components" 0 "npn13G2" 0 "10" 1>
   <GND * 1 1660 390 0 0 0 0>
   <GND * 1 1690 490 0 0 0 0>
   <GND * 1 1720 440 0 0 0 0>
   <R R6 1 1220 350 15 -26 0 1 "50 Ohm" 1 "26.85" 0 "0.0" 0 "0.0" 0 "26.85" 0 "european" 0>
-  <SPfile X1 1 1660 310 -26 -68 0 0 "../../openems/output/run_core_50ghz_mpa_data/run_core_50ghz_mpa.s4" 0 "rectangular" 0 "linear" 0 "open" 0 "4" 0>
+  <SPfile X1 1 1660 310 -26 -68 0 0 "/home/pedersen/projects/IHP-AnalogAcademy/modules/module_2_50GHz_MPA/part_4_layout_EMsims/core_1/openems/output/run_core_50ghz_mpa_data/run_core_50ghz_mpa.s4p" 0 "rectangular" 0 "linear" 0 "open" 0 "4" 0>
 </Components>
 <Wires>
   <1780 100 1780 130 "" 0 0 0 "">
