@@ -64,4 +64,3 @@ C {lab_pin.sym} 220 -300 0 0 {name=p2 sig_type=std_logic lab=Vin}
 C {gnd.sym} 320 -190 0 0 {name=l1 lab=GND}
 C {lab_pin.sym} 320 -410 0 0 {name=p4 sig_type=std_logic lab=Vdd}
 C {lab_pin.sym} 540 -300 0 1 {name=p5 sig_type=std_logic lab=Vout}
-C {lab_pin.sym} -210 -140 0 0 {name=p6 sig_type=std_logic lab=Vin}
