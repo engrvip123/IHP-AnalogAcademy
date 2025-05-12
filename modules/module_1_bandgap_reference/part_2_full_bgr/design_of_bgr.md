@@ -375,12 +375,12 @@ In this tutorial, we’ll demonstrate how to perform a Monte Carlo mismatch simu
 To begin, include the appropriate model files in your simulation. For mismatch simulations, the models should include mismatch parameters. Use the following imports:
 
 ```
-.lib $::SG13G2_MODELS/cornerCAP.lib cap_typ .lib $::SG13G2_MODELS/cornerRES.lib res_typ .lib cornerMOSlv.lib mos_tt_mismatch
+.lib $::SG13G2_MODELS/cornerCAP.lib cap_typ .lib $::SG13G2_MODELS/cornerRES.lib res_typ .lib cornerMOSlv.lib mos_tt_stat
 ```
 
 - **`cornerCAP.lib`**: Includes typical capacitor models.
 - **`cornerRES.lib`**: Includes typical resistor models.
-- **`cornerMOSlv.lib`**: Includes MOSFET models with mismatch parameters (`mos_tt_mismatch`).
+- **`cornerMOSlv.lib`**: Includes MOSFET models with mismatch parameters (`mos_tt_stat`).
 
 #### **Step 2: Setting Up the Simulation**
 
