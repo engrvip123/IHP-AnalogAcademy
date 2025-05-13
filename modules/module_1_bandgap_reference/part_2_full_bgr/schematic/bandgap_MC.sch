@@ -191,7 +191,7 @@ format="tcleval( @value )"
 value="
 .lib $::SG13G2_MODELS/cornerCAP.lib cap_typ
 .lib $::SG13G2_MODELS/cornerRES.lib res_typ
-.lib cornerMOSlv.lib mos_tt"}
+.lib cornerMOSlv.lib mos_tt_mismatch"}
 C {sg13g2_pr/sg13_lv_nmos.sym} -700 -765 2 0 {name=M8
 l=10u
 w=150n

@@ -64,7 +64,7 @@ C {devices/code_shown.sym} 95 -770 0 0 {name=MODEL only_toplevel=false
 format="tcleval( @value )"
 value="
 .lib cornerCAP.lib cap_typ
-.lib cornerMOSlv.lib mos_tt
+.lib cornerMOSlv.lib mos_tt_mismatch
 "}
 C {devices/code_shown.sym} 25 -1260 0 0 {name=NGSPICE only_toplevel=false 
 value="
