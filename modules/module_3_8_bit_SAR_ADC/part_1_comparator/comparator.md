@@ -168,7 +168,7 @@ Looking at the model includes, we see that now have defined the mismatch model
 name=MODEL1 only_toplevel=false
 format="tcleval( @value )"
 value="
-.lib cornerMOSlv.lib mos_tt_stat	
+.lib cornerMOSlv.lib mos_tt_mismatch	
 "
 ```
 This model includes variations in transistor parameters to simulate the effects of mismatches in the fabrication process. These variations are then used to analyze the impact on the comparator’s behavior.
