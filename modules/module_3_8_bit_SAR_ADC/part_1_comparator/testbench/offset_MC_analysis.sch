@@ -105,7 +105,7 @@ C {gnd.sym} 460 -300 2 0 {name=l7 lab=GND}
 C {devices/code_shown.sym} 15 -480 0 0 {name=MODEL1 only_toplevel=false
 format="tcleval( @value )"
 value="
-.lib cornerMOSlv.lib mos_tt
+.lib cornerMOSlv.lib mos_tt_mismatch
 "}
 C {devices/code_shown.sym} -675 -780 0 0 {name=NGSPICE1 only_toplevel=false 
 value="
