@@ -375,12 +375,17 @@ In this tutorial, we’ll demonstrate how to perform a Monte Carlo mismatch simu
 To begin, include the appropriate model files in your simulation. For mismatch simulations, the models should include mismatch parameters. Use the following imports:
 
 ```
-.lib $::SG13G2_MODELS/cornerCAP.lib cap_typ .lib $::SG13G2_MODELS/cornerRES.lib res_typ .lib cornerMOSlv.lib mos_tt_stat
+.lib $::SG13G2_MODELS/cornerCAP.lib cap_typ .lib $::SG13G2_MODELS/cornerRES.lib res_typ .lib cornerMOSlv.lib mos_tt
 ```
+
+Note (as of 13/05/2025):
+Mismatch modeling can currently be enabled simply by using the `mos_tt` model, as `mm_ok` (`mm_ok=1`) is enabled by default. Be aware that this behavior may change in future updates. Also, remember to account for this in the SAR ADC module, particularly during comparator analysis.
 
 - **`cornerCAP.lib`**: Includes typical capacitor models.
 - **`cornerRES.lib`**: Includes typical resistor models.
-- **`cornerMOSlv.lib`**: Includes MOSFET models with mismatch parameters (`mos_tt_stat`).
+- **`cornerMOSlv.lib`**: Includes MOSFET models with mismatch parameters (`mos_tt`).
+
+To perform statistical analysis instead of mismatch analysis, use the `mos_tt_stat` model. This captures wafer-to-wafer statistical variations.
 
 #### **Step 2: Setting Up the Simulation**
 
