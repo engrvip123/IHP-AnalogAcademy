@@ -22,7 +22,7 @@ from openEMS.physical_constants import *
 
 # preview model/mesh only?
 # postprocess existing data without re-running simulation?
-preview_only = True   
+preview_only = False   
 postprocess_only = False
 
 # ===================== input files and path settings =======================
@@ -100,12 +100,13 @@ max_cellsize = (wavelength_air/unit)/(sqrt(materials_list.eps_max)*cells_per_wav
 
 # Create simulation for port 1 .. 4 excitation, return value is data path for that excitation
 
+FDTD = openEMS(EndCriteria=exp(energy_limit/10 * log(10)))
+FDTD.SetGaussExcite( (fstart+fstop)/2, (fstop-fstart)/2 )
+FDTD.SetBoundaryCond( Boundaries )
+
 excite_ports_list = [[1],[2],[3],[4]]  # list of ports that are excited in the different excitation runs
 for excite_ports in excite_ports_list:
     # define excitation and stop criteria and boundaries
-    FDTD = openEMS(EndCriteria=exp(energy_limit/10 * log(10)))
-    FDTD.SetGaussExcite( (fstart+fstop)/2, (fstop-fstart)/2 )
-    FDTD.SetBoundaryCond( Boundaries )
     FDTD = simulation_setup.setupSimulation (excite_ports, simulation_ports, FDTD, materials_list, dielectrics_list, metals_list, allpolygons, max_cellsize, refined_cellsize, margin, unit, xy_mesh_function=util_meshlines.create_xy_mesh_from_polygons)
     simulation_setup.runSimulation (excite_ports, FDTD, sim_path, model_basename, preview_only, postprocess_only)
 
