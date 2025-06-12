@@ -2,6 +2,12 @@
   <img src="media/ihp-logo.jpg"  width="600" height="400" />
 </p>
 
+<p align="center">
+  <img src="media/bmftr_en.jpg"  width="300" height="200" />
+</p>
+
+The Development of this course is funded by the public german project FMD-QNC (16ME083) from BMFTR (Federal Ministry of Research, Technology and Space / Bundesministerium für Forschung, Technologie und Raumfahrt):
+https://www.elektronikforschung.de/projekte/fmd-qnc
 
 # Welcome to the IHP Analog Certificate Course
 
