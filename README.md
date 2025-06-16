@@ -2,10 +2,6 @@
   <img src="media/ihp-logo.jpg"  width="600" height="400" />
 </p>
 
-<p align="center">
-  <img src="media/bmftr_en.jpg"  width="300" height="200" />
-</p>
-
 The Development of this course is funded by the public german project FMD-QNC (16ME083) from BMFTR (Federal Ministry of Research, Technology and Space / Bundesministerium für Forschung, Technologie und Raumfahrt):
 https://www.elektronikforschung.de/projekte/fmd-qnc
 
@@ -294,3 +290,8 @@ We're also very open to feedback—whether it's pointing out errors, suggesting 
 Thanks for following along, and happy designing! 🚀
 
 Current Commit of IHP-Open-PDK to work with the course: eb1b540c58346cf6259285a38d09b2a04feb344a
+
+
+<p align="center">
+  <img src="media/bmftr_en.jpg"  width="300" height="200" />
+</p>
