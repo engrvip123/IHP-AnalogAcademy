@@ -16,7 +16,7 @@ This course provides a hands-on introduction to analog, RF, and mixed-signal IC 
 ## 📂 Navigating the Repository
 
 - **Go to the `modules/` folder**  
-  Each subfolder contains a `README.md` or similar markdown file explaining the full tutorial for that module in detail.
+  Each subfolder contains multiple markdown files under each part explaining the full tutorial for that module in detail.
 
 - **Use the `slides/` folder for reference only**  
   These are PowerPoint slides from the in-person course at IHP.  
