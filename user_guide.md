@@ -1,27 +1,36 @@
-📘 Analog Academy — User Guide
+# 📘 Analog Academy – User Guide
 
-Welcome to the IHP Analog Certificate Course!
+Welcome to the **IHP Analog Certificate Course**, part of the publicly funded FMD-QNC project (16ME083) by the **Federal Ministry of Research, Technology and Space (BMFTR)**.  
+More info: [FMD-QNC Project Website](https://www.elektronikforschung.de/projekte/fmd-qnc)
 
-This course introduces analog, RF, and mixed-signal IC design using open-source tools and the IHP Open PDK, focused on the 130 nm SG13G2 technology.
-🔍 How to Use This Repository
+---
 
-    Start with the modules/ folder
-    Each module contains a dedicated Markdown file with step-by-step tutorials, tools, and explanations. Follow them to learn each topic hands-on.
+## 🧭 How to Use This Course
 
-    Refer to the slides/ folder for context
-    This contains PowerPoint slides used in the in-person version of the course.
-    Note: These are not intended for standalone learning, as some content was explained live.
+This course provides a hands-on introduction to analog, RF, and mixed-signal IC design using **open-source tools** and the **IHP Open PDK (SG13G2 130nm technology)**.
 
-🧱 Course Structure
+> ⚠️ **Note:** This is *not* a beginner's IC design course. A basic understanding of electronics and microelectronics is required.
 
-The course is organized into the following modules:
+---
 
-    Foundations — Tool setup, gm/Id intro, and basic simulations
+## 📂 Navigating the Repository
 
-    Bandgap Reference — OTA design, simulation, and layout
+- **Go to the `modules/` folder**  
+  Each subfolder contains a `README.md` or similar markdown file explaining the full tutorial for that module in detail.
 
-    50 GHz Medium Power Amplifier — RF design, matching, nonlinear sims, EM
+- **Use the `slides/` folder for reference only**  
+  These are PowerPoint slides from the in-person course at IHP.  
+  They’re *not* intended to be followed alone for self-study, as some content was delivered live and may lack context.
 
-    8-bit SAR ADC — Comparator design, mixed-signal co-simulation
+---
 
-Each module builds on the previous, so we recommend going through them in order.
+## 🧱 Course Modules
+
+| Module | Topic                             |
+|--------|-----------------------------------|
+| 0      | Foundations (tools + gm/Id flow)  |
+| 1      | Bandgap Reference                 |
+| 2      | 50GHz Medium Power Amplifier      |
+| 3      | 8-bit SAR ADC                     |
+
+Each module builds on the last, combining theory with practical exercises.
