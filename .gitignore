@@ -17,4 +17,5 @@ modules/module_0_foundations/gmid_env
 *.out
 *.vcd
 *.npz
+*.log
 
