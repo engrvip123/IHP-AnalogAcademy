@@ -81,7 +81,7 @@ The scripts that was made for generating the LUTs can be found as:
 ### 🔧 Setup Procedure
 
 1. **Clone the Metwatts GMID repository**  
-   Follow the installation instructions provided in the repo.  
+   Follow the installation instructions provided in the repo ([`gmid`](https://github.com/medwatt/gmid))  
    > 💡 It is recommended to use a virtual environment.
 
 2. **Generate Lookup Tables**  
