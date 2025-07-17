@@ -99,7 +99,7 @@ The scripts that was made for generating the LUTs can be found as:
 4. **Launch the GMID GUI**  
    From the same directory, launch the Jupyter notebook:  
    ```bash
-   jupyter lab _gmid_test.ipynb
+   jupyter lab ../gmid_test.ipynb
    ```
    This notebook will open a GUI for exploring the GMID lookup tables, which should look like the following (make sure the paths match yours accordingly):
 
