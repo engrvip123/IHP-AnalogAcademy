@@ -149,7 +149,7 @@ def addPorts_to_CSX (CSX, excite_portnumbers,simulation_ports,FDTD, materials_li
         # each poly knows its layer number
         # get material name for poly, by using metal information from stackup
         metal = metals_list.getbylayernumber (poly.layernum)
-        if metal == None: # this layer does not exist in XML stackup
+        if metal is None: # this layer does not exist in XML stackup
             # found a layer that is not defined in stackup from XML, check if used for ports
             if poly.layernum in simulation_ports.portlayers:
                 # mark polygon for special handling in meshing
@@ -189,7 +189,7 @@ def addPorts_to_CSX (CSX, excite_portnumbers,simulation_ports,FDTD, materials_li
                          zmax_from = 0
                        else:
                          from_metal = metals_list.getbylayername(port.from_layername)
-                         if from_metal==None:
+                         if from_metal is None:
                             print('[ERROR] Invalid layer ' , port.from_layername, ' in port definition, not found in XML stackup file!')
                             sys.exit(1)                             
                          zmin_from  = from_metal.zmin
@@ -200,7 +200,7 @@ def addPorts_to_CSX (CSX, excite_portnumbers,simulation_ports,FDTD, materials_li
                          zmax_to = 0
                        else:
                          to_metal   = metals_list.getbylayername(port.to_layername)
-                         if to_metal==None:
+                         if to_metal is None:
                             print('[ERROR] Invalid layer ' , port.to_layername, ' in port definition, not found in XML stackup file!')
                             sys.exit(1)                             
                          zmin_to    = to_metal.zmin
