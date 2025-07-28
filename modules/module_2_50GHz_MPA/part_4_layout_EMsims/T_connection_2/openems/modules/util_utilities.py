@@ -30,8 +30,8 @@ def create_sim_path (script_path, model_basename):
         sim_path = os.path.join(base_path, model_basename + '_data')
         if not os.path.exists(sim_path):
             os.makedirs(sim_path, exist_ok=True)
-    except:
-        print('[WARNING] Could not create simulation data directory ', sim_path)
+    except (OSError, PermissionError) as e:
+        print(f'[WARNING] Could not create simulation data directory {sim_path}: {e}')
         print('Now trying to use temp directory for simulation data!\n')
         base_path =  os.path.join(tempfile.gettempdir(), 'openEMS')
         sim_path = os.path.join(base_path, model_basename + '_data')
@@ -113,8 +113,8 @@ def calculate_Yij_2port (i, j, f, sim_path, simulation_ports, symmetry=False):
             sys.exit(1)            
 
 
-    except:
-        print('[ERROR] Error in Y-parameter calculation')
+    except (ZeroDivisionError, ValueError, IndexError, KeyError) as e:
+        print(f'[ERROR] Error in Y-parameter calculation: {e}')
         sys.exit(1)
 
 
@@ -154,12 +154,12 @@ def calculate_Zij_2port (i, j, f, sim_path, simulation_ports, symmetry=False):
             # Z22
             return Z0*((1-s11)*(1+s22)+s12*s21)/((1-s11)*(1-s22)-s12*s21)
         else:
-            print('[ERROR] Invalid parameter requested: Y',i,j)
+            print('[ERROR] Invalid parameter requested: Z',i,j)
             sys.exit(1)            
 
 
-    except:
-        print('[ERROR] Error in Y-parameter calculation')
+    except (ZeroDivisionError, ValueError, IndexError, KeyError) as e:
+        print(f'[ERROR] Error in Z-parameter calculation: {e}')
         sys.exit(1)
         
 
@@ -174,26 +174,25 @@ def write_snp (Smatrix,f, filename):
     matrixsize = len(Smatrix)
     numfreq = len(f)
 
-    snp_file = open(filename, 'w')
-    snp_file.write('#   Hz   S  RI   R   50\n')
-    snp_file.write('!\n')
+    with open(filename, 'w') as snp_file:
+        snp_file.write('#   Hz   S  RI   R   50\n')
+        snp_file.write('!\n')
 
-    # address elements as Sij
-    for index in range(0, numfreq):
-        freq = f[index]
-        line = f"{freq:.6e}" 
+        # address elements as Sij
+        for index in range(0, numfreq):
+            freq = f[index]
+            line = f"{freq:.6e}" 
 
-        if matrixsize==1:
-            #1-port data
-            line = line + f" {Smatrix[0,index].real:.6e} {Smatrix[0,index].imag:.6e}"
-        else:
-            # multiport data
-            for j in range(0,matrixsize):   
-                for i in range(0,matrixsize):  
-                    line = line + f" {Smatrix[i, j, index].real:.6e} {Smatrix[i, j, index].imag:.6e}"
+            if matrixsize==1:
+                #1-port data
+                line = line + f" {Smatrix[0,index].real:.6e} {Smatrix[0,index].imag:.6e}"
+            else:
+                # multiport data
+                for j in range(0,matrixsize):   
+                    for i in range(0,matrixsize):  
+                        line = line + f" {Smatrix[i, j, index].real:.6e} {Smatrix[i, j, index].imag:.6e}"
 
-        snp_file.write(line + '\n')
-    snp_file.close()
+            snp_file.write(line + '\n')
 
 
 
